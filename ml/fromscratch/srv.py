@@ -46,11 +46,16 @@ if __name__ == '__main__':
         print >> sys.stderr, "Usage:\n  " + sys.argv[0] + "  <json_scan_file>\n"
         sys.exit(1)
 
+    host = '0.0.0.0'
+    port = 2222
+
     json_file = sys.argv[1]
 
-    srv = ThreadedHTTPServer(('0.0.0.0', 2222), HttpHandler)
+    srv = ThreadedHTTPServer((host, port), HttpHandler)
 
     srv.load_ml(json_file)
 
     srv.allow_reuse_address = True
+    print >> sys.stderr, "Serving on %s:%d... :)" % (host, port)
     srv.serve_forever()
+
