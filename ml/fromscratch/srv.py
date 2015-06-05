@@ -30,10 +30,19 @@ class HttpHandler(BaseHTTPRequestHandler):
         q = mq.get('q', [])
         q = q[0] if len(q) > 0 else ''
 
-        cat_id = self.server.cls.predict( q )
+        if len(q) > 3:
+            cat_id = self.server.cls.predict( q )
+        else:
+            cat_id = -1
 
         obj = dict()
         obj['category'] = self.server.cls.cat_id2name( cat_id )
+
+        try:
+            log = 'QUERY\t%s\t%s' % (q, obj['category'].encode('utf-8'))
+            print >> sys.stderr, log
+        except Exception, e:
+            print >> sys.stderr, "Log exc: " + str(e)
 
         resp = json.dumps(obj, ensure_ascii=False)
         resp = resp.encode('utf-8')
