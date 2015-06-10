@@ -25,6 +25,8 @@ import random
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import SGDClassifier
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.tree import DecisionTreeClassifier
 # from sklearn import svm
 
 import nltk.stem
@@ -92,8 +94,9 @@ class Classifier:
         print >> sys.stderr, "Learning..."
         train_features = self.vectorizer.fit_transform(train_docs)
 
-        # classifier = svm.SVC()
+        # self.classifier = svm.SVC() # modified_huber
         self.classifier = SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3, n_iter=5, random_state=42)
+        # self.classifier = DecisionTreeClassifier()
         print >> sys.stderr, self.classifier
 
         self.classifier.fit(train_features, train_target)
