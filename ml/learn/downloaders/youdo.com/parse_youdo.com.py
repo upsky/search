@@ -5,6 +5,7 @@ import sys
 import os
 import re
 import json
+import time
 
 import lxml.html
 import urllib2
@@ -81,7 +82,7 @@ def download_html(url):
 '''
 
 kFrontUrl = 'https://youdo.com'
-kParsePages = 35
+kParsePages = 100
 
 kXpathTasks = "//div/ul/li"
 kXpathTaskSubCat    = "//li[@class='b-task-block__brief__item']"
@@ -93,9 +94,13 @@ kXpathTaskAddress   = "//div[@class='b-task-block__info']/span[@class='js-value'
 nnn = 0
 
 for (cat, url) in plist:
-    print >> sys.stderr, (" - %s, url: %s" % (cat, url)).encode('cp866')
-    for i in xrange(1, kParsePages+1):
-        page_url = '%s%d' % (url, i)
+    print >> sys.stderr, (" - %s, url: %s" % (cat, url)).encode('utf-8')
+    for page_num in xrange(1, kParsePages+1):
+        if page_num % 4 == 0:  # sleep for 10 seconds after each 4 downloaded pages
+            print >> sys.stderr, "Sleeping some time..."
+            time.sleep(10)
+
+        page_url = '%s%d' % (url, page_num)
         print >> sys.stderr, "   trying download page url: %s" % page_url
 
         try:
@@ -148,5 +153,7 @@ for (cat, url) in plist:
             obj['price'] = price
             obj['desc'] = desc
             obj['addr'] = addr
+            obj['url'] = turl
             jstr = json.dumps(obj, ensure_ascii=False)
             print jstr.encode('utf8')
+
