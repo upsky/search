@@ -39,10 +39,23 @@ class Lexer:
     #-------------------------------------------------------
     # Возвращает морфологически нормализованное слово:
     # - lowercased, ё -> е, stemmed
-    def stemmed_normalize(self, unicode_word):
+    def normalize(self, unicode_word):
         w = unicode_word.lower()
         w = w.translate( self.translate_table ) # ё -> е
         return self.russian_stemmer.stem(w)
+
+    #-------------------------------------------------------
+    # Возвращает морфологически нормализованную строку
+    # complete_with_spaces - если True, тогда то, что было вырезано стемером заполняется пробелами
+    def normalize_str(self, unicode_str, complete_with_spaces=True):
+        s = u''
+        for tok in self.tokenize(unicode_str, normalizer=self.normalize):
+            if len(s) > 0:
+                s += u' '
+            s += tok.word_normalized
+            if complete_with_spaces:
+                s += (' ' * (len(tok.word) - len(tok.word_normalized)))
+        return s
 
 #-------------------------------------------------------------------------------
 gLexer = Lexer()

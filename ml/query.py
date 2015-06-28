@@ -5,33 +5,55 @@
 #
 
 from utils import logger
-import lex
-
-#-------------------------------------------------------------------------------
-# Нода дерева запроса
-class QNode:
-    def __init__(self):
-        self.token = None
-        self.labels = {}
-        self.children = []
+from lex import gLexer
 
 #-------------------------------------------------------------------------------
 class Query:
-    def __init__(self):
-        self.text = ''                  # исходный текст запроса в unicode
-        self.text_normalized = ''       # исходный текст с нормализованными и стеммированными словами
+    def __init__(self, utf8_str=None, stop_words=[]):
+        self.err_msg = None
+
+        if utf8_str == None:
+            self.clear()
+        else:
+            self.parse(utf8_str, stop_words)
+
+    #-------------------------------------------------------
+    def is_parsed(self):
+        return (self.text_normalized != None and len(self.tokens) > 0)
+
+    #-------------------------------------------------------
+    def get_err_msg(self):
+        return self.err_msg
+
+    #-------------------------------------------------------
+    def clear(self):
+        self.text = None                # исходный текст запроса в unicode
+        self.text_normalized = None     # исходный текст с нормализованными и стеммированными словами
         self.tokens = []                # список токенов
         self.labels = {}                # метки запроса
-        self.tree = None
 
-    def parse(self, utf8_str, stop_words=[]):
-        # convert
-        try:
-            self.text = utf8_str.decode('utf-8')
-        except Exception, e:
-            logger.Log("Query parser: can't convert your string from utf-8 to unicode. Exc: %s" % str(e))
-            return False
+    #-------------------------------------------------------
+    def add_label(self, section, name, value):
+        self.labels[section] = self.labels.get(section, dict())
+        self.labels[section][name] = self.labels[section].get(name, list())
+        self.labels[section][name].append( value )
+
+    #-------------------------------------------------------
+    # Парсит запрос:
+    # - на входе - unicode-строка, на выходе True/False;
+    # - для случая True - заполненная структура запроса в unicode
+    #! TODO : stop_words !!!
+    def parse(self, qtext, stop_words=[], complete_with_spaces=True):
+        self.clear()
+        self.text = unicode(qtext)
         # tokenize
-        self.tokens = [tok for tok in lex.gLexer.tokenize(self.text, normalizer=lex.gLexer.stemmed_normalize)]
-        self.text_normalized = ' '.join( [tok.word_normalized for tok in self.tokens] )
+        self.tokens = [tok for tok in gLexer.tokenize(self.text, normalizer=gLexer.normalize)]
+        # make normalized text
+        self.text_normalized = u''
+        for tok in self.tokens:
+            if len(self.text_normalized) > 0:
+                self.text_normalized += u' '
+            self.text_normalized += tok.word_normalized
+            if complete_with_spaces:
+                self.text_normalized += (' ' * (len(tok.word) - len(tok.word_normalized)))
         return True
