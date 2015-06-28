@@ -9,78 +9,98 @@ import json
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 from SocketServer   import ThreadingMixIn
 
-from testml import Classifier
+from ml.ml import Analyzer
+from ml.query import Query
+
+from ml.utils import logger
 
 kBeautifyJson = True
 
 #-------------------------------------------------------------------------------
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
-    def load_ml(self, json_file):
-        self.cls = Classifier()
-        self.cls.train_from_file( json_file )
-        print >> sys.stderr, "Trained on %d docs" % self.cls.loaded_docs
+    def init(self, config_file):
+        self.config_file = config_file
+        try:
+            self.ml_config = json.load( open(config_file) )
+        except Exception, e:
+            logger.Log("Can't load config file '%s'. Exc: %s" % (config_file, str(e)))
+            return False
+            
+        self.analyzer = Analyzer( self.ml_config )
+        logger.Log("Loaded analyzer, config file: %s" % config_file)
 
-    def load_hierarchy(self, hier_file):
-        self.cats_hier = json.load( open(hier_file) )
+        return True
 
 #-------------------------------------------------------------------------------
 class HttpHandler(BaseHTTPRequestHandler):
+    def make_resp(self, obj, beautify):
+        indent = None if not beautify else 2
+        resp = json.dumps(obj, ensure_ascii=False, indent=indent, sort_keys=True )
+        resp = resp.encode('utf-8')
+        return resp
+
     def do_GET(self):
         self.send_response(200)
-        self.send_header("Content-type", "text/plain;charset=utf-8")
+        self.send_header("Content-Type", "text/plain; charset=utf-8")
         self.end_headers()
 
         pp = urlparse.urlparse( self.path )
         qmap = urlparse.parse_qs( pp.query )
 
         obj = dict()
+        log_msg = ''
 
         if 'get' in qmap:
             what = qmap['get']
             what = what[0] if len(what) == 1 else ''
+            log_msg = "GET\t" + what
             if what == 'categories':
-                obj = self.server.cats_hier
+                obj = {'sorry, krizka': 'it\'s temporary unavailable :)' }
         elif 'q' in qmap:
             q = qmap.get('q', [])
             q = q[0] if len(q) > 0 else ''
 
             if len(q) > 3:
-                cat_id = self.server.cls.predict( q )
-            else:
-                cat_id = -1
+                try:
+                    q = q.decode('utf-8')
+                except Exception, e:
+                    logger.Log("Can't decode from utf-8, exc: %s" % str(e))
+                    return
 
-            obj['category'] = self.server.cls.cat_id2name( cat_id )
+                qobj = Query( q )
+                self.server.analyzer.analyze( qobj )
+
+                obj = qobj.labels
 
             try:
-                log = 'QUERY\t%s\t%s' % (q, obj['category'].encode('utf-8'))
-                print >> sys.stderr, log
+                log_msg = 'QUERY\t'
+                log_msg += q.encode('utf-8')
             except Exception, e:
-                print >> sys.stderr, "Log exc: " + str(e)
+                logger.Log("log_msg creating exc: " + str(e))
 
-        indent = None if not kBeautifyJson else 2
-        resp = json.dumps(obj, ensure_ascii=False, indent=indent, sort_keys=True )
-        resp = resp.encode('utf-8')
+        log_resp = log_msg + '\t' + self.make_resp(obj, beautify=False)
+        logger.Log( log_resp )
 
+        resp = self.make_resp(obj, beautify=kBeautifyJson)
         self.wfile.write( resp )
 
 #-------------------------------------------------------------------------------
 if __name__ == '__main__':
-    if len(sys.argv) < 3:
-        print >> sys.stderr, "Usage:\n  " + sys.argv[0] + "  <scan_file.json>  <categories_hierarchy.json>\n"
+    if len(sys.argv) < 2:
+        print >> sys.stderr, "Usage:\n  " + sys.argv[0] + "  <ml.conf>\n"
         sys.exit(1)
 
     host = '0.0.0.0'
     port = 2222
 
-    json_file = sys.argv[1]
-    hier_file = sys.argv[2]
+    config_file = sys.argv[1]
 
     srv = ThreadedHTTPServer((host, port), HttpHandler)
 
-    srv.load_ml(json_file)
-    srv.load_hierarchy(hier_file)
+    if not srv.init( config_file ):
+        sys.exit(1)
 
     srv.allow_reuse_address = True
-    print >> sys.stderr, "Serving on %s:%d... :)" % (host, port)
+    logger.Log( "Serving on %s:%d... :)" % (host, port) )
     srv.serve_forever()
 

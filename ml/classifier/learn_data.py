@@ -91,6 +91,7 @@ class LearnDataLoader:
         self._recursive_tree2list(self.tree, data)
         return data
 
+    #-------------------------------------------------------
     def _recursive_tree2list(self, node, data=[], path=[]):
         for (cat, sub_node) in node.iteritems():
             if cat == '__data__':
@@ -104,3 +105,4 @@ class LearnDataLoader:
                 data.append( (list(curr_path), d) )
 
             self._recursive_tree2list(sub_node, data, curr_path)
+

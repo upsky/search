@@ -8,13 +8,13 @@ import sys
 import json
 import pickle
 
-from lex import gLexer
-from utils import logger
+from ..lex import gLexer
+from ..utils import logger
 
 from learn_data import LearnDataLoader
 
-# from sklearn.feature_extraction.text import TfidfVectorizer
-# from sklearn.linear_model import SGDClassifier
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import SGDClassifier
 
 kModelFileVersion = '1.0'
 
@@ -24,9 +24,10 @@ class Analyzer:
         self.name = 'classifier'
         self.err_msg = None
 
-        # self.vectorizer = TfidfVectorizer(min_df=1, ngram_range=(1,2))
+        self.vectorizer = TfidfVectorizer(min_df=1, ngram_range=(1,2))
 
-        self.cfg = config.get(self.name, None)
+        config_section = self.name
+        self.cfg = config.get(config_section, None)
         if self.cfg == None:
             raise Exception("Can't find config section for analyzer '%s'" % self.name)
 
@@ -48,6 +49,9 @@ class Analyzer:
         self.cats = {}
         self.cat_id2name = {}
         self.cats_n = 0
+
+        self.docs = []
+        self.targets = []
         self.classifier = None
 
     #-------------------------------------------------------
@@ -63,12 +67,12 @@ class Analyzer:
 
     #-------------------------------------------------------
     def analyze(self, query):
-        ''' test_features = self.vectorizer.transform( [query.text_normalized] )
+        test_features = self.vectorizer.transform( [query.text_normalized] )
         p = self.classifier.predict(test_features)
-        p[0] '''
-        cat_id = 1
+        cat_id = p[0]
+
         cat_info = self.cat_id2info(cat_id)
-        query.add_label('cat', 'path', cat_info['path'])
+        query.add_simple_label( 'cat', {'path':cat_info['path'], 'prob':0.99} )
         return True
 
     #-------------------------------------------------------
@@ -76,24 +80,25 @@ class Analyzer:
         return (self.classifier != None)
 
     #-------------------------------------------------------
-    def train_from_file(self, file):
-        ldata = LearnDataLoader(file)
+    def load_train_data(self, fname):
+        ldata = LearnDataLoader(fname)
         if not ldata.is_loaded():
             self.err_msg = "Can't load train data. LearnDataLoader() err: %s" % (ldata.get_err_msg())
             return False
 
         ldata.balance_categories()
+        self.categories = ldata.get_categories()
+        return ldata
+
+    #-------------------------------------------------------
+    def train_from_file(self, fname):
+        ldata = self.load_train_data(fname)
         return self.train( ldata.get_learn_data() )
 
     #-------------------------------------------------------
     def train(self, learn_data):
         # трансформируем формат LearnDataLoader во внутренний формат
-        self.cats = {}
-        self.cat_id2name = {}
-        self.cats_n = 0
-
-        docs = []
-        targets = []
+        self.clear()
 
         for (path, data) in learn_data:
             # save category
@@ -110,27 +115,25 @@ class Analyzer:
             document = gLexer.normalize_str( document )
             cat_id = c['id']
 
-            docs.append( document )
-            targets.append( cat_id )
+            self.docs.append( document )
+            self.targets.append( cat_id )
 
-        logger.Log("Loaded, docs: %d, targets: %d" % (len(docs), len(targets)))
+        logger.Log("Loaded, docs: %d, targets: %d" % (len(self.docs), len(self.targets)))
 
         # треним классификатор
         logger.Log("Training classifier...")
-        '''
         self.classifier = SGDClassifier(loss='modified_huber', penalty='l2', alpha=5e-4, n_iter=100,
                                         power_t=0.5, random_state=12, shuffle=False, warm_start=False)
         logger.Log( str(self.classifier) )
 
-        train_features = self.vectorizer.fit_transform( docs )
-        self.classifier.fit(train_features, target)
-        '''
+        train_features = self.vectorizer.fit_transform( self.docs )
+        self.classifier.fit(train_features, self.targets)
+
         logger.Log("Done")
         return True
 
     #-------------------------------------------------------
-    @staticmethod
-    def _open_file(fname, mode='r'):
+    def _open_file(self, fname, mode='r'):
         try:
             fd = open(fname, mode)
         except Exception, e:
@@ -140,7 +143,7 @@ class Analyzer:
 
     #-------------------------------------------------------
     def save_model(self, model_file):
-        fd = Analyzer._open_file( model_file, 'wb+' )
+        fd = self._open_file( model_file, 'wb+' )
         if fd == None:
             return False
 
@@ -149,6 +152,8 @@ class Analyzer:
             'cats': self.cats,
             'cat_id2name': self.cat_id2name,
             'cat_n': self.cats_n,
+            'docs': self.docs,
+            'targets': self.targets,
             'classifier': self.classifier
         }
 
@@ -160,7 +165,7 @@ class Analyzer:
     def load_model(self, model_file):
         self.clear()
 
-        fd = Analyzer._open_file( model_file )
+        fd = self._open_file( model_file )
         if fd == None:
             return False
 
@@ -178,11 +183,18 @@ class Analyzer:
         self.cats = obj.get('cats', None)
         self.cat_id2name = obj.get('cat_id2name', None)
         self.cat_n = obj.get('cat_n', None)
+        self.docs = obj.get('docs', None)
+        self.targets = obj.get('targets', None)
         self.classifier = obj.get('classifier', 0)
 
-        if self.cats == None or self.cat_id2name == None or self.cat_n == None or self.classifier == 0:
+        if self.cats == None or self.cat_id2name == None or self.cat_n == None or \
+           self.docs == None or self.targets == None or self.classifier == 0:
             self.clear()
             self.err_msg = "Error. Perhaps model-file is corrupted."
             return False
 
+        # фитим векторайзер, чтобы он знал все слова
+        self.vectorizer.fit( self.docs )
+
         return True
+

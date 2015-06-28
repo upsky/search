@@ -9,13 +9,13 @@ from lex import gLexer
 
 #-------------------------------------------------------------------------------
 class Query:
-    def __init__(self, utf8_str=None, stop_words=[]):
+    def __init__(self, ustr=None, stop_words=[]):
         self.err_msg = None
 
-        if utf8_str == None:
+        if ustr == None:
             self.clear()
         else:
-            self.parse(utf8_str, stop_words)
+            self.parse(ustr, stop_words)
 
     #-------------------------------------------------------
     def is_parsed(self):
@@ -31,6 +31,11 @@ class Query:
         self.text_normalized = None     # исходный текст с нормализованными и стеммированными словами
         self.tokens = []                # список токенов
         self.labels = {}                # метки запроса
+
+    #-------------------------------------------------------
+    def add_simple_label(self, name, value):
+        self.labels[name] = self.labels.get(name, list())
+        self.labels[name].append( value )
 
     #-------------------------------------------------------
     def add_label(self, section, name, value):

@@ -2,7 +2,7 @@
 
 import re
 
-from lex import gLexer
+from ..lex import gLexer
 
 from objects import kAnalyzersSection
 
@@ -23,10 +23,11 @@ kVocab = ['помогите', 'срочно', 'срочняк', 'немедле�
 #-------------------------------------------------------------------------------
 class Analyzer:
     def __init__(self, config, voc=kVocab):
-        self.name = 'objects.urgency'
+        self.name = 'urgency'
         self.err_msg = None
 
-        self.cfg = config
+        config_section = kAnalyzersSection + '.' + self.name
+        self.cfg = config.get(self.name, None)
 
         # нормализуем словарь
         voc_list = []
