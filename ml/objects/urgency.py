@@ -41,7 +41,7 @@ class Analyzer:
         self.voc_re = re.compile(voc_rx, flags=re.UNICODE)
 
     #-------------------------------------------------------
-    def get_name(self):
+    def get_analyzer_name(self):
         return self.name
 
     #-------------------------------------------------------

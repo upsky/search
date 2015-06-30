@@ -24,8 +24,6 @@ class Analyzer:
         self.name = 'classifier'
         self.err_msg = None
 
-        self.vectorizer = TfidfVectorizer(min_df=1, ngram_range=(1,2))
-
         config_section = self.name
         self.cfg = config.get(config_section, None)
         if self.cfg == None:
@@ -41,7 +39,7 @@ class Analyzer:
             self.load_model( self.model_file )
 
     #-------------------------------------------------------
-    def get_name(self):
+    def get_analyzer_name(self):
         return self.name
 
     #-------------------------------------------------------
@@ -50,20 +48,17 @@ class Analyzer:
         self.cat_id2name = {}
         self.cats_n = 0
 
-        self.docs = []
-        self.targets = []
+        self.cats_hier = {}
         self.classifier = None
+        self.vectorizer = None
 
     #-------------------------------------------------------
     def get_err_msg(self):
         return self.err_msg
 
     #-------------------------------------------------------
-    def cat_id2info(self, id):
-        text_path = self.cat_id2name.get(id, None)
-        if text_path == None:
-            return None
-        return self.cats[text_path]
+    def get_cats_hier(self):
+        return self.cats_hier
 
     #-------------------------------------------------------
     def analyze(self, query):
@@ -71,34 +66,47 @@ class Analyzer:
         p = self.classifier.predict(test_features)
         cat_id = p[0]
 
-        cat_info = self.cat_id2info(cat_id)
+        cat_info = self._cat_id2info(cat_id)
         query.add_simple_label( 'cat', {'path':cat_info['path'], 'prob':0.99} )
         return True
 
     #-------------------------------------------------------
+    def _cat_id2info(self, id):
+        text_path = self.cat_id2name.get(id, None)
+        if text_path == None:
+            return None
+        return self.cats[text_path]
+
+    #-------------------------------------------------------
     def is_loaded(self):
-        return (self.classifier != None)
+        return (self.cats != None and self.cat_id2name != None and self.cat_n != None and \
+                self.cats_hier != None and self.classifier != None and self.vectorizer != None)
 
     #-------------------------------------------------------
-    def load_train_data(self, fname):
-        ldata = LearnDataLoader(fname)
-        if not ldata.is_loaded():
-            self.err_msg = "Can't load train data. LearnDataLoader() err: %s" % (ldata.get_err_msg())
+    def train_from_file(self, cats_hier_json, learn_data_json):
+        ldata = self._load_train_data( cats_hier_json, learn_data_json )
+        if ldata == None:
             return False
-
-        ldata.balance_categories()
-        self.categories = ldata.get_categories()
-        return ldata
+        return self.train( ldata.get_learn_data() )
 
     #-------------------------------------------------------
-    def train_from_file(self, fname):
-        ldata = self.load_train_data(fname)
-        return self.train( ldata.get_learn_data() )
+    def _load_train_data(self, cats_hier_json, learn_data_json):
+        ldata = LearnDataLoader( cats_hier_json, learn_data_json )
+        if not ldata.is_ok():
+            self.err_msg = "Can't load train data. LearnDataLoader() err: %s" % (ldata.get_err_msg())
+            return None
+
+        ldata.balance_data()
+        self.cats_hier = ldata.get_categories_hier()
+        return ldata
 
     #-------------------------------------------------------
     def train(self, learn_data):
         # трансформируем формат LearnDataLoader во внутренний формат
         self.clear()
+
+        docs = []
+        targets = []
 
         for (path, data) in learn_data:
             # save category
@@ -110,24 +118,28 @@ class Analyzer:
                 c = {'path':path, 'id':self.cats_n}
                 self.cats[text_path] = c
                 self.cat_id2name[self.cats_n] = text_path
-            #
+
             document = data['title'] # + ' ' + data['desc']
             document = gLexer.normalize_str( document )
             cat_id = c['id']
 
-            self.docs.append( document )
-            self.targets.append( cat_id )
+            docs.append( document )
+            targets.append( cat_id )
 
-        logger.Log("Loaded, docs: %d, targets: %d" % (len(self.docs), len(self.targets)))
+        logger.Log("Loaded, docs: %d, its targets: %d" % (len(docs), len(targets)))
 
         # треним классификатор
         logger.Log("Training classifier...")
+
+        self.vectorizer = TfidfVectorizer(min_df=1, ngram_range=(1,2))
+        logger.Log( str(self.vectorizer) )
+
         self.classifier = SGDClassifier(loss='modified_huber', penalty='l2', alpha=5e-4, n_iter=100,
                                         power_t=0.5, random_state=12, shuffle=False, warm_start=False)
         logger.Log( str(self.classifier) )
 
-        train_features = self.vectorizer.fit_transform( self.docs )
-        self.classifier.fit(train_features, self.targets)
+        train_features = self.vectorizer.fit_transform( docs )
+        self.classifier.fit(train_features, targets)
 
         logger.Log("Done")
         return True
@@ -142,7 +154,12 @@ class Analyzer:
         return fd
 
     #-------------------------------------------------------
-    def save_model(self, model_file):
+    def save_model(self, model_file=None):
+        if model_file == None:
+            model_file = self.model_file
+        if model_file == None:
+            raise Exception("specify model file please")
+
         fd = self._open_file( model_file, 'wb+' )
         if fd == None:
             return False
@@ -152,8 +169,8 @@ class Analyzer:
             'cats': self.cats,
             'cat_id2name': self.cat_id2name,
             'cat_n': self.cats_n,
-            'docs': self.docs,
-            'targets': self.targets,
+            'cats_hier': self.cats_hier,
+            'vectorizer': self.vectorizer,
             'classifier': self.classifier
         }
 
@@ -183,18 +200,13 @@ class Analyzer:
         self.cats = obj.get('cats', None)
         self.cat_id2name = obj.get('cat_id2name', None)
         self.cat_n = obj.get('cat_n', None)
-        self.docs = obj.get('docs', None)
-        self.targets = obj.get('targets', None)
-        self.classifier = obj.get('classifier', 0)
+        self.cats_hier = obj.get('cats_hier', None)
+        self.vectorizer = obj.get('vectorizer', None)
+        self.classifier = obj.get('classifier', None)
 
-        if self.cats == None or self.cat_id2name == None or self.cat_n == None or \
-           self.docs == None or self.targets == None or self.classifier == 0:
-            self.clear()
-            self.err_msg = "Error. Perhaps model-file is corrupted."
+        if not self.is_loaded():
+            self.err_msg = "load_model() error. Perhaps model-file is corrupted."
             return False
-
-        # фитим векторайзер, чтобы он знал все слова
-        self.vectorizer.fit( self.docs )
 
         return True
 
