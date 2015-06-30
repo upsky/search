@@ -54,8 +54,12 @@ class HttpHandler(BaseHTTPRequestHandler):
             what = qmap['get']
             what = what[0] if len(what) == 1 else ''
             log_msg = "GET\t" + what
+
             if what == 'categories':
-                obj = {'sorry, krizka': 'it\'s temporary unavailable :)' }
+                cls = self.server.analyzer.get_analyzer('classifier')
+                if cls != None:
+                    obj = cls.get_cats_hier()
+
         elif 'q' in qmap:
             q = qmap.get('q', [])
             q = q[0] if len(q) > 0 else ''

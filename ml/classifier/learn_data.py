@@ -6,7 +6,7 @@
 
 import json
 
-kMinimalCategoryLearnExamples = 10
+kMinimalCategoryLearnExamples = 20
 
 #-------------------------------------------------------------------------------
 class LearnDataLoader:
@@ -29,8 +29,8 @@ class LearnDataLoader:
         self.err_msg = None
         self.visible_cats_hier = None       # иерархия категорий для показа наружу; имеет упорядоченность в элементах
         self.checking_cats_hier = None      # просто деревянная структура для внутренних проверок
-        self.data_tree = dict()                  # обучающие данные
-        self.examples = 0
+        self.data_tree = dict()             # обучающие данные
+        self.examples = 0                   # кол-во обучающих примеров
 
     #-------------------------------------------------------
     # returns: [ {'name':'cat', 'subcats':[..nesting..]}, ... ]

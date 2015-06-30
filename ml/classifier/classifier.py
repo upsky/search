@@ -47,8 +47,8 @@ class Analyzer:
         self.cats = {}
         self.cat_id2name = {}
         self.cats_n = 0
-
         self.cats_hier = {}
+
         self.classifier = None
         self.vectorizer = None
 
@@ -91,19 +91,22 @@ class Analyzer:
 
     #-------------------------------------------------------
     def _load_train_data(self, cats_hier_json, learn_data_json):
+        logger.Log("Loading training examples...")
         ldata = LearnDataLoader( cats_hier_json, learn_data_json )
         if not ldata.is_ok():
             self.err_msg = "Can't load train data. LearnDataLoader() err: %s" % (ldata.get_err_msg())
             return None
 
+        logger.Log("Balancing training examples in categories tree...")
         ldata.balance_data()
+
         self.cats_hier = ldata.get_categories_hier()
         return ldata
 
     #-------------------------------------------------------
     def train(self, learn_data):
         # трансформируем формат LearnDataLoader во внутренний формат
-        self.clear()
+        logger.Log("Normalizing learn-data...")
 
         docs = []
         targets = []
