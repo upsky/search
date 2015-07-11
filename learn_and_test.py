@@ -1,13 +1,49 @@
 # -*- coding: utf-8 -*-
+#
+# Test and Learn
+#
 
 import sys
 import json
+from argparse import ArgumentParser
+
 
 from ml.utils import logger
 
 from ml.query import Query
 from ml import Analyzer
 from ml.classifier import classifier
+
+#-------------------------------------------------------------------------------
+# parse commandline arguments
+class Args:
+    def add_common(self, group, show_requires):
+        group.add_argument('-c', '--config', required=True, dest='config', nargs=1, metavar="config.json",
+                           help="ML config file")
+
+    def __init__(self):
+        p = ArgumentParser(prog=sys.argv[0], prefix_chars='-') # , description="Suggests Experiments Client (C) Go.Mail.Ru")
+
+        sp = p.add_subparsers(dest='mode', metavar='mode')
+
+        pm = sp.add_parser('learn_cls', help="Learn classifier")
+        self.add_common(pm, show_requires=True)
+        pm.add_argument('--hier', required=True, dest='hier', nargs=1, metavar="file.json",
+                        help="Categories hierarchy, json")
+        pm.add_argument('--data', required=True, dest='data', nargs=1, metavar="file.json",
+                        help="Learn data, json")
+
+        pm = sp.add_parser('test', help="Test")
+        self.add_common(pm, show_requires=True)
+
+        pm = sp.add_parser('exp', help="Experiments. Tuning classifier and etc mode")
+        pm.add_argument('--data', required=True, dest='data', nargs=1, metavar="file.json",
+                        help="Learn data, json")
+
+        if len(sys.argv) > 1 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
+            print >> sys.stderr, "\nType\n  %s <mode> --help\nto get help about concrete mode\n" % sys.argv[0]
+        
+        self.p = p.parse_args()
 
 #-------------------------------------------------------------------------------
 def recursive_test(test, res, path=[]):
@@ -41,67 +77,78 @@ def recursive_test(test, res, path=[]):
     return True
 
 #-------------------------------------------------------------------------------
-if __name__ == '__main__':
-    if len(sys.argv) < 4:
-        print >> sys.stderr, "ERROR\nUsage:\n  " + sys.argv[0] + " <MODE> <config_file.json> ...opts..."
-        print >> sys.stderr, "MODE:\n" \
-                             "  learn opts: <categories_hier.json> <learn_data.json>\n" \
-                             "  test  opts: <model_path> <marker_test.json>\n"
-        sys.exit(1)
+args = Args()
 
-    mode = sys.argv[1]
-    config_file = sys.argv[2]
+mode = getattr(args.p, 'mode')
+config_file = getattr(args.p, 'config')
 
-    config = json.load( open(config_file) )
+config = json.load( open(config_file) )
 
-    if mode == 'learn':
-        cats_hier_file = sys.argv[3]
-        learn_file = sys.argv[4]
+if mode == 'learn_cls':
+    cats_hier_file = getattr(args.p, 'hier')
+    learn_file = getattr(args.p, 'data')
 
-        cls = classifier.Analyzer( config )
+    cls = classifier.Analyzer( config )
 
-        if not cls.train_from_file( cats_hier_file, learn_file ):
-            logger.Log("Learn error: %s" % cls.get_err_msg())
+    if not cls.train_from_file( cats_hier_file, learn_file ):
+        logger.Log("Learn error: %s" % cls.get_err_msg())
+        sys.exit(2)
+
+    if not cls.save_model():
+        logger.Log("Error, can't save model: %s" % cls.get_err_msg())
+        sys.exit(3)
+
+    logger.Log("Model SUCCESSFULLY saved to file '%s'" % cls.model_file)
+
+elif mode == 'experiment':
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.linear_model import SGDClassifier
+    from sklearn import metrics
+
+    cats_hier_file = getattr(args.p, 'hier')
+    learn_file = getattr(args.p, 'data')
+    cls = classifier.Analyzer(
+        vectorizer = TfidfVectorizer(min_df=1, ngram_range=(1,2)),
+        classifier = SGDClassifier(loss='modified_huber', penalty='l2',
+                                   alpha=5e-4, n_iter=100, power_t=0.5,
+                                   random_state=12, shuffle=False, warm_start=False)
+    )
+    s = metrics.classification_report(train_target, predicted, target_names=cat_names)
+    print >> sys.stderr
+    print >> sys.stderr, s.encode('utf-8')
+
+elif mode == 'test':
+    mktest_file = getattr(args.p, '')
+    a = Analyzer( config )
+
+    mk = json.load( open(mktest_file) )
+    for test in mk:
+        print >> sys.stderr, "Test:'%s', query:'%s', expected:'%s'" % (test['name'], test['query'], str(test['res']))
+
+        qobj = Query( test['query'] )
+        if not qobj.is_parsed():
+            logger.Log("Query parser error: %s" % qobj.get_err_msg())
             sys.exit(2)
 
-        if not cls.save_model():
-            logger.Log("Error, can't save model: %s" % cls.get_err_msg())
+        if not a.analyze( qobj ):
+            logger.Log("Error during analyzing, error message: %s" % a.get_err_msg())
+            sys.exit(2)
+
+        print >> sys.stderr, " = query labels: " + str(qobj.labels)
+
+        # рекурсивно проверяем результат:
+        # ищем в рузультатах анализатора только то, что указано для поиска в тесте
+        test_res = test['res']
+        test_path = []
+        if not recursive_test(test_res, qobj.labels, test_path):
+            p = '.'.join( test_path )
+            logger.Log("Test FAILED. Test path: '%s'" % p)
             sys.exit(3)
 
-        logger.Log("Model SUCCESSFULLY saved to file '%s'" % cls.model_file)
+        print >> sys.stderr, " + OK"
 
-    elif mode == 'test':
-        mktest_file = sys.argv[4]
-        a = Analyzer( config )
+    print >> sys.stderr, "[+] All tests SUCCESSFULLY done"
+else:
+    print >> sys.stderr, "ERROR: unknown mode %s" % mode
 
-        mk = json.load( open(mktest_file) )
-        for test in mk:
-            print >> sys.stderr, "Test:'%s', query:'%s', expected:'%s'" % (test['name'], test['query'], str(test['res']))
-
-            qobj = Query( test['query'] )
-            if not qobj.is_parsed():
-                logger.Log("Query parser error: %s" % qobj.get_err_msg())
-                sys.exit(2)
-
-            if not a.analyze( qobj ):
-                logger.Log("Error during analyzing, error message: %s" % a.get_err_msg())
-                sys.exit(2)
-
-            print >> sys.stderr, " = query labels: " + str(qobj.labels)
-
-            # рекурсивно проверяем результат:
-            # ищем в рузультатах анализатора только то, что указано для поиска в тесте
-            test_res = test['res']
-            test_path = []
-            if not recursive_test(test_res, qobj.labels, test_path):
-                p = '.'.join( test_path )
-                logger.Log("Test FAILED. Test path: '%s'" % p)
-                sys.exit(3)
-
-            print >> sys.stderr, " + OK"
-
-        print >> sys.stderr, "[+] All tests SUCCESSFULLY done"
-    else:
-        print >> sys.stderr, "ERROR: unknown mode %s" % mode
-
-    sys.exit(0)
+sys.exit(0)

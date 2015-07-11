@@ -20,14 +20,24 @@ kModelFileVersion = '1.0'
 
 #-------------------------------------------------------------------------------
 class Analyzer:
-    def __init__(self, config):
+    def __init__(self, config=None, vectorizer=None, classifier=None):
         self.name = 'classifier'
         self.err_msg = None
 
+        if vectorizer != None:
+            self.init_vectorizer = vectorizer
+        else:
+            self.init_vectorizer = TfidfVectorizer(min_df=1, ngram_range=(1,2))
+
+        if classifier != None:
+            self.init_classifier = classifier
+        else:
+            self.init_classifier = SGDClassifier(loss='modified_huber', penalty='l2',
+                                                 alpha=5e-4, n_iter=100, power_t=0.5,
+                                                 random_state=12, shuffle=False, warm_start=False)
+
         config_section = self.name
         self.cfg = config.get(config_section, None)
-        if self.cfg == None:
-            raise Exception("Can't find config section for analyzer '%s'" % self.name)
 
         self.model_file = None
         if self.cfg != None:
@@ -134,11 +144,10 @@ class Analyzer:
         # треним классификатор
         logger.Log("Training classifier...")
 
-        self.vectorizer = TfidfVectorizer(min_df=1, ngram_range=(1,2))
+        self.vectorizer = self.init_vectorizer
         logger.Log( str(self.vectorizer) )
 
-        self.classifier = SGDClassifier(loss='modified_huber', penalty='l2', alpha=5e-4, n_iter=100,
-                                        power_t=0.5, random_state=12, shuffle=False, warm_start=False)
+        self.classifier = self.init_classifier
         logger.Log( str(self.classifier) )
 
         train_features = self.vectorizer.fit_transform( docs )
