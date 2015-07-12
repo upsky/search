@@ -14,34 +14,43 @@ from ..utils import logger
 from learn_data import LearnDataLoader
 
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import SGDClassifier
+from sklearn.multiclass import OneVsRestClassifier
 
-kModelFileVersion = '1.0'
+kModelFileVersion = '2.0'
 
 #-------------------------------------------------------------------------------
 class Analyzer:
-    def __init__(self, config=None, vectorizer=None, classifier=None):
+    def __init__(self, config=None, vectorizer=None, classifier=None, threshold=0.0, return_top=5):
         self.name = 'classifier'
         self.err_msg = None
 
         if vectorizer != None:
             self.init_vectorizer = vectorizer
         else:
-            self.init_vectorizer = TfidfVectorizer(min_df=1, ngram_range=(1,2))
+            self.init_vectorizer = CountVectorizer(min_df=1, ngram_range=(1,2))
 
         if classifier != None:
             self.init_classifier = classifier
         else:
-            self.init_classifier = SGDClassifier(loss='modified_huber', penalty='l2',
-                                                 alpha=5e-4, n_iter=100, power_t=0.5,
-                                                 random_state=12, shuffle=False, warm_start=False)
+            self.init_classifier = OneVsRestClassifier(
+                estimator=SGDClassifier(loss='modified_huber', penalty='l2', alpha=5e-4, n_iter=100,
+                                        power_t=0.5, random_state=12, shuffle=False, warm_start=False),
+                n_jobs=1
+        )
 
         config_section = self.name
         self.cfg = config.get(config_section, None)
 
         self.model_file = None
+        self.threshold = threshold
+        self.return_top = return_top
+
         if self.cfg != None:
             self.model_file = self.cfg.get('model_file', None)
+            self.threshold = self.cfg.get('threshold', threshold)
+            self.return_top = self.cfg.get('return_top', return_top)
 
         if self.model_file == None:
             self.clear()
@@ -54,11 +63,7 @@ class Analyzer:
 
     #-------------------------------------------------------
     def clear(self):
-        self.cats = {}
-        self.cat_id2name = {}
-        self.cats_n = 0
-        self.cats_hier = {}
-
+        self.ldata = LearnDataLoader()
         self.classifier = None
         self.vectorizer = None
 
@@ -68,100 +73,49 @@ class Analyzer:
 
     #-------------------------------------------------------
     def get_cats_hier(self):
-        return self.cats_hier
+        return self.ldata.get_categories_hier()
 
     #-------------------------------------------------------
     def analyze(self, query):
+        # классифаим
         test_features = self.vectorizer.transform( [query.text_normalized] )
-        p = self.classifier.predict(test_features)
-        cat_id = p[0]
+        res = self.classifier.predict_proba( test_features )
 
-        cat_info = self._cat_id2info(cat_id)
-        query.add_simple_label( 'cat', {'path':cat_info['path'], 'prob':0.99} )
+        # выбираем и сортим, берём топ
+        i = 0
+        res_arr = []
+        for prob in res[0]:
+            cat_id = self.classifier.classes_[i]     # преобразуем классы sklearn в наши
+            i += 1
+            if prob < self.threshold:
+                continue
+            res_arr.append( (cat_id, prob) )
+
+        res_arr = sorted(res_arr, key=lambda x: x[1], reverse=True)
+        res_arr = res_arr[:self.return_top]
+
+        # nothing found
+        if len(res_arr) == 0:
+            query.add_simple_label( 'cat', None )
+            return True
+
+        for (cat_id, prob) in res_arr:
+            cat_path = self.ldata.get_cat_id2path(cat_id)
+            query.add_simple_label( 'cat', {'path':cat_path, 'prob':prob} )
+
+        # well done
         return True
-
-    #-------------------------------------------------------
-    def _cat_id2info(self, id):
-        text_path = self.cat_id2name.get(id, None)
-        if text_path == None:
-            return None
-        return self.cats[text_path]
 
     #-------------------------------------------------------
     def is_loaded(self):
-        return (self.cats != None and self.cat_id2name != None and self.cat_n != None and \
-                self.cats_hier != None and self.classifier != None and self.vectorizer != None)
-
-    #-------------------------------------------------------
-    def train_from_file(self, cats_hier_json, learn_data_json):
-        ldata = self._load_train_data( cats_hier_json, learn_data_json )
-        if ldata == None:
-            return False
-        return self.train( ldata.get_learn_data() )
-
-    #-------------------------------------------------------
-    def _load_train_data(self, cats_hier_json, learn_data_json):
-        logger.Log("Loading training examples...")
-        ldata = LearnDataLoader( cats_hier_json, learn_data_json )
-        if not ldata.is_ok():
-            self.err_msg = "Can't load train data. LearnDataLoader() err: %s" % (ldata.get_err_msg())
-            return None
-
-        logger.Log("Balancing training examples in categories tree...")
-        ldata.balance_data()
-
-        self.cats_hier = ldata.get_categories_hier()
-        return ldata
-
-    #-------------------------------------------------------
-    def train(self, learn_data):
-        # трансформируем формат LearnDataLoader во внутренний формат
-        logger.Log("Normalizing learn-data...")
-
-        docs = []
-        targets = []
-
-        for (path, data) in learn_data:
-            # save category
-            text_path = '_/_'.join(path)
-
-            c = self.cats.get(text_path, None)
-            if c == None:
-                self.cats_n += 1
-                c = {'path':path, 'id':self.cats_n}
-                self.cats[text_path] = c
-                self.cat_id2name[self.cats_n] = text_path
-
-            document = data['title'] # + ' ' + data['desc']
-            document = gLexer.normalize_str( document )
-            cat_id = c['id']
-
-            docs.append( document )
-            targets.append( cat_id )
-
-        logger.Log("Loaded, docs: %d, its targets: %d" % (len(docs), len(targets)))
-
-        # треним классификатор
-        logger.Log("Training classifier...")
-
-        self.vectorizer = self.init_vectorizer
-        logger.Log( str(self.vectorizer) )
-
-        self.classifier = self.init_classifier
-        logger.Log( str(self.classifier) )
-
-        train_features = self.vectorizer.fit_transform( docs )
-        self.classifier.fit(train_features, targets)
-
-        logger.Log("Done")
-        return True
+        return (self.ldata.is_loaded() != None and self.classifier != None and self.vectorizer != None)
 
     #-------------------------------------------------------
     def _open_file(self, fname, mode='r'):
         try:
             fd = open(fname, mode)
         except Exception, e:
-            self.err_msg = "Can't open file '%s', exc: %s" % (fname, str(e))
+            self.err_msg = "Error in %s. Can't open file '%s', exc: %s" % (self.name, fname, str(e))
             return None
         return fd
 
@@ -170,7 +124,7 @@ class Analyzer:
         if model_file == None:
             model_file = self.model_file
         if model_file == None:
-            raise Exception("specify model file please")
+            raise Exception("Error in %s. Specify model file please" % self.name)
 
         fd = self._open_file( model_file, 'wb+' )
         if fd == None:
@@ -178,10 +132,7 @@ class Analyzer:
 
         obj = {
             'ver': kModelFileVersion,
-            'cats': self.cats,
-            'cat_id2name': self.cat_id2name,
-            'cat_n': self.cats_n,
-            'cats_hier': self.cats_hier,
+            'ldata': self.ldata.dump2obj(),
             'vectorizer': self.vectorizer,
             'classifier': self.classifier
         }
@@ -201,23 +152,25 @@ class Analyzer:
         try:
             obj = pickle.load( fd )
         except Exception, e:
-            self.err_msg = "Can't deserialize pickle-model-file '%s', exc: %s" % (model_file, str(e))
+            self.err_msg = "Error in %s. Can't deserialize pickle-model-file '%s', exc: %s" % \
+                            (self.name, model_file, str(e))
             return False
 
         ver = obj.get('ver', None)
         if ver != kModelFileVersion:
-            self.err_msg = "Error. Different version of model-file. Expected: %s, given: %s" % (kModelFileVersion, ver)
+            self.err_msg = "Error in %s. Different version of model-file. Expected: %s, given: %s" % \
+                            (self.name, kModelFileVersion, ver)
             return False
 
-        self.cats = obj.get('cats', None)
-        self.cat_id2name = obj.get('cat_id2name', None)
-        self.cat_n = obj.get('cat_n', None)
-        self.cats_hier = obj.get('cats_hier', None)
-        self.vectorizer = obj.get('vectorizer', None)
-        self.classifier = obj.get('classifier', None)
+        self.ldata.load_from_obj( obj['ldata'] )
+        self.vectorizer = obj['vectorizer']
+        self.classifier = obj['classifier']
+
+        logger.Log( "vectorizer: " + str(self.vectorizer) )
+        logger.Log( "classifier: " + str(self.classifier) )
 
         if not self.is_loaded():
-            self.err_msg = "load_model() error. Perhaps model-file is corrupted."
+            self.err_msg = "Error in %s. load_model() error. Perhaps model-file is corrupted." % self.name
             return False
 
         return True

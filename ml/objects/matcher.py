@@ -6,7 +6,7 @@ import re
 class Matcher:
     def __init__(self):
         self.r = {}
-        self.begin_re = re.compile('(?P<word>[\w]+)|(?P<sp>\s+)|(?P<label><[\w_0-9]+>)|(?P<re_begin>[(])' flags=re.UNICODE)
+        self.begin_re = re.compile(r'(?P<word>[\w]+)|(?P<sp>\s+)|(?P<label><[\w_0-9]+>)|(?P<re_begin>[(])', flags=re.UNICODE)
         self.err_msg = ''
 
     #-------------------------------------------------------

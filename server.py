@@ -25,7 +25,7 @@ class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
         except Exception, e:
             logger.Log("Can't load config file '%s'. Exc: %s" % (config_file, str(e)))
             return False
-            
+
         self.analyzer = Analyzer( self.ml_config )
         logger.Log("Loaded analyzer, config file: %s" % config_file)
 
@@ -83,6 +83,11 @@ class HttpHandler(BaseHTTPRequestHandler):
                 logger.Log("log_msg creating exc: " + str(e))
 
         log_resp = log_msg + '\t' + self.make_resp(obj, beautify=False)
+        log_src_len = len(log_resp)
+        kLogLenLimit = 400
+        log_resp = log_resp[:kLogLenLimit]
+        if len(log_resp) < log_src_len:
+            log_resp += '<...>'
         logger.Log( log_resp )
 
         resp = self.make_resp(obj, beautify=kBeautifyJson)

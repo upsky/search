@@ -54,6 +54,10 @@ class Analyzer:
     # Метками может быть что угодно: определённая категория и её вероятность,
     # найденный в тексте запроса объект и т.п.
     def analyze(self, query_obj):
+        # добавляем исходный запрос
+        query_obj.add_simple_label( 'q', query_obj.text )
+
+        # аналайзим
         for analyzer in self.analyzers:
             if not analyzer.analyze( query_obj ):
                 self.err_msg = analyzer.get_err_msg()
