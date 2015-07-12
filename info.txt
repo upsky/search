@@ -50,7 +50,7 @@
 2. Был посчитан margin для обучающей выбрки, выборка относительно не плохая, выбросов не очень много. Можно их выкинуть, посмотреть на качество (см learn/downloaders/youdo.com/scan_100pages_sorted_uniqed_margin.xlsx).
 3. Балансировка обучающего множества в дереве категорий: balance_category_min=10 - при таком раскладе получается ~86 категорий и субкатегорий.
 4. Как обучаем:
-$> python learn_and_test.py exp --hier ml\learn\categories_youdo.com_2015.06.30.json --data ml\learn\downloaders\youdo.com\scan_100pages_sorted_uniqed.txt --key fit
+$> python learn_and_test.py exp --hier ml/learn/categories_youdo.com_2015.06.30.json --data ml/learn/downloaders/youdo.com/scan_100pages_sorted_uniqed.txt --key fit
 В этой же утилите рассчёт марджина, тест классификатора.
 
 
