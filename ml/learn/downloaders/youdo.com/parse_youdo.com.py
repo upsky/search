@@ -146,12 +146,15 @@ for (cat, url) in plist:
                 print >> sys.stderr, "   addr exc: " + str(e)
                 addr = ''
 
+            cat_path = [cat, sub_cat]
+            if cat == sub_cat or len(sub_cat) == 0:
+                cat_path = [cat]
+
             obj = dict()
-            obj['cat'] = cat
-            obj['sub_cat'] = sub_cat
+            obj['cat_path'] = cat_path
             obj['title'] = title
-            obj['price'] = price
             obj['desc'] = desc
+            obj['price'] = price
             obj['addr'] = addr
             obj['url'] = turl
             jstr = json.dumps(obj, ensure_ascii=False)
