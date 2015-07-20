@@ -44,8 +44,12 @@ class Args:
         pm = sp.add_parser('exp', help="Experiments. Tuning classifier and etc mode")
         self.add_classifier_learn(pm, show_requires=True)
         pm.add_argument('--key', required=True, dest='key', nargs=1, metavar="key",
-                        help="Whell, some key for experiments")
+                        help="Well, some key for experiments")
 
+        pm = sp.add_parser('exp_vect', help="Experiments. Tuning vectorizer and etc mode")
+        self.add_classifier_learn(pm, show_requires=True)
+        pm.add_argument('--key', required=True, dest='key', nargs=1, metavar="key",
+                        help="Well, some magical key for experiments")
 
         if len(sys.argv) > 1 and (sys.argv[1] == '-h' or sys.argv[1] == '--help'):
             print >> sys.stderr, "\nType\n  %s <mode> --help\nto get help about concrete mode\n" % sys.argv[0]
@@ -159,6 +163,129 @@ elif mode == 'test':
 
     print >> sys.stderr, "[+] All tests SUCCESSFULLY done"
 
+elif mode == 'exp_vect':
+    from ml.classifier.learn_data import LearnDataLoader
+    from ml.lex import Lexer
+
+    from sklearn.linear_model import SGDClassifier
+    from sklearn.multiclass import OneVsRestClassifier
+
+    from sklearn.cross_validation import cross_val_score
+
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.feature_extraction.text import CountVectorizer
+
+    cats_hier_file = getattr(args.p, 'hier')[0]
+    learn_file = getattr(args.p, 'data')[0]
+    exp_key = getattr(args.p, 'key')[0].split(',')
+
+    lexer = Lexer()
+    vectorizer = None
+    classifier = None
+    ldata = LearnDataLoader()
+
+    # load learn data
+    if not ldata.load(cats_hier_file, learn_file, balance_category_min=10, log=True):
+        print >> sys.stderr, "Error: " + ldata.get_err_msg()
+        sys.exit(1)
+
+    cats_docs = ldata.get_learn_data(fields_to_get=['title'])
+    logger.Log("Examples to learn: %d" % len(cats_docs))
+
+    logger.Log("Normalizing learning data")
+    kSelCatId = 3
+
+    docs = [x[1] for x in cats_docs]
+
+    train_docs = [lexer.normalize_str(x[1], complete_with_spaces=False) for x in cats_docs]
+    # train_targets = [int(x[0] == kSelCatId) for x in cats_docs]
+    train_targets = [x[0] for x in cats_docs]
+
+    if 'vec_only_cat' in exp_key:
+        vect_docs = [lexer.normalize_str(x[1], complete_with_spaces=False) for x in cats_docs if x[0] == kSelCatId]
+    else:
+        vect_docs = train_docs
+
+    # docs = [x[1] for x in cats_docs if x[0] == kSelCatId]
+    # docs = [ u'Курьер на три доставки от во от Новогиреево', u'Курьер на Экспедитор во Фрязино' ]
+    # docs = [ u'aaa bbb figam ccc zzz', u'aaa bbb some ccc zzz' ]
+
+    # use_idf = False  ==  CountVectorizer()
+    #vectorizer = TfidfVectorizer(min_df=1, encoding=u'utf8', ngram_range=(1,2), token_pattern=u'(?u)\\b\\w+\\b',
+    #                             stop_words=[], smooth_idf=False, norm=None, use_idf=False)
+    vectorizer = CountVectorizer(ngram_range=(1,2))
+    print vectorizer
+
+    vectorizer.fit( vect_docs )
+    train_features = vectorizer.transform( train_docs )
+
+    if 'cls_ensemble' in exp_key:
+        classifier = OneVsRestClassifier(
+            estimator=SGDClassifier(loss='modified_huber', penalty='l2', alpha=5e-4, n_iter=100,
+                                    power_t=0.5, random_state=12, shuffle=False, warm_start=False),
+            n_jobs=1
+        )
+    else:
+        classifier = SGDClassifier(loss='modified_huber', penalty='l2', alpha=5e-4, n_iter=100,
+                                   power_t=0.5, random_state=12, shuffle=False, warm_start=False)
+
+    logger.Log(classifier)
+
+    logger.Log("Fitting Classifier")
+    classifier.fit(train_features, train_targets)
+
+    # print "Aiming category: %s" % ('/'.join( ldata.get_cat_id2path(kSelCatId) )).encode('utf-8')
+
+    # считаем отступы для всех документов нашей категории
+    if 'margins' in exp_key:
+        test_cats_docs = ldata.get_learn_data(fields_to_get=['title'])
+        test_docs = [x[1] for x in test_cats_docs]
+        test_norm_docs = [lexer.normalize_str(x[1], complete_with_spaces=False) for x in test_cats_docs]
+
+        margins = [0] * len(train_docs)
+
+        for i in xrange(len(train_docs)):
+            d = test_norm_docs[i]
+            target = train_targets[i]
+
+            f = vectorizer.transform( [d] )
+            res = classifier.predict_proba(f)[0]
+
+            # здесь у нас всего два класса: целевой (1) и НЕ-класс (0), поэтому всё упрощается
+            margins[i] = res[1] - res[0]
+
+            learn_cat = ('/'.join( ldata.get_cat_id2path(cats_docs[i][0]) )).encode('utf-8')
+            # print "%s\t%s\t%.02f" % (learn_cat, test_docs[i].encode('utf-8'), margins[i])
+
+        # убираем документы, для которых отступ оказался порога в НЕ-класс.
+        kMarginThreshold = 0.05
+        for i in xrange(len(margins)):
+            if margins[i] < kMarginThreshold:
+                train_targets[i] = 0
+
+    if 'kfolds' in exp_key:
+        print cross_val_score(classifier, train_features, train_targets, cv=3)
+
+    '''
+    voc = [ (w, c) for (w, c) in vectorizer.vocabulary_.iteritems() ]
+    voc = sorted(voc, key=lambda x: x[1])
+
+    print train_features.indices
+    print train_features.indptr
+    print train_features.data
+
+    rows = len(train_features.indptr) - 1
+    # rows
+    for r in xrange(rows):
+        r_from = train_features.indptr[r]
+        r_to = train_features.indptr[r+1]
+        print "doc %d" % r
+        # columns
+        for c in train_features.indices[ r_from:r_to ]:
+            word_id = c
+            print "\t%s\t%.02f" % (voc[word_id][0], train_features.data[word_id])
+    '''
+
 elif mode == 'exp':
     from ml.classifier.learn_data import LearnDataLoader
     from ml.lex import Lexer
@@ -178,11 +305,11 @@ elif mode == 'exp':
     from sklearn.svm import LinearSVC
     from sklearn.multiclass import OneVsRestClassifier
     from sklearn import metrics
+    from sklearn.cross_validation import cross_val_score
     import nltk
     import pickle
 
     from ml.objects import urgency
-
 
     cats_hier_file = getattr(args.p, 'hier')[0]
     learn_file = getattr(args.p, 'data')[0]
@@ -218,7 +345,7 @@ elif mode == 'exp':
         # classifier = OutputCodeClassifier(LinearSVC(random_state=0), code_size=2, random_state=0, n_jobs=2)
 
         # load learn data
-        if not ldata.load(cats_hier_file, learn_file, balance_category_min=10, log=True):
+        if not ldata.load(cats_hier_file, learn_file, balance_category_min=20, log=True):
             print >> sys.stderr, "Error: " + ldata.get_err_msg()
             sys.exit(1)
 
@@ -237,8 +364,10 @@ elif mode == 'exp':
         stop_words = list(stop_words)
 
         logger.Log("Fitting Vectorizer")
-        vectorizer = CountVectorizer(min_df=1, ngram_range=(1,2), stop_words=stop_words)
+        vectorizer = TfidfVectorizer(min_df=1, ngram_range=(1,2), stop_words=stop_words,
+                                     token_pattern=u'(?u)\\b\\w+\\b', smooth_idf=False, norm='l2')
         train_features = vectorizer.fit_transform( docs )
+        logger.Log(vectorizer)
 
         logger.Log("Fitting Classifier")
         classifier.fit(train_features, targets)
@@ -324,54 +453,57 @@ elif mode == 'exp':
 
         sys.exit(0)
 
-    logger.Log("Predicting")
-    # predict
-    while (True):
-        line = raw_input('type>>> ')
-        line = line.decode('cp866')
-        line = lexer.normalize_str(line)
+    if 'kfolds' in exp_key:
+        print cross_val_score(classifier, train_features, targets, cv=10)
+    else:
+        logger.Log("Predicting")
+        # predict
+        while (True):
+            line = raw_input('type>>> ')
+            line = line.decode('cp866')
+            line = lexer.normalize_str(line)
 
-        print line.encode('cp866')
+            print line.encode('cp866')
 
-        f = vectorizer.transform( [line] )
+            f = vectorizer.transform( [line] )
 
-        if 'one' in exp_key:
-            res = classifier.predict( f )
-            cat_id = res[0]
-            print cat_id
-            prob = 1.0
-            print "cat_id=%d, prob=%03f, '%s'" % (cat_id, prob, ('/'.join(ldata.get_cat_id2path(cat_id)).encode('cp866')))
-        else:
-            res = classifier.predict_proba( f )
-            # выбираем и сортим
-            kThreshold = 0.0 #51
-            i = 0
-            res_arr = []
-            for prob in res[0]:
-                cat_id = classifier.classes_[i]     # преобразуем классы sklearn в наши
-                i += 1
-                if prob < kThreshold:
-                    continue
-                res_arr.append( (cat_id, prob) )
+            if 'one' in exp_key:
+                res = classifier.predict( f )
+                cat_id = res[0]
+                print cat_id
+                prob = 1.0
+                print "cat_id=%d, prob=%03f, '%s'" % (cat_id, prob, ('/'.join(ldata.get_cat_id2path(cat_id)).encode('cp866')))
+            else:
+                res = classifier.predict_proba( f )
+                # выбираем и сортим
+                kThreshold = 0.0 #51
+                i = 0
+                res_arr = []
+                for prob in res[0]:
+                    cat_id = classifier.classes_[i]     # преобразуем классы sklearn в наши
+                    i += 1
+                    if prob < kThreshold:
+                        continue
+                    res_arr.append( (cat_id, prob) )
 
-            res_arr = sorted(res_arr, key=lambda x: x[1], reverse=True)
+                res_arr = sorted(res_arr, key=lambda x: x[1], reverse=True)
 
-            if len(res_arr) == 0:
-                print "Nothing found"
+                if len(res_arr) == 0:
+                    print "Nothing found"
 
-            i = 0
-            while i < 5 and i < len(res_arr):
-                (cat_id, prob) = res_arr[i]
-                print "cat_id=%d, prob=%.3f, '%s'" % (cat_id, prob, ('/'.join(ldata.get_cat_id2path(cat_id)).encode('cp866')))
-                i += 1
+                i = 0
+                while i < 5 and i < len(res_arr):
+                    (cat_id, prob) = res_arr[i]
+                    print "cat_id=%d, prob=%.3f, '%s'" % (cat_id, prob, ('/'.join(ldata.get_cat_id2path(cat_id)).encode('cp866')))
+                    i += 1
 
     # cross validation
     # from sklearn.cross_validation import cross_val_score
     # cross_val_score(clf, iris.data, iris.target, cv=10)
 
-    s = metrics.classification_report(train_target, predicted, target_names=cat_names)
-    print >> sys.stderr
-    print >> sys.stderr, s.encode('utf-8')
+    # s = metrics.classification_report(train_target, predicted, target_names=cat_names)
+    # print >> sys.stderr
+    # print >> sys.stderr, s.encode('utf-8')
 
 else:
     print >> sys.stderr, "ERROR: unknown mode %s" % mode
