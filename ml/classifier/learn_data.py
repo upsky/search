@@ -101,14 +101,9 @@ class LearnDataLoader:
                 self.err_msg = "Can't parse json train-example at line %d, exc: %s" % (n, str(e))
                 return False
 
-            cat = rec['cat']
-            sub_cat = rec['sub_cat']
+            cat_path = rec['cat_path']
             title = rec['title']
             desc = rec['desc']
-
-            cat_path = [cat, sub_cat]
-            if cat == sub_cat or len(sub_cat) == 0:
-                cat_path = [cat]
 
             if not self._add_data(cat_path=cat_path, data={'title':title, 'desc':desc}):
                 return False
