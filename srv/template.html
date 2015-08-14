@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>winTwin search engine</title>
+</head>
+
+<body>
+    <hr/>
+    <p><b>Получить разметку запроса:</b></p>
+    <form action="/search/" method="get">
+        <input type="text" style='width:560px;'/> <input type="submit"/>
+    </form>
+    <br/><br/>
+
+    <hr/>
+    <p><b>Обучить классификатор:</b></p>
+    <form action="/search/" method="post">
+        <textarea name="learn_data" cols=90 rows=15>
+Формат:
+{
+    "categories": {
+        "Категория1": {
+            "learn_data": [
+                "Обучающий пример",
+                "Ещё один обучающий пример"
+            ]
+            "categories": {
+                "Подкатегория1": {
+                    "learn_data": [ ... ], "categories": { ... }
+                },
+                "Подкатегория2": {
+                    "learn_data": [ ... ], "categories": { ... }
+                },
+                ...
+            }
+        },
+        "Категория2": {
+            "learn_data": [ ... ], "categories": { ... }
+        },
+        ...
+    }
+}
+</textarea>
+        <br/>
+        <input type="submit">
+    </form>
+</body>
+
+</html>

@@ -3,8 +3,9 @@
 
 import os
 import sys
-import urlparse
 import json
+import urlparse
+import cgi
 
 from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 from SocketServer   import ThreadingMixIn
@@ -16,8 +17,39 @@ from ml.utils import logger
 
 kBeautifyJson = True
 
+'''
+TODO:
+1. чтение конфига
+2. биндинг на хосте-порте из конфига
+3. вынесение логики обработки гет-пост запросов в ./srv/*.py модули
+    - GET:
+        - нет параметров:
+            * берём форму из srv/template.html, подставляем туда в {%LEARN_DATA%} содержимое файла
+              data/learn_data.json
+        - get=learn_data - отдаём содержимое файла data/learn_data.json, вставив в него в корень
+          поле version с текущей версией
+          !=> get=learn_data&version={ver} - отдаём обучающие данные нужной версии.
+        - q={query} - отдаём результаты классификатора.
+    - POST:
+        - если если есть postvars['learn_data'][0], тогда:
+            - валидируем его;
+            - если всё плохо - ругаемся ошибкой json-парсера;
+                { "status": "...error message..." }
+            - если всё хорошо:
+                * берём последнюю версию из data/learn_data.version (если нет, => 0);
+                * переименовываем предыдущую версию data/learn_data.json в learn_data.json.{version}
+                * инкремент версии, и добавляем в корень структуры обучающих данных поле 'version'
+                  с новой версией.
+                * сохраняем в файл data/learn_data.version новую версию.
+                * отправляем эти данные на обучение в классификатор.
+                * возвращаем статус:
+                { "status": "OK" }
+'''
+
 #-------------------------------------------------------------------------------
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
+    pass
+    '''
     def init(self, config_file):
         self.config_file = config_file
         try:
@@ -30,6 +62,7 @@ class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
         logger.Log("Loaded analyzer, config file: %s" % config_file)
 
         return True
+    '''
 
 #-------------------------------------------------------------------------------
 class HttpHandler(BaseHTTPRequestHandler):
@@ -39,13 +72,39 @@ class HttpHandler(BaseHTTPRequestHandler):
         resp = resp.encode('utf-8')
         return resp
 
-    def do_GET(self):
+    def do_POST(self):
         self.send_response(200)
         self.send_header("Content-Type", "text/plain; charset=utf-8")
         self.end_headers()
 
+        postvars = {}
+
+        ctype, pdict = cgi.parse_header(self.headers.getheader('content-type'))
+        if ctype == 'multipart/form-data':
+            postvars = cgi.parse_multipart(self.rfile, pdict)
+        elif ctype == 'application/x-www-form-urlencoded':
+            length = int( self.headers.getheader('content-length') )
+            postvars = urlparse.parse_qs(self.rfile.read(length), keep_blank_values=1)
+
+        self.wfile.write( str(postvars['learn_data'][0]) )
+
+    def do_GET(self):
         pp = urlparse.urlparse( self.path )
         qmap = urlparse.parse_qs( pp.query )
+
+        if len(qmap) == 0:
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.end_headers()
+
+            with open('srv/template.html') as fd:
+                tpl = fd.read()
+            self.wfile.write( tpl )
+            return
+
+        self.send_response(200)
+        self.send_header("Content-Type", "text/plain; charset=utf-8")
+        self.end_headers()
 
         obj = dict()
         log_msg = ''
@@ -96,7 +155,7 @@ class HttpHandler(BaseHTTPRequestHandler):
 #-------------------------------------------------------------------------------
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print >> sys.stderr, "Usage:\n  " + sys.argv[0] + "  <ml.conf>\n"
+        print >> sys.stderr, "Usage:\n  " + sys.argv[0] + "  <server.conf>\n"
         sys.exit(1)
 
     host = '0.0.0.0'
@@ -106,8 +165,10 @@ if __name__ == '__main__':
 
     srv = ThreadedHTTPServer((host, port), HttpHandler)
 
+    '''
     if not srv.init( config_file ):
         sys.exit(1)
+    '''
 
     srv.allow_reuse_address = True
     logger.Log( "Serving on %s:%d... :)" % (host, port) )
