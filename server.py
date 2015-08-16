@@ -12,44 +12,11 @@ from SocketServer   import ThreadingMixIn
 
 from srv import utils, config, logger, handlers
 
-'''
-TODO:
-[+1]. чтение конфига
-[+2]. биндинг на хосте-порте из конфига
-3. вынесение логики обработки гет-пост запросов в ./srv/*.py модули
-    + GET:
-        + нет параметров:
-            * берём форму из srv/template.html, подставляем туда в {%LEARN_DATA%} содержимое файла
-              data/learn_data.json
-        + get=learn_data - отдаём содержимое файла data/learn_data.json, вставив в него в корень
-          поле version с текущей версией
-          !=> get=learn_data&version={ver} - отдаём обучающие данные нужной версии.
-        - q={query} - отдаём результаты классификатора.
-    + POST:
-        - если если есть postvars['learn_data'][0], тогда:
-            + валидируем его;
-            - если всё плохо - ругаемся ошибкой json-парсера;
-                { "status": "...error message..." }
-            - если всё хорошо:
-                * берём последнюю версию из data/learn_data.version (если нет, => 0);
-                * переименовываем предыдущую версию data/learn_data.json в learn_data.json.{version}
-                * инкремент версии, и добавляем в корень структуры обучающих данных поле 'version'
-                  с новой версией.
-                * сохраняем в файл data/learn_data.version новую версию.
-                * отправляем эти данные на обучение в классификатор.
-                * возвращаем статус:
-                { "status": "OK" }
-'''
-
 #-------------------------------------------------------------------------------
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
     def init(self, cfg):
         self.cfg = cfg
-        self.handlers = handlers.Handlers(self)
-
-        ''' self.analyzer = Analyzer( self.ml_config )
-        logger.Log("Loaded analyzer, config file: %s" % config_file)'''
-
+        self.handlers = handlers.Handlers(cfg, self)
         return True
 
 #-------------------------------------------------------------------------------

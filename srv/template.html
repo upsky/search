@@ -5,22 +5,77 @@
     <title>winTwin search engine</title>
 </head>
 
-<body>
+<body style="font:11pt Arial;">
     <hr/>
-    <p><b>Получить разметку запроса:</b></p>
+    <span style='color:#03f'> <b>Получить разметку запроса:</b> </span>
     <form action="/search/" method="get">
-        <input type="text" name="q" style='width:560px;'/>
+        <input type="text" name="q" style='width:600px;'/>
         <input type="submit"/>
     </form>
     <br/><br/>
 
     <hr/>
-    <p><b>Обучить классификатор:</b></p>
+    <span style='color:#03f'> <b>Обучить классификатор:</b><br/> </span>
     <form action="/search/" method="post">
-        <textarea name="learn_data" cols=90 rows=35>{%LEARN_DATA%}</textarea>
+        <textarea name="learn_data" cols=120 rows=30>{%LEARN_DATA%}</textarea>
         <br/>
         <input type="submit">
     </form>
+    <br/><br/>
+
+    <hr/>
+    <p>
+        <p>Шпоргалка по запросам.</p>
+        <b>GET:</b>
+        <ul>
+            <li><a href="?q=query">?q=query</a> - послать запроса анализатору</li>
+            <li><a href="?get=learn_data">?get=learn_data</a> - получить текущую версию обучающих данных</li>
+            <li><a href="?get=learn_data&v=2">?get=learn_data&v=2</a> - получить обучающие данные версии 2</li>
+            <li><a href="?get=categories">?get=categories</a> - получить текущую структуру категорий</li>
+        </ul>
+        <b>POST:</b>
+        <ul>
+            <li>
+                learn_data - обучающие данные в формате json. Формат:</br>
+                <pre style="font: 12px Courier New; border: #0af dashed 1px; width: 500px;">
+{
+    "version": 0,
+    "categories": {
+        "Категория 1": {
+            "id": 1,
+            "learn_data": [
+                "Обучающий пример 1.1",
+                ...
+            ],
+            "categories": {
+                "Подкатегория 1.1": {
+                    "id": 2,
+                    "learn_data": [ ... ],
+                    "categories": { ... }
+                },
+                ...
+            }
+        },
+        "Категория 2": {
+            ...
+        }
+    }
+}</pre>
+                В обучающих данных нет обязательных полей. Вот поля, которые есть в принципе:<br/>
+                <ul>
+                    <li><b>categories</b> - категории, тип dict(мапа), не обязательное поле</li>
+                    <li><b>learn_data</b> - обучающие тексты, тип list(список), не обязательное поле</li>
+                    <li><b>id</b> - id категории, по умолчанию автогенерится, но можно указать, тогда будут юзаться указанные id, лишь бы не было конфликтующих</li>
+                    <li><b>version</b> - это поле автогенерится;</li>
+                </ul>
+            </li>
+        </ul>
+    </p>
+
+    <hr/>
+    <p align='center'>
+        2015 &copy; winTwin
+    </p>
 </body>
 
 </html>

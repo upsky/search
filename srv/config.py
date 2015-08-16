@@ -19,6 +19,11 @@ class Config:
             self.load(fname)
 
     #---------------------------------------------------------------------------
+    # get() via [] operator
+    def __getitem__(self, param_path):
+        return self.get(param_path)
+
+    #---------------------------------------------------------------------------
     # Parts of param-path are separated by dot '.'
     # Example: cfg.get('common.local_dir')
     # Returns the 'default' value if param not found.
@@ -37,11 +42,6 @@ class Config:
                 p = default
                 break
         return p
-
-    #---------------------------------------------------------------------------
-    # get() via [] operator
-    def __getitem__(self, param_path):
-        return self.get(param_path)
 
     #---------------------------------------------------------------------------
     # Parts of param-path are separated by dot '.'
