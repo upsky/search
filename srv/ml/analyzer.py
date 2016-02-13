@@ -32,3 +32,4 @@ class Analyzer:
 
     def analyze(self, query):
         return self.classifier.classify( query )
+
