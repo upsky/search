@@ -1,0 +1,524 @@
+#
+# Бренды наушников, https://market.yandex.ru/vendors.xml?CAT_ID=119075&hid=90555&track=fr_cm_vendor
+# Убраны слишком общие производители, которые занимаются всем подряд.
+#
+
+ACME
+ACQUA
+ACV
+ADL
+ADV.SOUND
+AEG
+AIAIAI
+AKG
+AV-Jefe
+AVALANCHE
+AVIS
+Abyss
+Accutone
+Activ
+Aedle
+AfterShokz
+Aima
+Aircoustic
+Akai
+Alcatel
+Alesis
+Alessandro
+Allen & Heath
+Alpha Audio
+Alpine
+Altec Lansing
+Amadeus
+American Audio
+Aneex
+Antikind
+Apex
+Aquapac
+Arctic
+Arthur Forty
+Astell&Kern
+Astrotec
+Audeze
+Audio-Technica
+AudioQuest
+Audiofly
+Aurisonics
+Avantree
+Awei
+Axelvox
+
+BEHRINGER
+BOOM
+BRAVIS
+Bagisson
+Bang & Olufsen
+Beats
+Beevo
+Belkin
+Beyerdynamic
+Bidenuo
+Biostar
+Black Fox
+BlackBerry
+BlackBoxx
+Blaupunkt
+Blomor
+Blue
+Bluedio
+Bojeux
+Bose
+Boss
+Bowers & Wilkins
+Brainwavz
+Buffalo
+Buxton
+
+CAFINI
+CROWN
+California Headphone
+Cannice
+Canyon
+Capdase
+Cardas Audio
+Case logic
+Casio
+Cason
+Cellular Line
+Celly
+Cerutti
+Challenger
+Cirkuit Planet
+Clarion
+Classix
+Clayton
+Coloud
+Connect
+Cooler Master
+Cosonic
+Cowon
+Creative
+Cresyn
+
+DCI (Decor Craft Inc.)
+DEXP
+DF
+DIS
+DITA
+DNS
+Dayrex
+Defender
+Degauss Labs
+Denn
+Denon
+Deppa
+Dexim
+Dialog
+DigiOn
+Direc
+Direct Sound
+Dolce&Gabbana
+Dowell
+Drobak
+DryCase
+Dunu
+
+ETYMOTIC
+EXEQ
+EXPLOYD
+Earsonics
+Ecko Unltd.
+Ecostyle
+Edifier
+Ednet
+Elecom
+Energy Sistem
+Envix
+Enzatec
+Ergo
+Esperanza
+Excomp
+Expert-s
+Explay
+
+F & D
+FOREVER
+Fanny Wang
+Fidue
+Fiio
+Final Audio Design
+First Accessories
+Firtech
+Fischer Audio
+Focal
+Fonemax
+Fostex
+Frame
+Frends
+
+G.Sound
+Gal
+Galaxy Audio
+Gear4
+Gelius
+Gembird
+Gemini
+Gemix
+General Satellite
+Genipu
+Genius
+Gerffins
+GermanMAESTRO
+Ginzzu
+Global
+Glow
+Goldring
+Gorsun
+Grado
+Grape
+Greenwave
+Griffin
+Grundig
+
+H2O Audio
+HAMA
+HARPER
+HAVI
+HOOMIA
+HQ
+Hantol
+Hapollo
+Happy Plugs
+Hardity
+Harman/Kardon
+Havit
+Heil Sound
+Heir Audio
+Henca
+Hercules
+Hi-Fun
+Hi-Rali
+HiFiMAN
+HiSoundAudio
+Hilp
+Hippo
+Hoco
+Hollister
+Human Friends
+
+I-mego
+ICON
+INCAR
+IRON Selection
+Ifrogz
+Igoodlo
+Incase
+Incipio
+Insmat
+InterStep
+Intro
+Invotone
+Isy
+Iwalk
+Izooma
+iBest
+iDance
+iEnjoy
+iGlover
+iHip
+iLuv
+iRiver
+iconBIT
+
+JBL
+JH Audio
+JHS
+JTS
+JVC
+Jabees
+Jabra
+Jamo
+Jays
+Jazwares
+Jet.A
+
+KEF
+KENWOOD
+KIKKERLAND
+KNG
+KRK
+Kabinni
+Kangol
+Karrimor
+Keeka
+Kennerton
+Kingsound
+Kitsound
+Klipsch
+Klyde
+Knowledge Zenith
+Konig Electronic
+Konoos
+Koracell
+Koss
+Krauler
+Kreolz
+Kurzweil
+
+L-PRO
+LEAR
+LUXA2
+Lauson
+Lexus
+Liberty Project
+Limitless Creations
+Logic Concept Technology
+Logic3
+
+M-Audio
+MEElectronics
+MIDLAND
+MTX
+MacAlly
+Magnat
+Manhattan
+Mannhas
+Marantz
+Marley
+Marshall
+Martin Logan
+Maverick
+Maxell
+Maxxtro
+McIntosh
+Media-Tech
+Mediana
+Meizu
+Merlin
+Microlab
+Microsoft
+Mini
+Miracase
+Modecom
+Mojo
+Molami
+Molecula
+Monoprice
+Monster
+Moshi
+Mosidun
+Motorhead
+Moxpad
+Munitio
+MusclePharm
+Musical Fidelity
+Muvit
+MyDean
+MyST
+
+NAD
+NAKATOMI
+NGS
+NOIZ Performance
+Nakamichi
+Natec
+Nike
+Nixon
+Noble
+Nocs
+NoiseHush
+Nokia
+Nomi
+Noontec
+NuForce
+Numark
+
+OPPO
+OXION
+Oklick
+OltraMax
+Omnitronic
+OnePlus
+Onkyo
+Ortofon
+Ostry
+Ounuo
+OverBoard
+Ovleng
+Oxygen Audio
+Ozone
+oBravo
+
+PERFECT SOUND
+PHONON
+PROEL
+PSB
+Palmexx
+Paradigm
+Partner
+Peavey
+Perfeo
+Phiaton
+Phonak
+Pioneer
+Pisen
+Pixus
+Pleomax
+Pockets
+Polk Audio
+Polyvox
+Pop Tune
+Power4
+Precide
+Prestigio
+Pro Audio
+Pro-Ject
+Probass
+Prodipe
+Promate
+Puma
+Puro
+
+QFX
+Qcyber
+Quarkie
+Qumo
+
+RBH
+RCF
+REAL-EL
+RHA
+ROCCAT
+ROXA
+RS
+Rapoo
+Razer
+Red Angel
+RedGiant
+Reloop
+Remax
+RiDATA
+Ritmix
+Rock
+Rock It Sounds
+Rocking Residence
+Roland
+
+SBS
+SHUOYA
+SMS Audio
+SPEEDLINK
+SUNCY
+SUOGE
+Sades
+Saiyo
+Samson
+Satzuma
+Scosche
+Section8
+Sempai
+Sendem
+Sennheiser
+SerteC
+Shure
+Skullcandy
+Sleek Audio
+SmartBuy
+SmartTrack
+Smarterra
+Smartfortec
+Sol Republic
+Solid Alliance
+Somic
+SongQu
+SonicGear
+Sonun
+Sonus Faber
+Soul Electronics
+Sound Pro
+SoundMAGIC
+Soundtronix
+Stagg
+Stanton
+Stark
+Stax
+SteelSeries
+Stenn
+Stingray
+Sudio
+Sunrise
+Superlux
+Sven
+Sweex
+
+T&D
+T'nB
+T-PEOS
+TAIDEN
+TDK
+TEAC
+TELEFUNKEN
+TTPOD
+TYLT
+Takstar
+Talisman
+Tascam
+Technics
+Thinksound
+Tivoli Audio
+Tonino Lamborghini
+TopDevice
+Tracer
+Truespin
+Trust
+Tt eSPORTS by Thermaltake
+Turtle Beach
+
+UNITY
+Ultimate Ears
+Ultrasone
+Unique Melody
+Urbanears
+Urbanista
+Utty
+
+V-moda
+VERTEX
+VIXTER
+VOX
+Veho
+Velodyne
+Velton
+Verbatim
+Verico
+Vestax
+Vibe
+Visenta
+Vivanco
+Vsonic
+
+Wallytech
+Wesc
+Westone
+WhirlWind
+
+X-Doria
+XKDUN
+XStream
+XhiTech
+Xiaomi
+Xqisit
+
+YOOKIE
+Yamaha
+Yison
+Yuin
+Yurbuds
+
+Zetton
+Zomo
+1964 Ears
+31 ВЕК
+4World Accessories
+
+Орбита

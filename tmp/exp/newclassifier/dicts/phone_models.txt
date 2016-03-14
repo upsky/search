@@ -1,0 +1,6217 @@
+#
+# Все модели телефонов
+# 	http://phone.1k.by/mobile/s.php?alias=mobile&alias2=mobile&filter=all&viewmode=list
+#
+# Sublime, регулярка для убирания производителя:
+#	\w\n-_.,\w +
+#	\1
+# Фильтры:
+# - Убираем модели-числа: ^0-9+$\n
+# - Убираем модели меньше, чем из 3х символов: ^\w{1,2}$\n
+# - Убираем цены: ' от \w + BYR$'
+# - Убираем объем памяти: ' ?/?0-9{1,3} ?Gb Ram?\?'
+# - Убираем скобки: [\[\]()]+
+#
+
+iPhone
+iPhone 3G
+iPhone 3G
+iPhone 3GS
+iPhone 3GS
+iPhone 3GS
+iPhone 4
+iPhone 4
+iPhone 4
+iPhone
+iPhone 4S
+iPhone 4S
+iPhone 4S
+iPhone 4S
+iPhone 5
+iPhone 5
+iPhone 5
+iPhone 5C
+iPhone 5C
+iPhone 5C
+iPhone 5S
+iPhone 5S
+iPhone 5S
+iPhone 6
+iPhone 6
+iPhone 6
+iPhone 6 Plus
+iPhone 6 Plus
+iPhone 6 Plus
+iPhone 6S
+iPhone 6S
+iPhone 6S
+iPhone 6S Plus
+iPhone 6S Plus
+iPhone 6S Plus
+iPhone
+Fonepad Note 6
+J101
+J102
+J103
+J121
+J202
+J206
+J208
+M303
+M310
+M530w
+M930
+P320
+P505
+P525
+P526
+P527
+P535
+P550
+P552w
+P565
+P750
+P835
+Padfone
+PadFone 2
+PadFone 2
+PadFone 2
+Padfone
+Padfone
+PadFone E
+PadFone Infinity
+PadFone Infinity
+PadFone mini 4.3
+PadFone mini PF400CG
+PadFone S PF500KL
+Pegasus X002
+Pegasus X003
+The New PadFone
+The New PadFone
+The New Padfone Infinity
+The new PadFone Infinity
+V55
+V66
+V75
+V80
+V90
+ZenFone 2 Deluxe ZE551ML
+ZenFone 2 Deluxe ZE551ML
+ZenFone 2 Deluxe ZE551ML
+ZenFone 2 Laser ZE500KG
+ZenFone 2 Laser ZE500KL
+ZenFone 2 Laser ZE500KL
+ZenFone 2 Laser ZE550KL
+ZenFone 2 Laser ZE551KL
+ZenFone 2 Laser ZE601KL
+ZenFone 2 Laser ZE601KL
+ZenFone 2 ZE500CL 2
+ZenFone 2 ZE500CL 2
+ZenFone 2 ZE550ML 2
+ZenFone 2 ZE551ML 2
+ZenFone 2 ZE551ML 2
+ZenFone 2 ZE551ML 4
+ZenFone 2 ZE551ML 4
+ZenFone 2 ZE551ML 4
+ZenFone 4 A400CG
+ZenFone 4 A450CG 1
+ZenFone 5 A500CG 1
+ZenFone 5 A500CG 2
+ZenFone 5 A500KL 1
+ZenFone 5 A500KL 2
+ZenFone 5 A500KL 2
+ZenFone 5 A501CG 1
+ZenFone 5 A501CG 2
+ZenFone 5 A501CG 2
+ZenFone 5 A502CG 1
+1051D
+Club
+Club db
+Com
+Easy
+Easy db
+Elle 3 Glamphone
+Elle Glamphone
+Gum db
+HERO 8020
+HERO 8020D
+Idol 3 4.7
+Idol 3 5.5
+IDOL MINI 6012D
+IDOL MINI 6012X
+IDOL S 6035R
+Mandarina Duck
+Max
+Max db
+One Touch 2000X
+One Touch 922
+OneTouch 1008
+OneTouch 1010D
+OneTouch 1013D
+OneTouch 1016D
+OneTouch 102
+OneTouch 103
+OneTouch 1030
+OneTouch 1030D
+OneTouch 1035D
+OneTouch 1040D
+OneTouch 106
+OneTouch 1060
+OneTouch 1060D
+OneTouch 108
+OneTouch 111
+OneTouch 153
+OneTouch 155
+OneTouch 156
+OneTouch 2001X
+OneTouch 2004C
+OneTouch 2004G
+OneTouch 2007D
+OneTouch 2010
+OneTouch 2010D
+OneTouch 2012D
+OneTouch 202
+OneTouch 203
+OneTouch 2040D
+OneTouch 206
+OneTouch 208
+OneTouch 222
+OneTouch 228
+OneTouch 232
+OneTouch 255
+OneTouch 280
+OneTouch 301
+OneTouch 302
+OneTouch 303
+OneTouch 303 old
+OneTouch 305
+OneTouch 310
+OneTouch 311
+OneTouch 316D
+OneTouch 318D
+OneTouch 320
+OneTouch 331
+OneTouch 332
+OneTouch 355
+OneTouch 363
+OneTouch 380
+OneTouch 383
+OneTouch 500
+OneTouch 501
+OneTouch 505
+OneTouch 511
+OneTouch 512
+OneTouch 525
+OneTouch 531
+OneTouch 535
+OneTouch 556
+OneTouch 557
+OneTouch 565
+OneTouch 585
+OneTouch 585D
+OneTouch 600
+OneTouch 602D
+OneTouch 606
+OneTouch 660
+OneTouch 700
+OneTouch 701
+OneTouch 708
+OneTouch 710D
+OneTouch 715
+OneTouch 720
+OneTouch 720D
+OneTouch 735
+OneTouch 735i
+OneTouch 756
+OneTouch 757
+OneTouch 800
+OneTouch 802
+OneTouch 806
+OneTouch 806D
+OneTouch 808
+OneTouch 810
+OneTouch 818
+OneTouch 818D
+OneTouch 819 Soul
+OneTouch 819D
+OneTouch 828
+OneTouch 835
+OneTouch 880
+OneTouch 903
+OneTouch 903D
+OneTouch 908
+OneTouch 910
+OneTouch 918D
+OneTouch 928D
+OneTouch 985D
+OneTouch 990
+OneTouch 992D
+OneTouch 993D
+OneTouch 997
+OneTouch 997D
+OneTouch 998
+OneTouch A341i
+OneTouch C550
+OneTouch C551
+OneTouch C552
+OneTouch C555
+OneTouch C560
+OneTouch C630
+OneTouch C635
+OneTouch C651
+OneTouch C652
+OneTouch C656
+OneTouch C701
+OneTouch C707
+OneTouch C710
+OneTouch C717
+OneTouch C750
+OneTouch C753
+OneTouch C825
+OneTouch C850
+OneTouch E100
+OneTouch E101
+OneTouch E105
+OneTouch E157
+OneTouch E158
+OneTouch E159
+OneTouch E160
+OneTouch E201
+OneTouch E205
+OneTouch E207
+OneTouch E220
+OneTouch E225
+OneTouch E227
+OneTouch E230
+OneTouch E252
+OneTouch E256
+OneTouch E257
+OneTouch E259
+OneTouch E260
+OneTouch E265
+OneTouch E270
+OneTouch E801
+OneTouch E805
+OneTouch Go Play 7048X
+OneTouch Hero 2 8030Y
+OneTouch I650
+OneTouch Idol 2 6037K
+OneTouch Idol 2 6037Y
+OneTouch Idol 2 Mini 6014X
+OneTouch Idol 2 Mini 6016D
+OneTouch Idol 2 Mini 6016X
+OneTouch Idol 6030A
+OneTouch Idol 6030D
+OneTouch Idol 6030X
+OneTouch Idol Alpha 6032X
+OneTouch Idol Ultra 6033
+OneTouch Idol X 6040
+OneTouch Idol X 6040D
+OneTouch Idol X+ 6043D
+OneTouch M'Pop 5020D
+OneTouch M'Pop 5020X
+OneTouch Pixi 2 4014D
+OneTouch PIXI 4007D
+OneTouch POP 3 5025D
+OneTouch Pop C1 4015D
+OneTouch Pop C3 4033D
+OneTouch Pop C3 4033X
+OneTouch Pop C7 7040A
+OneTouch Pop C7 7040D
+OneTouch Pop C7 7040E
+OneTouch Pop C7 7040F
+OneTouch Pop C7 7041D
+OneTouch Pop C7 7041X
+OneTouch Pop C9 7047D
+OneTouch Pop D5 5038D
+OneTouch Pop S7 7045Y
+OneTouch Pop S9 7050Y
+OneTouch Pop Star 5022D
+OneTouch PRO
+OneTouch S'Pop 4030
+OneTouch S'Pop 4030D
+OneTouch S107
+OneTouch S120
+OneTouch S210
+OneTouch S211
+OneTouch S319
+OneTouch S520
+OneTouch S621
+OneTouch S850
+OneTouch S853
+OneTouch S920
+OneTouch SCRIBE EASY 8000
+OneTouch SCRIBE EASY 8000D
+OneTouch SCRIBE HD 8008X
+OneTouch SCRIBE HD D 8008D
+OneTouch Share 300
+OneTouch Snap 7025
+OneTouch Snap 7025D
+OneTouch SPORT
+OneTouch Star 6010
+OneTouch Star Dual Sim 6010D
+OneTouch TPOP 4010
+OneTouch TPOP 4010D
+OneTouch V212
+OneTouch V270
+OneTouch V570
+OneTouch V670
+OneTouch V770
+OneTouch View
+OneTouch X'Pop
+OT-109
+OT-112
+OT-113
+OT-117
+OT-132
+OT-2005
+OT-2005D
+OT-209
+OT-213
+OT-217
+OT-217D
+OT-223
+OT-233
+OT-282
+OT-292
+OT-306
+OT-355
+OT-355D
+OT-361
+OT-362
+OT-385
+OT-385D
+OT-506
+OT-506D
+OT-536
+OT-595D
+OT-602
+OT-665
+OT-668
+OT-706
+OT-706A
+OT-710
+OT-799
+OT-803
+OT-813D
+OT-888D
+OT-890
+OT-890D
+OT-891 Soul
+OT-900
+OT-905
+OT-906
+OT-916
+OT-916D
+OT-918
+OT-980
+OT-983
+OT-986
+OT-991
+OT-991D
+OT-995
+Playboy Phone
+Pocket
+POP C5 5036D
+POP C5 5036Х
+Pro
+Tribe 3041
+Tribe 3041D
+View
+View db w@p
+beTouch E100
+beTouch E101
+beTouch E110
+beTouch E120
+beTouch E130
+beTouch E140
+beTouch E200
+beTouch E400
+CloudMobile S500
+DX650
+ICONIA SMART
+Liquid
+Liquid E
+Liquid E Ferrari
+Liquid E1 Duo
+Liquid E2 Duo
+Liquid E3 Duo E380
+Liquid E700
+Liquid Express E320
+Liquid Gallant Duo E350
+Liquid Jade 2
+Liquid Jade Z S57
+Liquid Jade Z S57
+Liquid Metal
+Liquid Mini
+Liquid S1 Duo
+Liquid S2
+Liquid Z120 Duo
+Liquid Z200 Duo
+Liquid Z3
+Liquid Z3 duo
+Liquid Z4 Duo Z160
+Liquid Z5 Duo Z150
+Liquid Z500
+Liquid Z520
+Liquid Z520
+Liquid Z530
+Liquid Z530
+Liquid Z630
+neoTouch
+neoTouch P400
+Stream
+Tempo DX900
+Tempo F900
+Tempo M900
+Tempo X960
+Z110
+Racing A668
+40 Titanium
+45 Platinum
+45 Titanium
+50 Platinum
+ROCK V5
+Alpha
+Connect
+Element
+Flash
+GTi
+Nox
+AK900
+A310
+A320
+A660
+A860W
+A90
+CA8
+CS6
+D85
+D86
+D89
+DA6
+F60
+F90
+F99
+M350
+N821
+moboDA 3360
+T728
+T818
+T828
+AML-100
+AML-100M
+ASP-500GA
+ASP-505A
+ZenFone 6 A600CG
+ZenFone 6 A600CG
+ZenFone 6 A600CG
+ZenFone 6 A601CG
+ZenFone 6 A601CG
+ZenFone C ZC451CG 1
+Zenfone Go ZC451TG
+ZenFone Go ZC500TG
+ZenFone Go ZC500TG
+ZenFone Selfie ZD551KL
+ZenFone Selfie ZD551KL
+ZenFone Zoom ZX551ML
+7105t
+7130g
+8700g
+9300 Curve 3G
+Bold 9000
+Bold 9650
+Bold 9700
+Bold 9780
+Bold 9790
+Bold 9900
+Bold 9930
+Classic Q20
+Curve 8300
+Curve 8310
+Curve 8320
+Curve 8330
+Curve 8520
+Curve 8530
+Curve 8900
+Curve 9220
+Curve 9320
+Curve 9350
+Curve 9360
+Curve 9380
+Leap
+Passport
+Passport Silver Edition
+Pearl 3G 9100
+Pearl 3G 9105
+Pearl 8100
+Pearl 8110
+Pearl 8120
+Pearl Flip 8220
+Pearl Flip 8230
+Porsche Design P'9982
+Porsche Design P'9983
+Porsche Design P’9981
+Priv
+Q10
+Storm 9500
+Storm 9530
+Storm2 9520
+Storm2 9550
+Torch 9800
+Torch 9810
+Torch 9850
+Torch 9860
+Tour 9630
+Z10 STL100-1
+Z10 STL100-2
+Z10 STL100-4
+Z30
+Ixion E 4
+Ixion E 5
+Ixion E140
+Ixion E145 Evo SE
+Ixion E150 Soul
+Ixion E2 4
+Ixion EL150
+Ixion EL250
+Ixion Energy
+Ixion ES 3.5
+Ixion ES 4
+Ixion ES 4.3
+Ixion ES 4.5
+Ixion ES135
+Ixion ES145
+Ixion ES150
+Ixion ES2 5
+Ixion ES245
+Ixion M 3.5
+Ixion M 4
+Ixion M 4.5
+Ixion M 5
+Ixion M LTE 5
+Ixion M145
+Ixion M150
+Ixion M350
+Ixion ML 4.5
+Ixion ML 4.7
+Ixion ML145
+Ixion ML2 5
+Ixion MQ 3.5
+Ixion MS 5
+Ixion MS150
+Ixion P 4
+Ixion Vector ES155
+Ixion X 4
+Ixion X 4.5
+Ixion X 4.7
+Ixion X 5
+Ixion XL 5
+Ixion XL140
+Ixion Y 5
+Larus B1
+Larus C1
+Larus C2
+Larus C4
+Larus E1
+Larus E2
+Larus E3
+Larus E4
+Larus E5
+Larus E7
+Larus M1
+Larus M2
+Larus M3
+Larus M4
+Larus M5
+Larus M6
+Larus S2
+Larus S3
+Larus S4
+Larus S5
+Larus Senior
+Larus V1
+Larus Z1
+4Game
+A170
+A240
+A320
+A350
+A350TV
+A351
+A400
+A500
+A600
+Advance
+Advance TV
+Air
+Alto
+Atlant
+Atom
+ATV
+B200
+B220
+B240
+B241
+B242
+Bit
+Blade
+Blaze
+BM10
+BM50
+BM55
+BM80
+BM90
+Cinema
+Communicator
+Craft
+Crystal
+Diamond
+P4000
+P5000
+P6000
+P6000 Pro
+P6000 Pro
+P7000
+P8000
+S2 Plus
+Trunk
+M-1401 Monza
+M-1402 Lyon
+M-1403 Capri
+M-1404 Beijing
+M-1405 Phoenix
+M-1406 Vitre
+M-1406 Vitre Gold
+M-1409 Bern
+M-1565 Hong Kong
+M-1801 Bangkok
+M-1802 Arlon
+M-1803 Dakar
+M-1804 Cairo
+M-1816 Luxembourge
+M-1818 Dublin
+M-1820 Barcelona
+M-1822 Ferrara
+M-1825 Bonn
+M-2402 Helsinki
+M-2404 Instambul
+M-2406 Toledo
+M-2410 Denver II
+M-2459 Dallas Mini
+M-2601 Las Vegas
+M-2606 Cupertino
+M-2610 Las Vegas
+M-2802 Kyoto
+M-2803 Munich
+M-2859 Dallas
+M-3200 Berlin
+M-3502 Mito
+M–2201 Rio
+M–2202 London
+M–2203 Geneve
+M–2420F New York
+M–2456 Orlando
+S-3501 Delhi
+S-3510 Aspen Mini
+S-4001 Oxford
+S-4005 Seoul
+S-4008 Shanghai
+S-4010 Aspen
+S-4502 Kingston
+S-4503 Dubai
+S-4505 Santiago
+S-4510 Florence
+S-4515 Moscow
+S-4516 Singapore
+S-4525 Vienna
+S-4555 Turbo
+S-4702 Osaka
+S-4707 Montreal
+S-5004 Paris
+S-5007 Rimini
+S-5010 Prague
+S-5055 Turbo Plus
+S-5500 Vancouver
+S-5501 Kawasaki
+Cat B100
+Cat B15
+Cat B15Q
+Cat B25
+Cat B30
+Cat S30
+Cat S40
+Cat S50
+BV5000
+Ultra
+DG2014
+DG450
+DG550
+DG700 TITANS2
+DG800
+iDx5 3G
+iDxD4 3G
+iDxD5 3G
+IDxQ 5
+Linx 4.7'' HD
+Baby Bear
+Dog
+GPS маячок
+Guard
+Teddyfone
+VOIIS Comfort
+VOIIS GPS
+Berlin
+Dubai
+Ibiza
+L.A.
+Young and Trendy
+Z80
+CDM-135
+CDM-8300
+CDM-8450
+CDM-8500
+CDM-8600
+CDM-8900
+CDM-9100
+CDM-9155
+НКТ АК-47
+S09
+K028
+K029
+K036
+K039
+K056
+K068
+K098
+K100
+K101
+K102
+K202
+K300
+K320
+K322
+LR009
+LR016
+LR018
+S200
+S201
+S202
+S328
+V050
+X12
+X21
+Ultra Slim
+ESC!
+Gamma
+LOCUS
+Track
+Twig Discovery
+Twin
+Vega
+A500
+A520
+C30
+M100
+M300
+M315
+M580
+P30
+P50
+S500
+S660C
+S670
+S670C
+S700
+S80
+T33
+Z2 Qube
+С36
+A38
+A58
+AL26 Hello Kitty
+C81
+CF61
+CL71
+E52
+E61
+E71
+E81
+EF51
+EF81
+EF91
+EL71
+M81
+P51
+Q-fi EF71
+S68
+S81
+S88
+SL80
+SL91
+С31
+E860
+S789
+S890
+V109
+A70 Phone
+509/509 Dual
+738 com/718 world
+908/909 Dual
+909 Dual S
+Com 207
+Com 607/608
+Bravis Alpha
+Bravis Base
+Bravis Biz
+Bravis Fire
+Bravis Solo
+Bravis Terra
+N7100
+N7300
+N8100
+Slip Web
+Itteki S42
+Aero
+Venue
+Venue Pro
+GS454
+GS500
+L10
+I-Rock M8 Batman
+M900
+P700
+S3503B
+S4003 2SIM
+S4004M
+S4501M
+S4502 2SIM
+S4503Q
+S4505M
+S4506
+S4701
+S4702M
+S5001
+S5301Q
+SD01
+SI4301
+818 Pro
+U1000
+HandlePlus 334 GSM
+CityPhone Astra
+CityPhone Astra Z1
+CityPhone CY-100
+CityPhone CY-85
+CityPhone Lion
+CityPhone Nova
+EL 908
+EL 909
+EL 928
+EL 970
+EL 980
+EL 990
+E100
+E200
+E300
+E320R
+E400S
+A1018s
+A1228c
+A2618
+A2628s
+A3618
+CA638
+GA318
+GA628
+GF768
+GF788
+GF788e
+GH337
+GH388
+GH688
+i888
+PH388
+R250s Pro
+R310s
+R320
+R380
+R520
+R600
+S868
+SH888
+T10s
+T18s
+T20s
+T28s
+T29
+T36
+T39
+T65
+T66
+T68
+TH688
+G500
+Glofiish DX900
+Glofiish M700
+Glofiish M750
+Glofiish M800
+Glofiish M810
+Glofiish V900
+Glofiish X500
+Glofiish X500+
+Glofiish X600
+Glofiish X610
+Glofiish X650
+Glofiish X800
+Glofiish X900
+Gloflish A-100
+InfoTouch P603
+M500
+M600
+M600+
+P300
+P700
+S4521
+S5042
+FX420 Dual SIM
+STRONGPHONE Q4
+StrongPhone Wi-Fi
+StrongPhone X1
+XtraPhone 4.5 QC Dual SIM
+XtraPhone 5.3 Q4 Dual SIM
+XtraPhone 5.3 QC Dual SIM
+2040i
+A130
+B200
+B300
+B400
+B500
+B501
+B600
+B700 Duo
+DS100
+DS103
+DS103D
+DS104D
+DS105
+DS105C
+DS105D
+DS106
+DS106D
+DS107
+DS107D
+DS108
+DS110
+DS111
+DS113
+DS115
+DS116
+DS116+
+DS120
+DS123
+DS124
+DS125
+DS128
+DS129
+DS131
+DS132
+DS133
+DS150
+DS155
+DS156
+DS160
+DS165
+DS167
+DS169
+DS170
+DS180
+DS185
+DS186
+DS210
+DS400
+DS420
+DS500
+E105
+E110
+E115
+E120
+E125
+E130
+E131
+E133
+E134
+E135
+E140
+E141 TV
+E145
+E145 TV
+E146
+E147 TV
+E150
+E151 Wi-fi
+E154
+E155
+E157
+E158
+E160
+E170
+E171 Wi-Fi
+E175
+E176
+E181 Sophie
+E185
+E190 Wi-Fi
+E195
+E200
+E210
+E300
+E310 Attitude
+Ezzy
+Ezzy 6
+Ezzy Flip
+Ezzy Trendy
+Ezzy Trendy 2
+Ezzy2
+Ezzy3
+Ezzy4
+Ezzy5
+Ezzy5+
+Ezzy6+
+FF177
+FF241
+FF242
+FF301
+FS401 Stratus 1
+FS402 Stratus 2
+FS403 Cumulus 1
+FS451 Nimbus 1
+FS452 Nimbus 2
+FS501 Nimbus 3
+FS502 Cirrus 1
+FS551 Nimbus 4
+FT10
+FT20
+Hummer HT1
+Hummer HT2
+IQ-110
+IQ-120
+IQ230
+IQ230 Compact
+IQ235 Uno
+IQ236 Victory
+IQ237 Dynamic
+IQ238 Jazz
+IQ239 ERA Nano 2
+IQ239+
+IQ240 Whizz
+IQ245 Wizard
+IQ245+ Wizard Plus
+IQ246 Power
+IQ250 Swift
+IQ255 Pride
+IQ256 Vogue
+IQ260 Blackbird
+IQ270 Firebird
+IQ275 Marathon
+IQ280 Tech
+IQ285 Turbo
+IQ430 Evoke
+IQ431 Glory
+IQ432 ERA Nano1
+IQ434 ERA Nano 5
+IQ436 ERA Nano 3
+IQ436i ERA Nano 9
+IQ436i ERA Nano 9
+IQ440 Energie
+IQ4401 ERA Energy 2
+IQ4403 Energie 3
+IQ4406 ERA Nano 6
+IQ4407 ERA Nano 7
+IQ4409 ERA Life 4
+IQ441 Radiance
+IQ4410 Quad Phoenix
+IQ4411 Energie 2
+IQ4412 Quad Coral
+IQ4413 EVO Chic 3
+IQ4415 ERA Style 3
+IQ4416 ERA Life 5
+IQ4417 ERA Energy 3
+IQ4418 ERA Style 4
+IQ442 Miracle
+IQ442 Quad Miracle 2
+IQ443 Trend
+IQ444 Diamond
+IQ444 Quattro Diamond 2
+IQ445 Genius
+IQ446 Magic
+IQ446 Magic
+IQ447 ERA Life 1
+IQ448 Chic
+IQ4490 ERA Nano 4
+IQ450 Horizon
+IQ450 Quattro Horizon 2
+IQ4503 ERA Life 6
+IQ4504 Evo Energy 5
+IQ4505 ERA Life 7
+IQ451 Vista
+IQ4511 Octa Tornado One
+IQ4512 Chic 4
+IQ4514 Evo Tech 4
+IQ4516 Octa Tornado Slim
+IQ452 Quad EGO Vision 1
+IQ453 Quad Luminor FHD
+IQ454 EVO Tech 1
+IQ456 ERA Life 2
+IQ457 Quad
+IQ4601 ERA Style 2
+Levi's
+LX500
+LX600 Mega
+LX610 Mega
+LX800 Sapphire
+M08
+M100
+M110
+M130
+M140
+M550
+M760
+M90
+MC100
+MC110
+MC120
+MC130
+MC131
+MC135
+MC140
+MC145
+MC150 DS
+MC155
+MC165
+MC170 DS
+MC175 DS
+MC177
+MC180
+MC181
+MC210
+MC220
+MC300
+MP100
+MP220
+MP300
+MP400
+MP500
+MP600
+MX200
+MX200i
+MX230
+MX300
+MX330
+OD1
+PC100
+PC200
+Pronto IQ449
+Q110 TV
+Q115
+Q120 TV
+Q200 Swivel
+Q200i Swivel
+Q300
+Q400
+Q410 Princess
+Q420
+S1160
+S1180
+S1186
+S1190
+S1199
+S15
+S188
+S20
+S288
+S299
+S388
+S588
+S688
+SC14
+SC24
+SL100
+SL110
+SL120
+SL130
+SL140 DS
+SL200
+SL300m
+SL400m
+SL500i
+SL500m
+SL600
+Spark IQ4404
+ST100
+ST230
+ST240
+ST300
+ST305
+SX100
+SX200
+SX205
+SX210
+SX215
+SX220
+SX225
+SX230
+SX240
+SX300
+SX305
+SX310
+SX315
+TS100
+TS103D
+TS105
+TS107
+TS110
+TS111
+TS111+
+TS2050
+TS2060
+TS90
+TS91
+V07
+V09
+V100
+V107
+V11
+V15
+V150
+V20
+V25
+V30
+V40
+V50
+V60
+V70
+X10
+X7a
+Z007
+Z200
+Z300
+Z400
+Z500
+Z600
+Dream
+Easy
+Element
+Fin
+Five
+Flip
+Fresh
+Golf
+HD Quad
+Hit
+Ice
+Indigo
+Infinity
+Infinity II
+Joy
+JoyTV
+Light
+Moon
+MU220
+MU240
+N1 Dual Sim
+N1 часы
+Navigator
+Neo
+Onyx
+Phantom
+Polo
+Power
+Power Bank
+Primo
+Pulsar
+Q230
+Q231
+Q232
+Q233
+Rio
+Rio Play
+Shark
+Simple
+Sky
+SL240
+SL241
+SL260
+Slim
+Solo
+Space
+Star
+StarTV
+Storm
+Style
+Surf
+T1000
+T280
+T285
+T350
+T400
+Titan
+Tornado
+TV240
+TV245
+TV280
+Vega
+Vision
+X-tremer
+X243
+GIGABYTE Aku A1
+GIGABYTE Alto A2
+GIGABYTE Barbie
+GIGABYTE g-Cam
+GIGABYTE g-Smart
+GIGABYTE g-Smart i
+GIGABYTE g-Smart i128
+GIGABYTE g-X5
+GIGABYTE g-YoYo
+GIGABYTE GSmart Arty A3
+GIGABYTE Gsmart Classic
+GIGABYTE GSmart Classic Lite
+GIGABYTE GSmart Classic Pro
+GIGABYTE Gsmart Essence
+GIGABYTE GSmart F180
+GIGABYTE GSmart F280
+GIGABYTE GSmart G1305
+GIGABYTE GSmart G1310
+GIGABYTE GSmart G1315
+GIGABYTE GSmart G1317D
+GIGABYTE GSmart G1342
+GIGABYTE GSmart G1345
+GIGABYTE GSmart G1355
+GIGABYTE GSmart GS202
+GIGABYTE GSmart GS202+
+GIGABYTE GSmart i120
+GIGABYTE GSmart i300
+GIGABYTE GSmart i350
+GIGABYTE GSmart Maya M1
+GIGABYTE GSmart Maya M1 V2
+GIGABYTE GSmart Mika M2
+GIGABYTE GSmart MS800
+GIGABYTE GSmart MS802
+GIGABYTE GSmart MS820
+GIGABYTE GSmart MW700
+GIGABYTE GSmart MW702
+GIGABYTE GSmart MW720
+GIGABYTE GSmart MW998
+GIGABYTE GSmart q60
+GIGABYTE GSmart Rey R3
+GIGABYTE GSmaRt Rio R1
+GIGABYTE GSmart S1200
+GIGABYTE GSmart S1205
+GIGABYTE GSmart Saga S3
+GIGABYTE GSmart Simba SX1
+GIGABYTE GSmart T4
+GIGABYTE GSmart T4 Lite Edition
+GIGABYTE GSmart t600
+GIGABYTE Guru
+GIGABYTE Maya M1 v2
+GIGABYTE Roma R2
+GIGABYTE Roma RX
+GIGABYTE Sierra S1
+GIGABYTE Tuku T2
+M101 Dual
+M101 Dual mini
+M101 Dual rev.2
+M103 Dual mini
+M105 Dual
+M108 Dual
+R12D
+R3 DUAL
+R31 DUAL
+R32 DUAL
+R4 DUAL
+R5 DUAL
+R6 Dual
+R6 Ultimate
+R8 DUAL
+RS61 Dual
+RS7 Dual
+RS9 Dual
+RS91 Dual
+RS94 Dual
+S4010
+Fone 450Q
+FONE 570Q
+Insignia 500
+Quantum 2 500
+Quantum 400 Lite
+Elife E7
+Elife E7
+Elife E7L
+TW810
+Pocket LOOX T810
+Pocket LOOX T830
+ES813
+NavTalk
+A10
+nuvifone A50
+nuvifone M10
+nuvifone M20
+DST 01
+G777
+MH132
+PS236
+FT-850
+MS100
+GU5010B
+GL-800Android
+GL-900Dolfin
+GL-900Sky
+Beyond Dreams Pink Gold
+Beyond Dreams White Gold
+Beyond Dreams Yellow Gold
+Centerfold Pink Gold
+Centerfold White Gold
+Ascend D Quad
+Ascend D1 Quad XL
+Ascend D2
+Ascend G350
+Ascend G500 Pro
+Ascend G520
+Ascend G526
+Ascend G6
+Ascend G6 4G
+Ascend G6-U00
+Ascend G606-T00
+Ascend G620-L72
+Ascend G620s
+Ascend G630
+Ascend G630D
+Ascend G7-L01
+Ascend G7-L03
+Ascend G700-U00
+Ascend G700-U10
+Ascend G700-U20
+Ascend G710
+Ascend G730
+Ascend G750 Honor 3X
+Ascend G750 U10
+Ascend Honor 3X Pro
+Ascend Mate
+Ascend Mate2 4G
+Ascend Mate7
+Ascend Mate7
+Ascend P1 S
+Ascend P1 XL
+Ascend P2
+Ascend P6
+Ascend P6 S
+Ascend P7
+Ascend P7 mini
+Ascend P7-L00
+Ascend P7-L10
+Ascend W1
+Ascend W2
+Ascend Y101
+Ascend Y201 Pro
+Ascend Y210
+Ascend Y210D
+Ascend Y220
+Ascend Y300 T8833
+Ascend Y310
+Ascend Y320
+Ascend Y325
+Ascend Y330
+Ascend Y330D
+Ascend Y5 Y560-U02
+Ascend Y511
+Ascend Y511D
+Ascend Y518
+Ascend Y520 U22
+Ascend Y530
+Ascend Y600
+Ascend Y625 U32
+C8812
+C8813
+D51 Discovery Expedition
+ETS-310
+ETS-388
+ETS-668
+ETS-678
+ETS-688
+G Play mini
+G2100
+G2200
+G2800S
+G3512
+G5000
+G525
+G610
+G610S
+G6600
+G6608
+G7 Plus
+G8 RIO-L01
+Honor 2 U9508
+Honor 3
+Honor 3C H30-L02
+Honor 3C H30-L02
+Honor 3C H30-T00
+Honor 3C H30-U10
+Honor 3C Lite
+Honor 3C Play Hol-U10
+Honor 4A
+Honor 4C
+Honor 4X
+Honor 4X
+Honor 6
+Honor 6
+Honor 6 H60-L02 Mulan
+Honor 6 Plus
+Honor 6 Plus
+Honor 7 Dual
+Honor 7 Dual
+Honor 7i
+Honor 7i
+Honor ShotX
+Honor ShotX
+Honor X5
+Mate 6
+Mate 6.1
+Mate 8
+Mate 8
+Mate S CRR-UL00
+Mate S CRR-UL00
+Mate S CRR-UL09
+Nexus 6P
+Nexus 6P
+Nexus 6P
+P8 GRA-L09
+P8 GRA-UL00
+P8 GRA-UL10
+P8lite
+P8lite Dual
+P8max
+Sonic U8650
+T8828 G305T
+T8830 G309
+U5130
+U5900S
+U7519
+U7520
+U8110
+U8150 Ideos
+U8180 IDEOS X1
+U8185 Ascend Y100
+U8186 Ascend Y101
+U8230
+U8350 Boulde
+U8500
+U8510 Ideos X3
+U8650 Sonic
+U8655 Ascend Y200
+U8685 Ascend Y210
+U8800 IDEOS X5
+U8800 Ideos X5 Pro
+U8812D Ascend G302D
+U8815 Ascend G300
+U8816 Ascend G301
+U8825 Ascend G330
+U8825D Ascend G330D
+U8836D Ascend G500
+U8850 Vision
+U8860 Honor
+U8950 Ascend G600
+U8950D Ascend G600
+U8951 Ascend G510
+U8951D Ascend G510
+U9000 IDEOS X6
+7 Mozart
+7 Pro
+7 Surround
+7 Trophy
+Amaze 4G
+Aria
+Butterfly
+Butterfly 2
+Butterfly S
+ChaCha
+Desire
+Desire 200
+Desire 210 Dual SIM
+Desire 300
+Desire 310
+Desire 310 Dual Sim
+Desire 320
+Desire 326G Dual Sim
+Desire 400 Dual Sim
+Desire 500
+Desire 500 dual SIM
+Desire 501 Dual Sim
+Desire 510
+Desire 516 Dual Sim
+Desire 526G Dual SIM
+Desire 526G Dual SIM
+Desire 526G+ Dual SIM
+Desire 526G+ Dual SIM
+Desire 600 Dual Sim
+Desire 601
+Desire 601 Dual Sim
+Desire 606w
+Desire 608t
+Desire 610
+Desire 616 Dual SIM
+Desire 620
+Desire 620 Dual SIM
+Desire 620G Dual SIM
+Desire 626
+Desire 626G
+Desire 626Q
+Desire 700
+Desire 728G Dual Sim
+Desire 728x Dual SIM
+Desire 816
+Desire 816 Dual Sim
+Desire 816G Dual Sim
+Desire 820
+Desire 820 Dual Sim
+Desire 820G+ Dual Sim
+Desire 820s Dual Sim
+Desire 820us Dual Sim
+Desire 826 Dual Sim
+Desire C
+Desire EYE
+Desire HD
+Desire P
+Desire S
+Desire SV
+Desire U Dual Sim
+Desire V
+Desire VC
+Desire VT 328t
+Desire X
+Desire X Dual Sim
+Desire XC Dual Sim
+Desire Z
+Droid Incredible
+EVO 3D
+EVO 4G
+EVO Design 4G
+Explorer
+First
+Gratia
+HD mini
+HD2
+HD7
+HD7
+Hero
+Hero CDMA
+Imagio
+Incredible S
+J Z321e
+J butterfly
+Legend
+Magic
+MAX 4G
+MTeoR
+One E8
+One E8 Dual SIM
+One E9 Dual SIM
+One E9+ Dual SIM
+One E9s Dual SIM
+One M8 EYE
+One M8
+One M8
+One M8 Dual SIM
+One M8s
+One M9
+One M9
+One M9+
+One M9+ Supreme Camera Edition
+One M9s
+One
+One
+One
+One A9
+One A9
+One dual sim
+One dual sim
+One Max
+One Max
+One ME dual sim
+One mini
+One mini 2
+One S
+One SU
+One SV
+One V
+One X
+One X
+One X+
+One XL
+One XL
+Ozone
+P3300
+P3350
+P3400
+P3470
+P3600
+P4350
+P5500 Touch Dual
+P5520 Touch Dual
+P6300
+P6500
+Proto T329W
+Pure
+Radar
+Rhyme
+S310
+S420
+S620
+S710
+S730
+S740
+Salsa
+Sensation
+Sensation XE
+Sensation XL
+Smart
+Snap
+T-Mobile G1
+Tattoo
+Titan
+Touch 3G
+Touch Cruise II T4242
+Touch Cruise P3650
+Touch Diamond CDMA
+Touch Diamond P3490
+Touch Diamond P3700
+Touch Diamond2
+Touch HD
+Touch P3450
+Touch P3452
+Touch Pro
+Touch Pro CDMA
+Touch Pro2
+Touch Viva
+Touch2
+TyTN
+TyTN II
+TyTN Pro
+Velocity 4G
+Wildfire
+Wildfire S
+Windows Phone 8s
+Windows Phone 8x
+Windows Phone 8x LTE
+X7500
+X7510
+Alpha GT
+Alpha GTR
+Alpha GTX
+Alpha Ice
+Alpha R
+Alpha Rage
+Bay
+Blast
+Boost
+Boost 2
+Boost 2 SE
+Boost 3
+Boost 3 Pro
+Cosmo
+Cosmo Duo
+Explosion
+HD Duo
+Hippo
+Ice 2
+Jet Duo
+Nano
+Omega Prime
+Omega Prime Mini
+Omega Prime XL
+Omega Q
+Power Five Pro
+Power Four
+Power Ice
+PP5420
+Spade
+Spark
+Spark 2
+Strike
+Thor
+TV Duo
+WinWin
+Yummy Duo
+Zera F
+Zera S
+Zeus
+HTC Nexus One
+Centerfold Yellow Gold
+Le million
+Like Heaven Pink Gold
+Like Heaven White Gold
+Like Heaven Yellow Gold
+Mayesty Pink Gold
+Mayesty White Gold
+Mayesty Yellow Gold
+Violent Numbers Pink Gold
+Violent Numbers White Gold
+Violent Numbers Yellow Gold
+Avantgarde Luna Gold
+Avantgarde Luna Steel
+Avantgarde Regal Black
+Avantgarde Regal Titanium
+Avantgarde Skeleton
+Avantgarde Skeleton Gold
+Avantgarde Sol Gold
+Avantgarde Sol Steel
+Black Diamonds
+Cruiser Titanium
+Extreme X3
+Extreme X5
+Grand Monaco Black Ceramic Black Alcantara
+Grand Monaco Black Ceramic Black Carbon
+Grand Monaco Black Ceramic Black Leather
+Grand Monaco Black Ceramic Gray Alcantara
+Grand Monaco Black Ceramic Red Alcantara
+Grand Monaco Black Ceramic Red Leather
+Grand Monaco Cayman S Metallic Ceramic Black
+Grand Monaco Luxury Pure Black Cayman
+Grand Monaco Metallic Ceramic Black Carbon
+Grand Monaco Metallic Ceramic Black LE
+Grand Monaco Red Ceramic Red Cayman
+Grand Monaco Sport Black Ceramic Black Carbon LE
+Grand Monaco Sport Metallic Ceramic Metallic Carbon LE
+Grand Monaco Sport Pure Black Carbon
+iPhone 3GS for lady
+iPhone 3GS for man
+iPhone 4 Black Diamond
+Lady Diamond
+Lady Gold
+Luxor
+Luxor Las Vegas
+Luxor Las Vegas Jackpot
+Luxor World Time
+Royal Black Diamonds
+Royal White Diamonds
+Skeleton Ultramarine Gold
+White Diamonds
+A110
+A130
+C310
+G342i
+G402i
+G410i
+G550i
+G600i
+M130
+M130B
+M131
+M240
+U900
+X3000
+X5000
+m28
+GCP-5000
+A610
+HG-M66
+M1000
+M230
+M260
+M300
+M500 Silver Pearl
+M600
+M66 Kosmo Pearl
+M80
+N60
+PenPhone P5
+PenPhone P6
+PenPhone P7
+V20
+V280
+W718
+Nautiz X3
+iWatch A1
+iWatch EG100
+iWatch KW688
+iWatch M810
+iWatch M860
+iWatch V2
+CS668
+D806
+D816
+HTG-100
+HTG-200
+HTG-630
+HTG-660
+HTG-818
+HOLLEY COMMUNICATIONS H6699
+W20
+W21
+W31
+W33
+Elite x3
+iPAQ 514 Voice Messenger
+iPAQ 614 Business Navigator
+iPAQ 614c Business Navigator
+iPAQ 914c Business Messenger
+iPAQ Data Messenger
+iPAQ H6310
+iPAQ H6325
+iPAQ H6340
+iPAQ hw6510
+iPAQ hw6515
+iPAQ hw6710
+iPAQ hw6715
+iPAQ hw6910
+iPAQ hw6915
+iPAQ hw6940
+iPAQ rw6815
+iPAQ Voice Messenger
+Pre 3
+Veer
+A1000
+A2010
+A208t
+A269i
+A278t
+A316
+A316i
+A319
+A319i
+A328
+A3600D
+A369i
+A376
+A3800D
+A390
+A396
+A399
+A5000
+A516
+A526
+A529
+A536
+A560
+A5800D
+A590
+A6000
+A6010
+A606
+A616
+A630
+A639
+A656
+A66
+A660
+A670T
+A680
+A688T
+A690
+A7000
+A7010
+A750
+A760
+A766
+A768T
+A780
+A789
+A806
+A808t
+A816
+A820
+A830
+A850
+A850+
+A858T
+A859
+A880
+A889
+A916
+A936
+A936 Note 8
+ET960
+ET980
+IdeaPhone A706
+IdeaPhone A800
+IdeaPhone K860
+IdeaPhone P770
+IdeaPhone S560
+IdeaPhone S720
+IdeaPhone S890
+IdeaPhone S920
+K3 Note/K50-T5
+K80M
+K900
+K900
+P70
+P70-A
+P70-T
+P70-T
+P700
+P700i
+P780
+P780
+P90
+Phab
+Phab Plus
+S580
+S60
+S650
+S660
+S696
+S750
+S8 A7600
+S820
+S820
+S820e
+S850
+S856
+S860
+S880
+S898T
+S898T+
+S930
+S939
+Sisley S90 1
+Sisley S90 2
+Sisley S90-A
+Vibe P1
+Vibe P1 Pro P1c72
+Vibe P1m
+Vibe S1
+Vibe Shot Z90-3
+Vibe Shot Z90-7
+Vibe Shot Z90-A40
+Vibe X S960
+Vibe X2
+Vibe X2 Pro
+Vibe X3
+Vibe Z
+Vibe Z Dual
+Vibe Z2 K920 mini
+Vibe Z2 Pro K920
+ZUK Z1
+U9200 Ascend P1
+U9500 Ascend D1
+Y360
+Y6 SCL-L01
+A100
+A120
+A130
+A155
+A160
+A175
+A190
+A190 Duos
+A230
+A258
+A290
+A390
+A399
+A7150
+AKA H788N
+B1200
+B1300
+B2000
+B2070
+B2100
+B2150
+B2250
+BL20 New Chocolate
+BL20E
+BL40
+C1100
+C1150
+C1400
+C2100
+C2200
+C2500
+C310 Duos
+C3320
+C3380
+C3400
+C360
+C3600
+C800W
+C900 QUANTUM
+C960
+Class H650E
+CU500
+CU720
+E400 Optimus L3
+E510 Optimus Hub
+E720 Optimus Chic
+E730 Optimus Sol
+E900 Optimus 7
+E906 Jil Sander
+F1200
+F2100
+F2200
+F2300
+F2400
+F2410
+F3000
+F70 D315
+F7200
+G Flex 2 16GB
+G Flex 2 32GB
+G Flex D958
+G Pro 2 D838
+G Pro 2 D838
+G Pro Lite Dual D686
+G1500
+G1600
+G1610
+Alfa
+Alpha
+Amber
+Amulet
+Apollo
+Art
+Beta
+Chance
+Choice
+Crystal
+Delta
+Delta 2
+Dream
+Effect
+Ellips
+Fire
+Fire 2
+Flame
+Flora
+Helios
+Hemera
+Liberty
+Libra
+Libra 2
+Moon
+Norma
+Norma 2
+Omega
+Orion
+Rock
+S10
+Sigma
+Sky
+Smart
+Solo
+Soul
+Star
+Step
+Storm
+Sun
+T34
+Teta
+Teta 2
+Zeta
+G2 512Mb Ram
+G2F
+G2S
+G3C
+G3S
+G4C
+G4S
+G5 Advanced Edition
+G5 Standart Edition
+G5S
+S2 Advanced
+S2 Basic
+S3 Advanced
+S3 Basic
+A9+
+Discovery V8
+Discovery V9
+GT X8
+V5+
+V6+
+i3000
+i4000HD
+i6000
+i6000
+i7000
+i8000
+V3 Plus
+V3C
+H1+
+H6 S931
+X7 Elite
+X7 HD
+X7 Plus
+X7 Turbo
+X8 mini
+One X600
+One X600
+V12
+BRICK
+CP09
+CP10
+CP10 BestInSpace
+CP10S
+CP11
+Space
+Spacer
+SURF
+GX-100C
+GX-209C
+GX-218C
+GX-230C
+H-MP318
+H-MP510
+H-MP520
+H-MP700
+H-MP718
+H-MP728
+H-MP738
+H-MP800
+HGC-600E
+HX-510B
+Q120
+W100
+JAM
+JAMA
+JAMA 101
+JAMA 201
+JAMin
+JAQ
+JAQ3
+JASJAM
+JASJAR
+K-JAM
+PDA2k
+Pocket PC Phone Edition
+SmartFlip
+Smartphone
+Smartphone 2
+SP3
+SP3i
+SP4m
+SP5
+SP5m
+SPJAS
+Ultimate 5150
+Ultimate 6150
+Ultimate 7150
+Ultimate 8150
+Ultimate 8502
+Ultimate 9150
+Ultimate 9502
+CALLISTO 100 NT-1501T
+NetTAB Mercury Duo NT-3502M
+NetTAB MERCURY LX
+NETTAB MERCURY Q4 NT-3509M
+NETTAB MERCURY Q5 NT-3510M
+NetTAB Mercury Q7 NT-3602M
+NETTAB MERCURY QUAD NT-3507M
+NETTAB MERCURY QUAD FHD NT-3506M
+NETTAB MERCURY S NT-3508M
+NetTAB Mercury X
+NETTAB MERCURY XL
+INNO 100
+INNO 110
+INNO 120
+INNO 30
+INNO 36
+INNO 50
+INNO 55
+INNO 70
+INNO 78
+INNO 79
+INNO 80
+INNO 89
+INNO 90
+INNO 99
+INNO-A10
+INNO-A20
+INNO-P10
+iRu M4301
+iRu M5301
+iRu Q501
+2 CITY
+LM-121b
+LM-801
+LM-801b
+Telecom L-100
+Telecom L-210
+KS606+
+KS8000
+KS808
+LION
+S9 Titanium
+E210
+E320
+E98
+K1 Turbo
+KC101
+Intellekt iQ200
+Intellekt iQ700
+Candid KX16
+Clik KX20
+Dorado KX13
+E2500
+E3500
+E4600
+KE301
+KE424C
+Koi
+S1600
+SE-47
+Slider Remix KX5
+Strobe
+Topaz KX7
+W41K
+Zio M6000
+LPH1 Mini
+S4A1 Vega
+S4A2 Irida
+S4A3 Pallada
+S5A1 Callisto
+S5A2 Oberon
+S5A3 Capella
+S6A1 Antares
+G1800
+G2 D802
+G2 D802
+G2 mini D618
+G2 mini D620
+G3 Beat D722K
+G3 D855
+G3 D855
+G3 Dual D858
+G3 Dual D858
+G3 Stylus D690
+G3100
+G360
+G3S D722
+G3S D724
+G4 Beat H735T
+G4 Dual H818
+G4 H815
+G4 Stylus H540F
+G4 Stylus H635
+G4c H522Y
+G4c H525N
+G4S H736
+G5 H830
+G5220
+G5310
+G5400
+G5450
+G5500
+G5600
+G7000
+G7020
+G7030
+G7050
+G7070
+G7100
+G7120
+G8000
+G832
+GB102
+GB106
+GB109
+GB110
+GB125
+GB130
+GB160
+GB170
+GB190
+GB210
+GB220
+GB230
+GB280
+GC900
+GD330
+GD350
+GD510
+GD550 Pure
+GD580
+GD880 Mini
+GD900
+GD910
+GM200
+GM205
+GM210
+GM310
+GM360
+GM360i Viewty Snap
+GM730
+GM750
+GS101
+GS106
+GS107
+GS155
+GS200
+GS205
+GS290
+GS500 Cookie Plus
+GT400 Viewty Smile
+GT405
+GT405 Viewty GT
+GT500 Puccini
+GT505
+GT540 Optimus
+GU230
+GU280
+GW300
+GW520
+GW620
+GX200
+GX300
+GX500
+HB620T
+K10 K410
+K10 LTE K430ds
+K4 K130E
+K8000
+KB770
+KC550
+KC560
+KC780
+KC910
+KC910i
+KE260
+KE500
+KE590
+KE600
+KE770 Shine
+KE800
+KE850 Prada
+KE850 Prada Silver
+KE970 Shine
+KE990
+KF240
+KF245
+KF300
+KF301
+KF305
+KF310
+KF350
+KF510
+KF600
+KF690
+KF700
+KF750
+KF755
+KF900 Prada II
+KG110
+KG118
+KG120
+KG130
+KG190
+KG195
+KG200
+KG210
+KG220
+KG225
+KG240
+KG245
+KG270
+KG276
+KG280
+KG288
+KG290
+KG291
+KG296
+KG300
+KG320
+KG338
+KG370
+KG376
+KG800
+KG810
+KG920
+KG99
+KM330
+KM380
+KM500
+KM555E Clubby
+KM570
+KM710
+KM900
+KP100
+KP105
+KP107
+KP108
+KP110
+KP130
+KP152
+KP199
+KP200
+KP210
+KP215
+KP220
+KP235
+KP260
+KP265
+KP320
+KP500
+KP501
+KP502
+KP502 Cookie
+KS10
+KS20
+KS360
+KS365
+KS500
+KS660
+KT520
+KT770
+KU250
+KU580
+KU800
+KU950
+KU970 Shine
+KU990
+KV6000
+L Bello D331
+L Bello D335
+L Fino D290n
+L Fino D295
+L1100
+L342i
+L35
+L40 D170
+L60 X145
+L65 D280
+L65 D285
+L70 D320
+L70 D325
+L80 D380
+L90 D405
+L90 D410
+Leon H324
+Leon H340
+LHD-200
+LP3550
+M4410
+M6100
+Magna H500
+Magna H502
+Magna H502F
+MG230
+MM535
+Nexus 4
+Nexus 4
+Nexus 5
+Nexus 5
+Nexus 5X
+Nexus 5X
+Optimus 3D Max
+Optimus 4X HD
+Optimus F5 4G LTE P875
+Optimus F7 LTE
+Optimus G
+Optimus G Pro E985
+Optimus G Pro E985
+Optimus G Pro E986
+Optimus G Pro E988
+Optimus GJ E975W
+Optimus L1 II Dual E420
+Optimus L1 II E410
+Optimus L3
+Optimus L3 Dual E405
+Optimus L3 II Dual E435
+Optimus L3 II E425
+Optimus L3 II E430
+Optimus L4 II Dual E445
+Optimus L4 II E440
+Optimus L5
+Optimus L5 Dual E615
+Optimus L5 II Dual E455
+Optimus L5 II E450
+Optimus L5 II E460
+Optimus L7 II Dual P715
+Optimus L7 II P710
+Optimus L7 II P713
+Optimus L7 P700
+Optimus L7 P705
+Optimus L9 II D605
+Optimus L9 P760
+Optimus L9 P765
+Optimus L9 P768
+Optimus One P500
+Optimus Pro C660
+Optimus True HD LTE P936
+P350 Optimus Me
+P520
+P690 Optimus Link/Net
+P692 Optimus Net
+P698 Optimus Link/Net Dual Sim
+P7200
+P895 Optimus Vu
+P920 Optimus 3D
+P930 Nitro HD
+P970 Optimus Black
+P990 Optimus 2X
+PM225
+PRADA 3.0 P940
+Reveal
+S1000
+S310
+S3500
+S367
+S5000
+S5100
+S5200
+S5300
+SB120
+Spirit H422
+Spirit H440N
+SV360
+SV590
+T300
+T310
+T310i
+T315i
+T320
+T370
+T375
+T385
+T500
+T510
+T510 Duos
+T5100
+T515
+TU550
+U300
+U310
+U830
+U8380
+U8500
+U8550
+U880
+V10
+V10
+VI125
+VX3300
+VX5200
+VX6000
+VX8000
+VX8100
+VX8500
+VX9800
+W3000
+W5200
+W5210
+W5300
+W7000
+W7020
+M1 mini
+M1 Note
+M1 Note
+M1 Note
+M2 mini
+M2 Note
+M2 Note
+Metal
+Metal
+MX 2-core
+MX 4-core
+MX 4-core
+MX2
+MX2
+MX2
+MX3
+MX3
+MX3
+MX3
+MX4
+MX4
+MX4 Pro
+MX4 Pro
+MX4 Pro
+MX5
+MX5
+MX5
+Pro 5
+Pro 5
+Lumia 430 Dual SIM
+Lumia 435
+Lumia 435 Dual SIM
+Lumia 532 Dual SIM
+Lumia 535
+Lumia 535 Dual SIM
+Lumia 540 Dual SIM
+A091 Canvas Engage
+A092 Canvas Quad
+A093 Canvas Fire
+A104 Canvas Fire 2
+A106 Canvas Viva
+A107 Canvas Fire 3
+A111 Canvas Doodle
+A114 Canvas 2.2
+A114R Canvas Beat
+A118R Canvas Tube
+A121 Canvas Elanza 2
+A190 Canvas HD plus
+A200 Canvas Turbo Mini
+A250 Canvas Turbo
+A28 Bolt
+A290 Canvas Knight Cameo
+A350 Canvas Knight
+A36 Bolt
+A59 Bolt
+A79 Bolt
+A82 Bolt
+A94 Canvas Social
+A94 Mad
+AQ5001 Canvas Power
+D200
+D305 Bolt
+D320 Bolt
+D340
+E313
+Q324
+Q334 Canvas Spark 2
+Q335 Bold
+Q338
+Q379
+Q380 Canvas Spark
+Q391 Canvas Spark 2
+Q392 Canvas Juice 3
+S302 Bolt
+X081
+X088
+X098
+X1800
+X1850
+X2050
+X2400
+X2401
+X2411
+X2420
+X245
+X249
+X267
+X281
+X2814
+X2820
+X337
+X352
+X401
+X502
+X556
+X649
+X700
+C-1
+C-10
+C-11
+C-2
+C-3
+C-4
+C-5
+C-6
+C-7
+J-1
+J-2
+J-3
+J-8
+K-1
+K-10
+K-2
+K-3
+K-5
+K-6
+K-7
+M-1
+M-2
+M-3
+M10
+M11
+P10
+X-1
+X300
+X500
+X800
+X850
+Zug 3
+Zug 5S
+Zug S
+MM131
+MM430BB
+MM450
+MM450BB
+MM450BB Plus
+MM460
+MM470
+MM470BB
+MM705
+MM710
+Charme i300
+Columb W700
+M100
+M200
+M800
+S700
+S800
+THL W1
+W650i
+W660
+W710 Socrat
+W800
+UBIQ-5000G
+MX-5010
+MX-6881
+MX-6890
+MX-7830
+MX-7920
+MX-7922
+MX-7931
+MX-7941
+MX-7970
+MX-C90
+IMPERIUS AERO SLIM
+Lumia 550
+Lumia 550 Dual SIM
+Lumia 640 Dual SIM
+Lumia 640 LTE
+Lumia 640 LTE Dual SIM
+Lumia 640 XL
+Lumia 640 XL Dual SIM
+Lumia 640 XL LTE Dual SIM
+Lumia 650
+Lumia 650 Dual SIM
+Lumia 950
+Lumia 950 Dual SIM
+Lumia 950 XL
+Lumia 950 XL Dual SIM
+A1000
+A1010
+A1200
+A1210
+A1600
+A1680
+A6188
+A630
+A668
+A728
+A732
+A760
+A768
+A780
+A810
+A820
+A840
+A845
+A860
+A910
+A920
+A925
+Accompli 008
+Atrix 2
+Atrix 4G
+Aura
+Aura Diamond Edition
+BACKFLIP
+BRAVO
+C113
+C113A
+C115
+C116
+C117
+C118
+C121
+C123
+C139
+C155
+C156
+C157
+C168
+C200
+C202
+C205
+C250
+C257
+C261
+C290
+C300
+C330
+C332
+C333
+C343
+C350
+C380
+C381p
+C390
+C450
+C460
+C520
+C550
+C650
+C698p
+C975
+CD160
+CD920
+CD930
+Charm
+CLIQ 2
+D160
+D460
+D520
+Defy
+Defy Mini
+Defy XT XT535
+Defy+
+DEVOUR
+Dext
+Droid
+DROID Pro
+DROID Pro+
+Droid RAZR
+Droid RAZR HD
+Droid RAZR MAXX
+Droid RAZR MAXX HD
+Droid Ultra
+Droid X
+E1000
+E1060
+E1070
+E1120
+E360
+E365
+E378i
+E380
+E390
+E398
+E550
+E680
+E770
+E815
+E895
+Electrify M
+EM330
+Evoke QA4
+EX112
+EX115
+EX128
+EX300
+Fire
+Fire XT
+Flipout
+Flipside
+Gleam
+GLEAM+
+Grasp
+Hint QA30
+i776w
+International 8900
+JEWEL U9
+Karma QA1
+Krave ZN4
+KRZR K1
+KRZR K1m
+KRZR K3
+L800t
+M1000
+M3188
+M3288
+M3588
+M3688
+M3788
+M3888
+M6088
+MC75
+Milestone
+Milestone 2
+Milestone XT720
+Moto E 2nd Gen. XT1521
+Moto E XT1021
+Moto G 2n Gen Dual SIM
+Moto G 3rd Gen.
+Moto G 3rd Gen.
+Moto G
+Moto G
+Moto G Dual SIM
+Moto G Dual SIM
+MOTO Q 9h
+Moto X 2nd Gen.
+Moto X
+Moto X
+MOTOACTV W450
+Motofone F3
+MOTOLUXE
+MOTOMING A1200E
+MOTOSURF A3100
+MotoZine ZN5
+MPx
+MPx100
+MPx200
+MPx220
+MS150I
+MS250
+MS280
+MS300
+MS400
+MS500
+MS550
+MS800
+Nexus 6
+Nexus 6
+P250
+PEBL U3
+PEBL U6
+PEBL U9
+Photon 4G
+Q q9h
+Quench
+RAZR
+Razr HD
+RAZR i
+Razr M
+RAZR MAXX
+RAZR MAXX V6
+RAZR MAXX V6 FERRARI
+RAZR maxx Ve
+RAZR V3
+RAZR V3c
+RAZR V3i
+RAZR V3i DG
+RAZR V3m
+RAZR V3x
+RAZR V3xx
+RAZR Z
+RAZR2 V8
+RAZR2 V8 512Mb
+RAZR2 V8 Luxury Edition
+RAZR2 V9
+RAZR2 V9m
+RIZR Z10
+RIZR Z3
+RIZR Z8
+ROKR DUO Z6
+ROKR E1
+ROKR E2
+ROKR E3
+ROKR E6
+ROKR E8
+ROKR EM25
+ROKR EM28
+ROKR EM30
+ROKR EM325
+ROKR EM35
+ROKR W6
+ROKR Z6
+ROKR Z6m
+Slimlite
+SLVR L2
+SLVR L6
+SLVR L7
+SLVR L7e
+SLVR L9
+ST7860
+StarTAC 130
+StarTAC 70
+StarTAC 85
+T720
+T720i
+T722i
+Talkabout 180
+Talkabout 189
+Talkabout 190
+Talkabout 191
+Talkabout 192
+Talkabout 205
+Talkabout 360
+Talkabout T2288
+Timeport 250
+Timeport 260
+Timeport 280
+Timeport i2000
+Timeport L7089
+Timeport L7189
+Timeport P1088
+Timeport P7389
+V100
+V1000
+V1050
+V1100
+V150
+V171
+v176
+v177
+V180
+V191
+V195
+V2088
+V220
+V226
+V2282
+V2288
+V235
+V265
+v270 SLVRlite
+v280 SLVRcam
+V300
+V360
+V367
+V3688
+V3690
+V400
+V50
+V500
+V525
+V535
+V545
+V547
+V550
+V555
+V557
+V560
+V60
+V600
+V60i
+V620
+V635
+V66
+V66i
+V690
+V70
+V710
+V750
+V80
+V8088
+V810
+V8160
+V872
+V878
+V975
+V980
+VE538
+VE66
+VE75
+W156
+W160
+W170
+W175
+W180
+W181
+W200
+W205
+W206
+W208
+W210
+W213
+W218
+W220
+W230
+W233 Renew
+W270
+W315
+W355
+W360
+W375
+W377
+W380
+W385
+W388
+W395
+W396
+W510
+W7 Active Edition
+Wilder
+WX160
+WX161
+WX180
+WX280
+WX288
+WX290
+WX295
+WX390
+WX395
+XT5 Quench
+XT532
+XT701
+ZN200
+ZN300
+1030 Grander
+1045
+1060 Grand
+1065 Spectrum
+1082 Elegant
+3370 Sweet
+6680 Share
+8815TV FOXY
+Infinity 3G
+Next-S
+S-line
+K2S
+Mio 728
+Mio 8380
+Mio A501
+Mio A502
+Mio A700
+Mio A701
+Mio A702
+Mio Explora K70
+Mio Leap G50
+Electric Trium 110
+Electric Trium Aria
+Electric Trium Astral
+Electric Trium Cosmo
+Electric Trium Eclipse
+Electric Trium FX
+Electric Trium Galaxy
+Electric Trium Geo
+Electric Trium Laser
+Electric Trium M21I
+Electric Trium M320
+Electric Trium M760
+Electric Trium M800
+Electric Trium M900
+Electric Trium Mars
+Electric Trium Mondo
+Electric Trium Neptune
+Electric Trium Sirius
+Electric Trium SX
+105 Damascus
+Classic 712 Stealth LE
+Classic 712EM
+Classic 712GCB
+Classic 712ZAF
+Grand 350 Pioneer
+Grand Touch
+Grand Touch GCB
+Lucido
+Luminoso
+Professional
+Professional 105 ZAF
+Professional 105EM
+Professional 105GCB
+Professional 105GMT Antique
+Professional 105GMT Gold
+Professional 105GMT Stealth
+Professional 105GMT White
+Professional CAMO
+Professional EM
+Professional EM LE
+Stealth
+Extreme
+DB2000
+DB4000
+DB4100
+DB500
+DB7000
+DigitalTalk NEX 2600
+E101
+E1101
+E121
+E122
+E228
+E242
+E313
+E353
+E373
+E540
+E606
+E616
+E636
+E949
+G10
+N200
+N223i
+n22i
+n341i
+n343i
+N344i
+n411i
+N412i
+N500
+N500i
+N500is
+N511i
+N600i
+N620
+N630
+N650i
+N710
+N728
+N730
+N820
+N830
+N840
+N850
+N900
+N908
+N910
+N917
+N920
+N923
+N930
+N938
+N940
+TalkTime MAX 920
+S330
+S340
+S410
+S4105MD
+101
+105
+105 Dual Sim
+106
+107
+108
+108 Dual sim
+1110i
+112
+113
+1209
+1280
+130 Dual SIM
+1616
+1661
+1680 Classic
+1800
+206
+206 Dual Sim
+208
+2110i
+2115i
+215 Dual SIM
+220
+220 Dual SIM
+222
+222 Dual SIM
+2220 slide
+225
+225 Dual SIM
+230
+230 Dual SIM
+2323 Classic
+2330 Classic
+2600 Classic
+2605 Mirage
+2630
+2680 Slide
+2690
+2700 Classic
+2705 Shade
+2710 Navigation Edition
+2720 Fold
+2730 Classic
+301
+301 Dual Sim
+3109 Classic
+3110 Classic
+3110 Evolve
+3120 Classic
+3250 XpressMusic
+3500 Classic
+3510i
+3585i
+3586i
+3600 Slide
+3610 Fold
+3710 Fold
+3720 Classic
+500
+5130 XpressMusic
+5140i
+515
+515 Dual Sim
+5200
+5220 XpressMusic
+5228
+5230 Navigation Edition
+5233
+5250
+5300 XpressMusic
+5310 XpressMusic
+5320 XpressMusic
+5330 Mobile TV Edition
+5330 XpressMusic
+5500 Sport
+5500 Sport Music Edition
+5530 XpressMusic
+5610 XpressMusic
+5630 XpressMusic
+5700 XpressMusic
+5730 XpressMusic
+5800 Navigation Edition
+5800 XpressMusic
+603
+6080
+6102i
+6110 Navigator
+6120 Classic
+6121 Classic
+6124 Classic
+6208 Classic
+6210 Navigator
+6212 Classic
+6216 Classic
+6220 Classic
+6230i
+6260 Slide
+6300i
+6303 Classic
+6303 Classic Betty Barclay Edition
+6303i Сlassic
+6310i
+6500 Classic
+6500 Slide
+6555
+6600 Fold
+6600 Slide
+6600i Slide
+6610i
+6650 T-mobile
+6700 Classic
+6700 classic Gold Edition
+6700 classic Illuvial
+6700 Slide
+6710 Navigator
+6720 Classic
+6730 Classic
+6760 Slide
+700
+7070 Prism
+7100 Supernova
+7205 Intrigue
+7210 Supernova
+7250i
+7310 Supernova
+7373 Special Edition
+7390
+7500 Prism
+7510 Supernova
+7610 Black Blue Dictionary
+7610 Supernova
+7900 Crystal Prism
+7900 Prism
+808 PureView
+8600 Luna
+8800 Arte
+8800 Carbon Arte
+8800 Diamond Arte
+8800 Gold Arte
+8800 Sapphire Arte
+8800 Sirocco Edition
+8800 Sirocco Gold
+8910i
+9300i
+Asha 200
+Asha 201
+Asha 202
+Asha 203
+Asha 205
+Asha 205 Dual Sim
+Asha 210
+Asha 210 Dual sim
+Asha 230 Dual SIM
+Asha 300
+Asha 302
+Asha 303
+Asha 305
+Asha 306
+Asha 308
+Asha 308 Charme
+Asha 309
+Asha 309 Charme
+Asha 310
+Asha 311
+Asha 311 Charme
+Asha 500
+Asha 500 Dual Sim
+Asha 501
+Asha 501 Dual Sim
+Asha 502 Dual SIM
+Asha 503
+Asha 503 Dual Sim
+C1-00
+C1-01
+C1-02
+C2-00
+C2-01
+C2-02
+C2-03
+C2-05
+C2-06
+C3-01 Gold Edition
+C3-01 Touch and Type
+C3-01.5
+C5-00
+C5-00 5MP
+C5-03
+C5-05
+C5-06
+C6-00
+C6-01
+C7-00
+E50 with camera
+E50 without camera
+E51
+E51 without camera
+E52
+E52 Navigation Edition
+E55
+E60
+E61
+E61i
+E62
+E63
+E65
+E66
+E70
+E71
+E71x
+E72
+E73
+E75
+E90
+Lumia
+Lumia 1020
+Lumia 1320
+Lumia 1520
+Lumia 510
+Lumia 520
+Lumia 525
+Lumia 530
+Lumia 530 Dual SIM
+Lumia 610
+Lumia 610 NFC
+Lumia 620
+Lumia 625
+Lumia 630
+Lumia 630 Dual SIM
+Lumia 635
+Lumia 636
+Lumia 710
+Lumia 720
+Lumia 730 Dual SIM
+Lumia 735
+Lumia 800
+Lumia 820
+Lumia 830
+Lumia 900
+Lumia 920
+Lumia 925
+Lumia 925
+Lumia 928
+Lumia 930
+N-Gage
+N-Gage QD
+N70
+N70 Game Edition
+N70 Lingvo Edition
+N70 Music Edition
+N71
+N72
+N73
+N73 Music Edition
+N75
+N76
+N77
+N78
+N79
+N79 Active
+N79 Eco
+N80
+N80 Internet Edition
+N81
+N81
+N82
+N85
+N86 8MP
+N90
+N900
+N91
+N91
+N92
+N93
+N93i
+N95
+N95
+N96
+N97
+N97 mini
+N97 mini Gold Edition
+Oro
+X Dual SIM
+X+ Dual SIM
+X1-00
+X1-01
+X2 Dual SIM
+X2-00
+X2-01
+X2-02
+X2-05
+X3-02 Touch and Type
+X3-02.5
+X5-01
+X6 Navigation Edition
+XL Dual SIM
+Cocoon
+Graphite
+Ice
+Jet
+Xda Argon
+XDA Atom
+XDA Atom Exec
+Xda Comet
+Xda Cosmo
+XDA Flame
+XDA II mini
+XDA IIi
+XDA mini S
+XDA NEO
+XDA Nova
+Xda orbit
+Az@lis 238
+Diga
+E100
+E102
+E120
+E1500
+E160
+E210
+E320
+F533
+Fisio 120
+Fisio 311
+Fisio 620
+Fisio 625
+Fisio 820
+Fisio 822
+Fisio 825
+Fizz
+Genie
+Genie 2000
+Genie 838
+Genie DB
+Genie Sport
+I908
+I928
+M200
+M600
+Ozeo
+Ozeo 8@8
+S200
+S220
+S307
+S308
+S309
+S337
+S388
+S396
+S398
+S616
+S660
+S800
+S880
+S890
+S900
+Savvy
+Spark
+TWIST
+W3500
+W536
+W626
+W7555
+X2300
+X332
+Xenium
+Xenium 289
+Xenium 9@9
+Xenium 9@9 ++
+Xenium 9@98
+Xenium 9@9a
+Xenium 9@9c
+Xenium 9@9d
+Xenium 9@9e
+Xenium 9@9f
+Xenium 9@9g
+Xenium 9@9h
+Xenium 9@9i
+Xenium 9@9k
+Xenium 9@9q
+Xenium 9@9r
+Xenium 9@9s
+Xenium 9@9t
+Xenium 9@9u
+Xenium 9@9v
+Xenium 9@9w
+Xenium 9@9z
+Xenium Champion X333
+Xenium E180
+Xenium E311
+Xenium E560
+Xenium F511
+Xenium K700
+Xenium V377
+Xenium V387
+Xenium V526
+Xenium V787
+Xenium V816
+Xenium W336
+Xenium W3568
+Xenium W632
+Xenium W6500
+Xenium W6610
+Xenium W6618
+Xenium W732
+Xenium W737
+Xenium W832
+Xenium W8500
+Xenium W8510
+Xenium W8555
+Xenium X100
+Xenium X116
+Xenium X125
+Xenium X126
+Xenium X128
+Xenium X130
+Xenium X1510
+Xenium X1560
+Xenium X216
+Xenium X2300
+Xenium X2301
+Xenium X312
+Xenium X325
+Xenium X331
+Xenium X500
+Xenium X501
+Xenium X503
+Xenium X513
+Xenium X518
+Xenium X519
+Xenium X520
+Xenium X525
+Xenium X530
+Xenium X550
+Xenium X5500
+Xenium X600
+Xenium X620
+Xenium X622
+Xenium X623
+Xenium X630
+Xenium X700
+Xenium X703
+Xenium X710
+Xenium X800
+Xenium X806
+Xenium X810
+Xenium X830
+Grace S5 LTE
+Grace X3
+Grace X5
+Grace X7
+MultiPhone 3350 DUO
+MultiPhone 3400 DUO
+MultiPhone 3404 DUO
+MultiPhone 3450 DUO
+MultiPhone 3451
+MultiPhone 3500 DUO
+MultiPhone 3501 DUO
+MultiPhone 3502 DUO
+MultiPhone 3540 DUO
+MultiPhone 4000 DUO
+MultiPhone 4020 DUO
+MultiPhone 4040 DUO
+MultiPhone 4044 DUO
+MultiPhone 4055 DUO
+MultiPhone 4300 DUO
+MultiPhone 4322 DUO
+MultiPhone 4500 DUO
+MultiPhone 4505 DUO
+MultiPhone 5000 DUO
+MultiPhone 5044 Duo
+MultiPhone 5300 DUO
+MultiPhone 5307 DUO
+MultiPhone 5400 DUO
+MultiPhone 5430
+MultiPhone 5450 DUO
+MultiPhone 5451 DUO
+MultiPhone 5453 DUO
+MultiPhone 5455 DUO
+MultiPhone 5500 DUO
+MultiPhone 5501
+MultiPhone 5503 DUO
+MultiPhone 5504 DUO
+MultiPhone 5505 DUO
+MultiPhone 5507 DUO
+MultiPhone 5508 DUO
+MultiPhone 5517 DUO
+MultiPhone 5550 DUO
+MultiPhone 7500
+MultiPhone 7500
+MultiPhone 7557
+MultiPhone 7600 DUO
+MultiPhone 8400 DUO
+MultiPhone 8500 DUO
+Muze A3 3452 DUO
+Muze C3 3504 DUO
+Muze D3 3530 DUO
+Wize A3 3453 DUO
+Wize C3 3503 DUO
+Wize F3 3457 DUO
+One
+One
+CardPhone
+Push 180 Dual
+Push 181 Dual
+Push 183 Dual
+Push 184
+Push 185
+Push 231
+Push 242 Dual
+Push 244 Dual Slim
+Push 245
+Push 250 Dual
+Push 280 Dual
+Push Defender
+Push Mini
+Quest
+Quest 320
+Quest 400
+Quest 404
+Quest 406
+Quest 408
+Quest 450
+Quest 453
+Quest 454
+Quest 455
+Quest 458
+Quest 500
+Quest 504
+Quest 507
+Quest 530
+Quest 570
+Quest 574
+Quest 600
+Quest 601
+Quest Defender
+Arctic 200
+Atlantic 454
+Atlantic 600
+Indian 254
+Indian 400
+Irkutsk
+Kursk
+Lipetsk
+Omsk
+Pacific 454
+Pacific 800
+Saratov
+Sochi
+Ufa
+LMV9
+Clover R815
+Find 5
+Find 5
+Find 7
+Find 7a
+Finder X907
+Mirror R819
+Muse R821
+RMP-390
+RMP-391
+RMP-400
+RMP-405
+RMP-450
+RMP-451
+RMP-470
+RMP-471
+RMP-500
+RMP-520
+RMP-530
+RMP-600
+BD351G
+XDA Stealth
+Xda Terra
+Xda Zinc
+Care-Phone 1
+Care-Phone 2
+Care-Phone 3
+Care-Phone 4
+S-450
+S-570
+g735
+n725
+n725 Basic
+n725 GPS
+p745
+Pixi
+Pre
+Pre CDMA
+Treo 180
+Treo 180G
+Treo 270
+Treo 500
+Treo 600
+Treo 650
+Treo 680
+Treo 750
+Treo Pro
+Tungsten W
+A100
+A101
+A102
+A200
+A500
+Eluga
+Eluga Power
+Eluga U
+G250
+G450
+G50
+G500
+G51
+G520
+G60
+G600
+G70
+GD30
+GD35
+GD50
+GD52
+GD55
+GD60
+GD67
+GD68
+GD70
+GD75
+GD87
+GD88
+GD90
+GD92
+GD93
+GD95
+GD96
+KX-TU301
+MX6
+MX7
+P11
+P31
+P41
+P51
+P61
+P81
+SA6
+SA7
+T11
+T21
+T31
+Toughbook 01
+VS2
+VS3
+VS6
+VS7
+X100
+X11
+X200
+X300
+X400
+X500
+X60
+X66
+X68
+X70
+X700
+X800
+Z800
+Pantech A100
+Pantech G200
+Pantech G300
+Pantech G310
+Pantech G400
+Pantech G500
+Pantech G510
+Pantech G600
+Pantech G650
+Pantech G670
+Pantech G700
+Pantech G800
+Pantech G900
+Pantech GB100
+Pantech GB200
+Pantech GB210
+Pantech GB300
+Pantech GB310
+Pantech GF100
+Pantech GF200
+Pantech GF260
+Pantech GF500
+Pantech GI100
+Pantech HX-510B
+Pantech HX-525B
+Pantech HX-550C
+Pantech HX-570B
+Pantech HX-575
+Pantech PG 3000
+Pantech PG-1000s
+Pantech PG-1200
+Pantech PG-1400
+Pantech PG-1405
+Pantech PG-1500
+Pantech PG-1600
+Pantech PG-1800
+Pantech PG-1900
+Pantech PG-2800
+Pantech PG-3200
+Pantech PG-3300
+Pantech PG-3500
+Pantech PG-3600
+Pantech PG-3600v
+Pantech PG-3700
+Pantech PG-3900
+Pantech PG-6100
+Pantech PG-6200
+Pantech PG-8000
+Pantech PH-K2500V
+Pantech PH-L4000V
+Pantech PR-600
+Pantech PT-K2100
+Pantech PT-S100
+Pantech PU-5000
+Pantech Q80
+Pantech S100
+Pantech U-4000
+509-HD
+Cayenne
+P9521
+P9522
+C120
+2020i
+S100
+S110
+S200
+S300
+G20
+S15
+13-19'teen
+RT-550
+GM2191
+GM822
+GM940
+Evo V7
+Evo X8
+Indigo
+MID
+A767 Propel
+A867 Eternity
+A890
+Ativ S GT-I8750
+B2100
+B2700
+B3210
+B3310
+B3410
+B520
+B5310 CorbyPRO
+B5330 Galaxy Chat
+B5702 DuoS
+B5722 DuoS
+B7610 OmniaPRO
+B7722 DuoS
+B7722i DuoS
+C260
+C270
+C3010
+C3011
+C3050
+C3053
+C3060R
+C3110
+C3212 DuoS
+C3222 DuoS
+C3300 Champ
+C3300 Libre
+C3303 Champ Camera
+C3310
+C3312 Duos
+C3322 DuoS
+C3322 DuoS La Fleur
+C3330 Champ 2
+C3332
+C3350
+C3500
+C3510
+C3520
+C3520 La Fleur
+C3530
+C3530 La Fleur
+C3560
+C3592
+C3630
+C3750
+C3752 DuoS
+C3782
+C5010 Squash
+C520
+C5212 DuoS
+C5510
+C6112 DuoS
+C6620
+C6625
+Ch@t 333 GT-S3332
+Champ Neo Duos C3262
+Comet I
+Core Prime VE G361H
+D780 DuoS
+D780 DuoS Gold Edition
+D880 DuoS
+D900
+D900i
+D980 DuoS
+E1050
+E1070
+E1080
+E1081T
+E1085
+E1100
+E1107
+E1110
+E1117
+E1120
+E1125
+E1150
+E1170
+E1172
+E1175T
+E1182 DuoS
+E1195
+E1200
+E1200R
+E1202
+E1210
+E1225 DuoS
+E1230
+E1232
+E1232D
+E1252 DuoS
+E1272
+E1282
+E1310
+E1310M
+E1360
+E1360M
+E1410
+E200
+E200 Eco
+E2100
+E2120
+E2121B
+E2152 DuoS
+E2202
+E2210
+E2222 DuoS
+E2230
+E2232 DuoS
+E2250
+E2252 Metro
+E2330
+E2350
+E2370
+E250
+E2510
+E2530
+E2530 La Fleur
+E2600
+E2652 Champ DuoS
+E2652W Champ DuoS
+E3210
+E390
+E500 Versus
+E500C Versus
+E740
+E840
+E888
+Essense
+F110 Adidas miCoach
+F210
+F300
+F310
+F330
+F400
+F480
+F480 Games Edition
+F480 Hugo Boss
+F480 La Fleur
+F490
+F700
+G600
+G800
+galaxy
+galaxy s3
+Galaxy 580 GT-I5800
+Galaxy A3 Duos SM-A300F/DS
+Galaxy A3 Duos SM-A300H/DS
+Galaxy A3 SM-A300FU
+Galaxy A3 SM-A300H
+Galaxy A3 SM-A310F
+Galaxy A5 Duos SM-A500F/DS
+Galaxy A5 Duos SM-A500H/DS
+Galaxy A5 SM-A500F
+Galaxy A5 SM-A500H
+Galaxy A5 SM-A510F/DS
+Galaxy A7 Duos SM-A700F/DS
+Galaxy A7 Duos SM-A700H/DS
+Galaxy A7 Duos SM-A700Y/DS
+Galaxy A7 SM-A700F
+Galaxy A7 SM-A710F/DS
+Galaxy A8 Duos SM-A800FD
+Galaxy A8 SM-A800F
+Galaxy A9 SM-A9000
+Galaxy Ace 3 GT-S7270
+Galaxy Ace 3 GT-S7272
+Galaxy Ace 3 LTE GT-S7275
+Galaxy Ace 4 Lite Duos SM-G313H/DS
+Galaxy Ace 4 Lite Duos SM-G313HU/DS
+Galaxy Ace 4 Lite SM-G313H
+Galaxy Ace 4 Neo Duos SM-G318H/DS
+Galaxy Ace 4 Neo SM-G318H
+Galaxy Ace Duos GT-S6802
+Galaxy Ace GT-S5830
+Galaxy Ace II GT-I8160
+Galaxy Ace II x GT-S7560M
+Galaxy Ace La Fleur GT-S5830I
+Galaxy Ace Plus GT-S7500
+Galaxy Ace Style LTE SM-G357FZ
+Galaxy Alpha SM-G850F
+Galaxy Alpha SM-G850Y
+Galaxy Beam GT-I8530
+Galaxy Core 2 SM-G355HN
+Galaxy Core Advance GT-I8580
+Galaxy Core GT-I8260
+Galaxy Core GT-I8262
+Galaxy Core II SM-G355H
+Galaxy Core LaFleur GT-I8262
+Galaxy Core LTE SM-G386F
+Galaxy Core Plus SM-G350
+Galaxy Core Prime Duos SM-G360H/DS
+Galaxy Core Prime SM-G360H
+Galaxy E5 Duos SM-E500H/DS
+Galaxy E5 SM-E500F
+Galaxy E7 Duos SM-E700F/DS
+Galaxy E7 Duos SM-E700H/DS
+Galaxy E7 SM-E700F
+Galaxy Exhibit 4G SGH-T679
+Galaxy Express 2 SM-G3815
+Galaxy Express GT-I8730
+Galaxy Fame Duos GT-S6812
+Galaxy Fame GT-S6810
+Galaxy Fame Lite GT-S6790
+Galaxy Fame Lite LaFleur GT-S6790
+Galaxy Fit GT-S5670
+Galaxy Gio GT-S5660
+Galaxy Golden GT-I9235
+Galaxy Grand 2 SM-G7100
+Galaxy Grand 2 SM-G7102
+Galaxy Grand 2 SM-G7105
+Galaxy Grand GT-I9082
+Galaxy Grand I9080
+Galaxy Grand Neo GT-I9060
+Galaxy Grand Neo GT-I9060
+Galaxy Grand Neo Duos GT-I9060DS
+Galaxy Grand Neo Duos GT-I9060DS
+Galaxy Grand Neo Plus Duos GT-I9060L/DS
+Galaxy Grand Neo+ GT-I9082C
+Galaxy Grand Prime SM-G530FZ
+Galaxy Grand Prime SM-G530H
+Galaxy Grand Prime SM-G530Y
+Galaxy Grand Prime VE Duos SM-G531H/DS
+Galaxy Grand Prime VE SM-G531F
+Galaxy J1 Ace Duos SM-J110H/DS
+Galaxy J1 Duos SM-J100H/DS
+Galaxy J1 SM-J100FN
+Galaxy J1 SM-J100H
+Galaxy J1 SM-J120F/DS
+Galaxy J2 SM-J200F/DS
+Galaxy J2 SM-J200H/DS
+Galaxy J5 SM-J500F/DS
+Galaxy J5 SM-J500FN
+Galaxy J5 SM-J500H/DS
+Galaxy J7 SM-J700F/DS
+Galaxy J7 SM-J700H/DS
+Galaxy K zoom SM-C115
+Galaxy Mega 2 SM-G750F
+Galaxy Mega 5.8 GT-I9150
+Galaxy Mega 5.8 GT-I9152
+Galaxy Mega 6.3 GT-I9200
+Galaxy Mega 6.3 GT-I9205
+Galaxy Mega 6.3 GT-I9200
+Galaxy Mega 6.3 GT-I9205
+Galaxy Metrix 4G SCH-I405U
+Galaxy Mini 2 GT-S6500
+Galaxy Mini GT-S5570
+Galaxy Music Duos GT-S6012
+Galaxy Music GT-S6010
+Galaxy Nexus GT-I9250
+Galaxy Note 3 Dual Sim SM-N9002
+Galaxy Note 3 Dual Sim SM-N9002
+Galaxy Note 3 Dual Sim SM-N9002
+Galaxy Note 3 Neo Lite SM-N7500
+Galaxy Note 3 Neo SM-N7502
+Galaxy Note 3 Neo SM-N7505
+Galaxy Note 4 Duos SM-N9100
+Galaxy Note 4 SM-N910C
+Galaxy Note 4 SM-N910F
+Galaxy Note 4 SM-N910G
+Galaxy Note 4 SM-N910H
+Galaxy Note 4 SM-N910S
+Galaxy Note 4 SM-N910U
+Galaxy Note 5 SM-N920
+Galaxy Note 5 SM-N920
+Galaxy Note 5 SM-N920
+Galaxy Note 5 Duos SM-N9200
+Galaxy Note Edge SM-N915F
+Galaxy Note Edge SM-N915G
+Galaxy Note GT-N7000
+Galaxy Note II GT-N7100
+Galaxy Note II GT-N7100
+Galaxy Note II GT-N7100
+Galaxy Note II LTE GT-N7105
+GALAXY Note LTE GT-N7005
+Galaxy Pocket GT-S5300
+Galaxy Pocket Neo GT-S5310
+Galaxy Pocket Neo GT-S5312
+Galaxy Pocket Plus GT-S5301
+Galaxy Premier GT-I9260
+Galaxy Premier GT-I9260
+Galaxy Pro GT-B7510
+Galaxy R GT-I9103
+Galaxy S Advance GT-I9070
+Galaxy S Advance GT-I9070
+Galaxy S Duos 2 GT-S7582
+Galaxy S Duos GT-S7562
+Galaxy S GT-I9000
+Galaxy S II LTE GT-I9210
+GALAXY S II Plus GT-I9105
+Galaxy S III 4G GT-I9305
+Galaxy S III mini GT-I8190
+Galaxy S III mini GT-I8190
+Galaxy S III mini Value Edition GT-I8200
+Galaxy S III mini Value Edition GT-I8200
+Galaxy S III Neo GT-I9301I
+Galaxy S III Neo Duos GT-I9300I
+Galaxy S Plus GT-I9001
+Galaxy S scLCD GT-I9003
+Galaxy S4 GT-I9500
+Galaxy S4 GT-I9502
+Galaxy S4 GT-I9505
+Galaxy S4 GT-I9506
+Galaxy S4 GT-I9500
+Galaxy S4 GT-I9502
+Galaxy S4 GT-I9505
+Galaxy S4 GT-I9500
+Galaxy S4 GT-I9505
+Galaxy S4 Active GT-I9295
+Galaxy S4 Black Edition GT-I9500
+Galaxy S4 Black Edition GT-I9505
+Galaxy S4 Black Edition GT-I9506
+Galaxy S4 Black Edition GT-I9515
+Galaxy S4 Black Edition GT-I9500
+Galaxy S4 LaFleur GT-I9500
+Galaxy S4 LaFleur GT-I9505
+Galaxy S4 mini Black Edition GT-I9190
+Galaxy S4 mini Black Edition GT-I9192
+Galaxy S4 mini Black Edition GT-I9195
+Galaxy S4 mini Duos GT-I9192
+Galaxy S4 mini Duos Value Edition GT-I9192I
+Galaxy S4 mini GT-I9190
+Galaxy S4 mini GT-I9195
+Galaxy S4 mini GT-I9197
+Galaxy S4 mini LaFleur Duos GT-I9192
+Galaxy S4 mini LaFleur GT-I9190
+Galaxy S4 mini LaFleur GT-I9195
+Galaxy S4 Value Edition GT-I9515
+Galaxy S4 Zoom 4G C105
+Galaxy S4 Zoom SM-C101
+Galaxy S5 SM-G900F
+Galaxy S5 SM-G900H
+Galaxy S5 SM-G901F
+Galaxy S5 SM-G900F
+Galaxy S5 SM-G900H
+Galaxy S5 SM-G900I
+Galaxy S5 Active SM-G870F
+Galaxy S5 Duos SM-G900FD
+Galaxy S5 mini SM-G800F
+Galaxy S5 mini SM-G800H
+Galaxy S5 mini SM-G800H/DS
+Galaxy S5 Neo SM-G903F
+Galaxy S6 SM-G920F
+Galaxy S6 Duos SM-G920FD
+Galaxy S6 SM-G920F
+Galaxy S6 Duos SM-G920FD
+Galaxy S6 SM-G920F
+Galaxy S6 Duos SM-G9200
+Galaxy S6 Edge SM-G925
+Galaxy S6 Edge SM-G925
+Galaxy S6 Edge SM-G925
+Galaxy S6 Edge+ SM-G928C
+Galaxy S6 Edge+ Duos SM-G9287
+Galaxy S6 Edge+ Duos SM-G9287
+Galaxy S7
+Galaxy S7 Edge
+Galaxy Spica GT-I5700
+Galaxy Star 2 SM-G130E
+Galaxy Star Advance SM-G350E
+Galaxy Star GT-S5280
+Galaxy Star GT-S5282
+Galaxy Star Plus GT-S7262
+Galaxy Star Pro GT-S7260
+Galaxy Trend 2 SM-G313HN
+Galaxy Trend GT-S7390
+Galaxy Trend GT-S7392
+Galaxy Tab
+GalaxyTab
+Tank x10
+P860 Explorer
+P920 Tangenta
+RG128 Mariner
+RG150 Traveller
+RG210 Swft II
+RG220 Swift Plus
+RG960 Apex
+RG970 Partner
+Q5-S
+Pro G7
+Pro G8
+S8 Lite
+R350
+R463
+R470
+R530
+Upad U-77
+DC-715
+DC-735
+DMC-830
+Kids
+MC-3000
+MC-810
+MC-820
+MC-825 FM
+MC-830
+MC-840
+MC-850
+MC-850 GPRS
+MC-920
+MC-922
+MC-930
+MC-932
+MC-936
+MC-939
+MC-940
+MC-950
+MC-959
+MW-3020
+MW-3026
+MW-3040
+MW-3042
+MW-3052
+MW-930 WAP
+MW-932
+MW-936
+MW-979 GPRS
+MW-X1
+MY-3088
+MY-X6
+my100X
+my101X
+my150X
+my200C
+my200X
+my201X
+my210X
+my212X
+my226X
+my300C
+my300X
+my301X
+my400V
+my400X
+my401C
+my401X
+my405X
+my411C
+my411C LuluCastagnette
+my411X
+my419X
+my500X
+my501C
+my501X
+my511X
+my600X
+my700X
+my800C
+my800X
+my850C
+my900C
+myC-1
+myC-2
+myC-3b
+myC-4
+myC3-2
+myC4-2
+myC5-2
+myC5-2v
+myC5-3
+myE-77
+myMovieBox
+myS-7
+MYX-1W
+myX-2
+myX-3
+myX-3d
+myX-4
+myX-5m
+MYX-7
+myX-8
+myX5-2
+myX6-2
+myZ-3
+myZ-5
+myZ-55
+Puma
+RC-715
+RC-725
+RC-730
+RC-820
+RC-840
+RC-912
+RD-435
+RD-750
+WA3050
+Galaxy Trend LaFleur GT-S7390
+Galaxy Trend Plus GT-S7580
+Galaxy W GT-I8150
+Galaxy Win GT-I8552
+Galaxy Win Pro SM-G3812
+Galaxy xCover 2 GT-S7710
+Galaxy xCover 3 G388F
+Galaxy xCover GT-S5690
+Galaxy Y Duos GT-S6102
+Galaxy Y GT-S5360
+Galaxy Y Plus GT-S5303
+Galaxy Y Pro Duos GT-B5512
+Galaxy Y Pro GT-B5510
+Galaxy Young 2 SM-G130H
+Galaxy Young Duos GT-S6312
+Galaxy Young GT-S6310
+Giorgio Armani Galaxy S GT-I9010
+Giorgio Armani GT-B7620
+GT-C3780
+GT-E1190
+GT-I5500
+GT-I5510
+GT-I6410
+GT-I7110
+GT-I7500
+GT-I8000
+GT-I8510
+GT-I8510
+GT-I8910
+GT-I8910
+GT-S5292
+Guru Music 2 SM-B310E
+Hello Kitty GT-C3300
+i200
+i450
+i550
+i5510 Galaxy 551
+i5801 Galaxy Apollo
+i600
+i710
+i740
+i780
+i8160 Galaxy Ace II La Fleur
+i8190 Galaxy S III mini La Fleur
+i8320
+i8910 Omnia HD Gold Edition
+i900 Omnia WiTu
+i900 Omnia WiTu
+i9000 Galaxy S
+i9020 Nexus S Google Nexus S
+i907 Epix
+i9100 Galaxy S II
+i9100 Galaxy S II
+i9100 Galaxy S II Crystal Edition
+i9100G Galaxy S II
+i9250 Galaxy Nexus
+i9250 Galaxy Nexus
+i9300 Galaxy S III
+i9300 Galaxy S III La Fleur
+i9300 Galaxy S III
+i9300 Galaxy S III
+J150
+J210
+J610
+J700
+J770
+Javelin
+Jet GT-S8000
+L170
+L770
+L810
+L811
+L870
+La Fleur GT-S5230
+Louvre GT-B7610
+M110 Solid
+M2310
+M2510
+M2710
+M310
+M3200
+M3310
+M3510 BEATZ
+M3710 Corby Beat
+M620
+M6710 Beat Disc
+M7500 Emporio Armani Night Effect
+M7600
+M8800 Pixon
+M8910 Pixon12
+Metro 312 SM-B312
+Metro 312 SM-B312E
+Metro B350E
+Monte Bar GT-C3200
+Monte Slider GT-E2550
+N7000 Galaxy Note
+N9000 Galaxy Note 3
+N9005 Galaxy Note 3
+N9005 Galaxy Note 3
+N9006 Note 3
+Nexus S GT-I9023
+Omnia 7 GT-I8700
+Omnia LITE GT-B7300
+Omnia M GT-S7530
+Omnia PRO GT-B7320
+Omnia Pro GT-B7330
+Omnia W GT-I8350
+P520 Giorgio Armani
+PM-A740
+Rex 70 GT-S3802
+Rex 80 GT-S5222R
+RL-A760
+S3030
+S3100
+S3110
+S3310
+S3350
+S3370
+S3500
+S3550
+S3572
+S3600
+S3650 Corby
+S3653
+S3770
+S3850 Corby II
+S5050
+S5150
+S5200
+S5229 Star 3
+S5230 GPS
+S5230 Hello Kitty
+S5233
+S5233W
+S5250 Wave 525 La Fleur
+S5250 Wave 525 Romantic Pink
+S5302 Galaxy Pocket Duos
+S5350
+S5360 Galaxy Y Hello Kitty
+S5360 Galaxy Y La Fleur
+S5363 Galaxy Y
+S5380 Wave Y La Fleur
+S5510
+S5530
+S5550
+S5560
+S5570i Galaxy
+S5600
+S5600v Blade
+S5610
+S5611
+S5620
+S5690 Galaxy Xcover
+S5750
+S5780 Wave 578
+S5830 Galaxy Ace Hugo Boss
+S5830 Galaxy Ace La Fleur
+S5830i Galaxy Ace
+S6102 Galaxy Y Duos La Fleur
+S6700
+S7070 Diva
+S7220
+S7230E Wave 723 La Fleur
+S7330
+S7350
+S7550 Blue Earth
+S7560 Galaxy Trend
+S7562 Galaxy S Duos La Fleur
+S8003
+S8600 Wave III
+S9110
+S9402 Ego DuoS
+SCH-611
+SCH-A530
+SCH-A610
+SCH-A620
+SCH-A790
+SCH-A840
+SCH-A870
+SCH-A970
+SCH-B100
+SCH-B200
+SCH-B250
+SCH-E120
+SCH-E135
+SCH-E140
+SCH-E170
+SCH-E200
+SCH-E250
+SCH-E300
+SCH-E350
+SCH-E370
+SCH-E380
+SCH-E430
+SCH-E470
+SCH-i819
+SCH-i830
+SCH-N195
+SCH-S250
+SCH-S350
+SCH-V300
+SCH-V410
+SCH-V420
+SCH-V450
+SCH-V500
+SCH-V540
+SCH-V720
+SCH-V740
+SCH-W569
+SCH-X130
+SCH-X250
+SCH-X350
+SCH-X430
+SCH-X580
+SCH-X590
+SCH-X600
+SCH-X720
+SCH-X780
+SCH-X800
+SCH-X850
+SCH-X969
+SGH-2100
+SGH-2200
+SGH-2400
+SGH-A100
+SGH-A110
+SGH-A188
+SGH-A200
+SGH-A300
+SGH-A400
+SGH-A500
+SGH-A727
+SGH-A800
+SGH-B100
+SGH-B110
+SGH-B130
+SGH-B200
+SGH-B220
+SGH-B300
+SGH-B320
+SGH-C100
+SGH-C110
+SGH-C120
+SGH-C130
+SGH-C140
+SGH-C160
+SGH-C170
+SGH-C200
+SGH-C200N
+SGH-C210
+SGH-C230
+SGH-C240
+SGH-C250
+SGH-C300
+SGH-C327
+SGH-C400
+SGH-C450
+SGH-D100
+SGH-D300
+SGH-D307
+SGH-D357
+SGH-D410
+SGH-D415
+SGH-D500
+SGH-D500E
+SGH-D510
+SGH-D520
+SGH-D600
+SGH-D608
+SGH-D700
+SGH-D710
+SGH-D720
+SGH-D730
+SGH-D800
+SGH-D808
+SGH-D820
+SGH-D830
+SGH-D840
+SGH-D840C
+SGH-D900B
+SGH-E100
+SGH-E210
+SGH-E300
+SGH-E310
+SGH-E317
+SGH-E330
+SGH-E330N
+SGH-E340
+SGH-E350
+SGH-E350E
+SGH-E360
+SGH-E370
+SGH-E380
+SGH-E400
+SGH-E420
+SGH-E480
+SGH-E490
+SGH-E530
+SGH-E570
+SGH-E590
+SGH-E600
+SGH-E610
+SGH-E620
+SGH-E630
+SGH-E700
+SGH-E710
+SGH-E720
+SGH-E730
+SGH-E750
+SGH-E760
+SGH-E770
+SGH-E780
+SGH-E790
+SGH-E800
+SGH-E810
+SGH-E820
+SGH-E830
+SGH-E850
+SGH-E870
+SGH-E880
+SGH-E890
+SGH-E900
+SGH-E900M
+SGH-E910
+SGH-E950
+SGH-F200
+SGH-F250
+SGH-F500
+SGH-F510
+SGH-F520
+SGH-G400
+SGH-G810
+SGH-i250
+SGH-i300
+SGH-i300x
+SGH-i310
+SGH-i320
+SGH-i400
+SGH-i520
+SGH-i530
+SGH-i560
+SGH-i718
+SGH-i750
+SGH-i760
+SGH-J400
+SGH-J600
+SGH-L310
+SGH-L320
+SGH-L600
+SGH-L700
+SGH-L760
+SGH-M100
+SGH-M130
+SGH-M150
+SGH-M200
+SGH-M300
+SGH-M600
+SGH-M610
+SGH-N100
+SGH-N250
+SGH-N300
+SGH-N400
+SGH-N500
+SGH-N600
+SGH-N620
+SGH-N700
+SGH-N800
+SGH-P100
+SGH-P110
+SGH-P180
+SGH-P200
+SGH-P207
+SGH-P300
+SGH-P310
+SGH-P400
+SGH-P510
+SGH-P520
+SGH-P700
+SGH-P730
+SGH-P850
+SGH-P900
+SGH-P920
+SGH-P930
+SGH-P940
+SGH-P960
+SGH-Q100
+SGH-Q200
+SGH-R200
+SGH-R210
+SGH-R220
+SGH-S100
+SGH-S200
+SGH-S300
+SGH-S342i
+SGH-S400i
+SGH-S401i
+SGH-S410i
+SGH-S500
+SGH-S501i
+SGH-S720i
+SGH-S730i
+SGH-T100
+SGH-T200
+SGH-T400
+SGH-T500
+SGH-T700
+SGH-T809
+SGH-U100
+SGH-U300
+SGH-U708
+SGH-V200
+SGH-X100
+SGH-X120
+SGH-X140
+SGH-X150
+SGH-X160
+SGH-X200
+SGH-X210
+SGH-X300
+SGH-X400
+SGH-X450
+SGH-X460
+SGH-X461
+SGH-X480
+SGH-X481
+SGH-X495
+SGH-X500
+SGH-X510
+SGH-X520
+SGH-X530
+SGH-X540
+SGH-X550
+SGH-X600
+SGH-X610
+SGH-X620
+SGH-X630
+SGH-X640
+SGH-X650
+SGH-X660
+SGH-X670
+SGH-X680
+SGH-X700
+SGH-X800
+SGH-X810
+SGH-X820
+SGH-X830
+SGH-Z100
+SGH-Z105
+SGH-Z130
+SGH-Z140
+SGH-Z150
+SGH-Z170
+SGH-Z300
+SGH-Z350
+SGH-Z360
+SGH-Z370
+SGH-Z400
+SGH-Z500
+SGH-Z510
+SGH-Z540
+SGH-Z550
+SGH-Z560
+SGH-Z620
+SGH-Z700
+SGH-Z710
+SGH-Z720
+SPH i550
+SPH-A303
+SPH-A460
+SPH-A500
+SPH-A503
+SPH-A520
+SPH-A660
+SPH-A800
+SPH-A900
+SPH-i330
+SPH-i500
+SPH-I700
+SPH-S2700
+SPH-V7400
+SPH-V7800
+SPH-V7900
+SPH-V840
+Star 3 Duos GT-S5222
+Star 3 GT-S5220
+Star GT-S5230
+Star II DUOS GT-C6712
+Star II GT-S5260
+Star TV GT-S5233T
+Star Wi-Fi GT-S5230W
+T929 Memoir
+Thor
+U600
+U700
+U800
+U900
+UltraTOUCH GT-S8300
+Watch Phone
+Wave 2 Pro GT-S5330
+Wave 3 GT-S8600
+Wave 525 GT-S5250
+Wave 578 GT-S5780
+Wave 723 GT-S7230
+Wave GT-S8500
+Wave II GT-S8530
+Wave M GT-S7250
+Wave Y GT-S5380
+WiTu Pro GT-B7350
+Xcover GT-B2710
+Xcover SM-B550H
+CMD-C1
+CMD-CD5
+CMD-J5
+CMD-J6
+CMD-J7
+CMD-J70
+CMD-MZ5
+CMD-X1000
+CMD-X2000
+CMD-Z1
+CMD-Z5
+CMD-Z7
+Experia
+Xperia Acro S LT26w
+Xperia C
+Xperia C3 D2533
+Xperia C3 Dual D2502
+Xperia C4
+Xperia C4 Dual
+Xperia C5 Ultra
+Xperia C5 Ultra Dual
+Xperia E
+Xperia E dual
+Xperia E1
+Xperia E1 Dual
+Xperia E3
+Xperia E3 Dual 2212
+Xperia E4
+Xperia E4 Dual
+Xperia E4g
+Xperia E4g Dual
+Xperia Go ST27i
+Xperia GX
+Xperia Ion LT28i
+Xperia ion LTE
+Xperia J ST26i
+Xperia L
+Xperia M
+Xperia M dual
+Xperia M2
+Xperia M2 Aqua
+Xperia M2 Dual
+Xperia M4 Aqua
+Xperia M4 Aqua
+Xperia M4 Aqua Dual 16GB
+Xperia M4 Aqua Dual 8GB
+Xperia M5
+Xperia M5 Dual
+Xperia Miro ST23i
+Xperia Neo L MT25i
+Xperia P LT22i
+Aino
+Aspen
+C510
+C702
+C901
+C901 GreenHeart
+C902
+C903
+C905
+Cedar
+D750i
+Elm
+F305
+F500i
+G502
+G700
+G705
+G900
+Hazel
+J100i
+J110i
+J120i
+J132
+J200
+J210i
+J220i
+J230i
+J300i
+Jalou
+Jalou by Dolce & Gabbana
+K200i
+K205i
+K220i
+K300i
+K310i
+K320i
+K330
+K500i
+K506c
+K510i
+K530i
+K550i
+K550im
+K600i
+K608i
+K610i
+K610im
+K618i
+K630i
+K660i
+K700i
+K750i
+K770i
+K790i
+K800i
+K810i
+K850i
+Live with Walkman WT19i
+M600i
+Mix Walkman
+Naite
+P1i
+P800
+P900
+P910i
+P990i
+R300
+R300i
+R306i
+R600
+S302
+S312
+S500i
+S600i
+S700i
+S710a
+Satio
+Spiro
+T100
+T105
+T200
+T206
+T230
+T250i
+T270i
+T280i
+T290
+T300
+T303
+T310
+T600
+T608
+T610
+T61c
+T630
+T650i
+T68i
+T700
+T707
+T715
+TM506
+txt
+txt pro
+V600i
+V800
+V802SE
+Vivaz
+Vivaz pro
+W200i
+W205
+W300i
+W302
+W350i
+W380i
+W395
+W508
+W550i
+W580i
+W580im
+W595
+W600i
+W610i
+W660i
+W700i
+W705
+W710i
+W715
+W760i
+W800i
+W810i
+W830i
+W850i
+W880i
+W888i
+W890i
+W900i
+W902
+W902 plus
+W910i
+W950i
+W960i
+W980i
+W995
+Walkman W8
+Xperia acro HD SO-03D
+Xperia active
+Xperia arc
+Xperia arc S
+Xperia mini
+Xperia mini Pro
+Xperia Neo
+MT15i
+Xperia neo V
+MT11i
+Xperia Play
+Xperia pro
+Xperia Pureness X5
+Xperia ray
+Xperia X1
+Xperia X10
+Xperia X10 mini
+Xperia X10 mini pro
+Xperia X2
+Xperia X8
+Yari
+Yendo
+Z1010
+Z200
+Z250i
+Z300i
+Z310i
+Z320i
+Z500i
+Z520i
+Z530i
+Z550i
+Z555i
+Z600
+Z610i
+z700
+Z710i
+Z750i
+Z770i
+Z780
+Z800i
+Zylo
+E400
+E500
+L100
+L108
+L301
+P10
+P101
+P211
+R280
+R390
+R390+
+R413
+AF103
+C220
+D201
+D400
+E74
+GS121
+GS123
+I616
+I959
+M200
+M340
+M380
+W301
+705SH
+Aquos Phone SH930W
+GX-1
+GX-10
+GX-10i
+GX-17
+GX-20
+GX-22
+GX-25
+GX-30
+GX-30i
+GX-L15
+SH530U
+SH631W
+SH837W
+TM100
+TM150
+TM200
+V604SH
+W-ZERO3
+ES1000
+Ex-Handy 07
+Land Rover S1
+Land Rover S2
+XP1
+XP1 bt
+XP1300 Core
+XP1301 Core NFC
+XP3 ENDURO
+XP3 QUEST PRO
+XP3300 FORCE
+XP3340 Sentinel
+XP5300 3G
+H920
+X920
+TS3
+VR7
+A5520SA
+MM7400
+S750
+S750i
+SCP-5300
+SCP-8100
+V801SA
+W22SA
+W31SA
+SGT 01
+D800
+M550
+S330
+Z100
+SG-2600E
+SG-2800E
+SHTURMANN Smart 1
+A31
+A35
+A36
+A40
+A50
+A51
+A52
+A53
+A55
+A57
+A60
+A62
+A65
+A70
+A75
+AF51
+AL21
+AP75
+AX72
+AX75
+C10
+C25
+C28
+C30
+C35i
+C45
+C55
+C60
+C62
+C65
+C70
+C72
+C75
+CC75
+CF110
+CF62
+CF65
+CF75
+CFX65
+CL50
+CL55
+CL75
+CT66
+CX65
+CX70
+CX75
+CXV70
+E10
+M30
+M35i
+M50
+M55
+M65
+M75
+MC60
+ME45
+ME75
+MT50
+PenPhone
+S10
+S10 'Active'
+S15, S16
+S15E
+S25
+S35i
+S4 'Power'
+S40
+S42
+S45
+S45i
+S46
+S55
+S65
+S66
+S75
+SF65
+SFG75
+SG75
+SK65
+SL10
+SL25
+SL42
+SL45
+SL45i
+SL55
+SL65
+SL75
+SL75 ESCADA
+SP65
+ST55
+ST60
+SX1
+SX45
+SXG75
+WristPhone
+Xelibri 1
+Xelibri 2
+Xelibri 3
+Xelibri 4
+Xelibri 5
+Xelibri 6
+Xelibri 7
+Xelibri 8
+mobile Comfort 50
+mobile Comfort 50 Agat
+mobile Comfort 50 mini
+mobile X-treme DZ67 Travel
+mobile X-treme IP67
+mobile X-treme IP68
+mobile X-treme IZ67 Boat
+mobile X-treme PQ11
+mobile X-treme PQ22
+mobile X-treme PR67 City
+SDC-106
+SM-1120
+SM-1220
+SM-2120
+SM-4150
+SM-5120
+SM-5220
+SM-5320
+SM-6190
+SM-7150
+SM-8190
+SM-8290
+SMD-103
+SMD-104
+SMD-105
+SSP-101
+IM-8100
+Y IM-1400
+Y IM-3000
+Y IM-5000
+Y IM-5100
+Y IM-5400
+Y IM-6100
+Y IM-6200
+Y IM-6400
+Y IM-6500
+Y IM-7100
+Y IM-7200
+Y IM-7300
+Y IM-7400
+Y IM-7700
+Y IM-8400
+Y IM-8500/8500L
+Y IM-U100
+Classiс
+Duos
+Hit
+Simple
+Target
+PH77
+M500 GSM
+705T
+A168
+Xperia S LT26i
+Xperia SL LT26ii
+Xperia Sola MT27i
+Xperia SP
+Xperia SX
+Xperia T LT30i
+Xperia T2 Ultra
+Xperia T2 Ultra dual
+Xperia T3
+Xperia Tipo Dual ST21i2
+Xperia Tipo ST21i
+Xperia TX LT29i
+Xperia U ST25i
+Xperia V LT25i
+Xperia X Performance
+Xperia Z
+Xperia Z Ultra
+Xperia Z1
+Xperia Z1 Compact
+Xperia Z2
+Xperia Z2a
+Xperia Z3
+Xperia Z3 Compact
+Xperia Z3 Dual
+Xperia Z3+
+Xperia Z3+ Dual
+Xperia Z5
+Xperia Z5 Compact
+Xperia Z5 Dual
+Xperia Z5 Dual Premium
+Xperia Z5 Premium
+Xperia ZL
+Xperia ZR C5502
+Xperia ZR LTE C5503
+Hongmi 1S
+Mi 4i
+Mi 4i
+Mi Note
+Mi Note
+Mi Note Pro
+Mi-2
+Mi-2
+Mi-One
+Mi2A
+Mi2A
+Mi2S
+Mi2S
+Mi3
+Mi3
+Mi4
+Mi4
+2015
+4400
+5000
+5000T
+I95
+L969
+T100
+T100S
+T11
+T12
+T200
+T200C
+T200C
+T4400
+T5S
+T6 Pro
+T6C
+T6S
+V12
+V12+
+W100
+W100S
+W11
+W11
+W200
+W200C
+W200S
+W3+
+W300
+W7S
+W8 Beyond
+W8+
+W8e
+W8s
+teXet iX TM-4772
+iX-maxi/TM-4982
+iX-mini TM-4182
+TM-102
+TM-103
+TM-224
+TM-228
+TM-229
+TM-3000
+TM-3200R
+TM-3204R
+TM-333
+TM-4004
+TM-420
+TM-4377
+TM-4504
+TM-4515 X-style
+TM-4572/X-medium
+TM-4577
+TM-4677
+TM-4782/X-slim
+TM-4872 X-medium plus
+TM-502R
+TM-503RS
+TM-507R
+TM-508R
+TM-508R
+TM-509R
+TM-510R
+TM-511R
+TM-512R
+TM-513R
+TM-515R
+TM-5200
+TM-5204
+TM-5277
+TM-5377
+TM-540R
+TM-5503 X-mega
+TM-605TV
+TM-607TV
+TM-99
+TM-B100
+TM-B110
+TM-B111
+TM-B112
+TM-B113
+TM-B114
+TM-B115
+TM-B116
+TM-B118
+TM-B200
+TM-B210
+TM-B310
+TM-B311
+TM-B312
+TM-B313
+TM-B410
+TM-B415
+TM-B416
+TM-B450
+TM-D105
+TM-D107
+TM-D108
+TM-D109
+TM-D205
+TM-D222
+TM-D223
+TM-D225
+TM-D226
+TM-D227
+teXet TM-D300
+TM-D301
+TM-D302
+TM-D305
+TM-D45
+X-basic TM-4072
+X-cosmo TM-5508
+X-driver Quad/TM-4082R
+X-driver TM-4104R
+X-Line TM-5006
+X-maxi 2 TM-5016
+X-maxi qHD TM-5172
+X-maxi TM-5072
+X-mini/TM-3504
+X-navi TM-4672
+X-point TM-4077
+X-quad TM-4503
+X-shine TM-5007
+X-square TM-4972
+X-start TM-4172
+X4/TM-5082
+X8 TM-5092
+Ascent 2010
+Ascent Azure
+Ascent Black Leather
+Ascent Ferrari 1947
+Ascent Ferrari 60
+Ascent Ferrari GT Limited Edition
+Ascent Indianapolis
+Ascent Le Mans
+Ascent Monaco
+Ascent Monza
+Ascent Motorsport
+Ascent Nurburgring
+Ascent Pink
+Ascent Silverstone
+Ascent Summer Season Cream
+Ascent Summer Season Strawberry
+Ascent Ti
+Ascent Ti Carbon Fibre
+Ascent Ti Damascus Steel
+Ascent Ti Ferrari Giallo
+Ascent Ti Ferrari Nero
+Ascent Ti Ferrari Rosso
+Ascent White
+Constellation Ayxta
+Constellation Candy
+Constellation Exotic Polished stainless steel amaranth ostrich skin
+Constellation Exotic Polished stainless steel aqua ostrich skin
+Constellation Exotic Polished stainless steel black ostrich skin
+Constellation Exotic polished stainless steel dark brown karung skin
+Constellation Exotic polished stainless steel dark pink karung skin
+Constellation Mixed Metal
+Constellation Monogram
+Constellation Polished Stainless Steel Black Leather
+Constellation Polished Stainless Steel Pink Leather
+Constellation Pure Black
+Constellation Pure Chocolate
+Constellation Pure Silver
+Constellation Pure White
+Constellation Quest
+Constellation Rococo Ivory
+Constellation Rococo Noir
+Constellation Rococo Sapphire
+Constellation Rococo Scarlet
+Constellation Rose Gold
+Constellation Satin Stainless Steel
+Constellation Smile
+Constellation T Black Neon Silver Carbon Fiber
+Constellation T Candy Mint Green нержавеющая сталь зеленая кожа
+Constellation T Smile Coral Blue Нержавеющая сталь, голубая резина
+Constellation T Smile Pebble Grey нержавеющая сталь, серая резина
+Constellation T Smile Sea Anemon Purple
+Constellation T нержавеющая сталь розовая кожа
+Constellation T нержавеющая сталь черная кожа
+Constellation T нержавеющая сталь черная кожа аллигатора
+Constellation Vivre Black
+Constellation Vivre Fuchia
+Constellation Vivre Ocean Blue
+Constellation Vivre Pink
+Constellation Yellow Gold
+Constellation Yellow Gold Diamond Trim
+Constellation капучино
+Constellation малиновый
+Constellation мокко
+Constellation оранжевый
+Constellation черный
+Signature Cobra
+Signature Duo Stainless Steel
+Signature M Design Black and White Diamonds
+Signature M Design Platinum Solitaire Diamond
+Signature M Design Rose Gold Pink Diamonds
+Signature M Design Rose Gold Pink Sapphires
+Signature M Design White Gold Pave Diamonds
+Signature M Design White Gold Pave Diamonds with baguette keys
+Signature M Design Yellow Diamonds
+Signature M Design Yellow Gold Pave Diamonds
+Signature M Design Yellow Gold Pave Diamonds with baguette keys
+Signature Platinum/MMII
+Signature Precious
+Signature Python
+Signature S Design Clous De Paris
+Signature S Design Ladies Mother Of Pearl
+Signature S Design Pure Silver
+Signature S Design Stainless Steel
+Signature S Design White Gold
+Signature S Design Yellow Gold
+Signature S Design Zirconium
+Signature Stainless Steel
+Signature Stainless Steel Reflective
+Signature Stainless Steel with Red Metal Bezel
+Signature Stainless Steel with Yellow Metal Bezel
+Signature Stainless Steel with Yellow Metal Details
+Signature Stainless Steel with Yellow Metal Keys
+Signature White Gold
+Signature White Gold Half Pave Diamonds
+Signature Yellow Gold
+Signature Yellow Gold Half Pave Diamonds
+Ti Ferrari
+Ti Titanium Black PVD Red Gold Mixed Metals
+Be Pure
+ВЕ Pro
+A280
+VEON A380
+VEON A48
+VEON A68
+VEON A78
+VEON C8680
+VEON S303
+T10
+V30
+V33
+C300
+C302
+D501
+D502
+D504
+D506
+D511
+Impress Drive
+Impress Easy
+M101
+M102
+S101
+X1s
+X2 Turbo
+1105i
+3305i
+ZEN 4.7
+ZEN 5
+ZEN 5+
+Xplay 3S
+Android Note
+Android Note II
+Android Note II 5.0"
+Android Note II 5.5"
+Android Note II 6.0"
+A61
+A619
+Q30
+Q70
+V16
+V36
+V76
+V793
+V796
+V798
+V816
+Vega T1
+Vega T2
+Vega T3
+Swarovski
+S200
+S500e
+Ameo
+MDA
+MDA compact
+MDA compact II
+MDA II
+MDA III
+MDA Pro
+MDA Vario
+SDA
+Fuchsia MERIDIIST GMT
+GULF MERIDIIST
+Link
+MERIDIIST
+MERIDIIST Automobili Lamborghini
+MERIDIIST Black Diamond
+Meridiist Black PVD
+Meridiist Diamonds
+MERIDIIST GMT
+MERIDIIST Python Gold Dust
+MERIDIIST Stainless steel & Rose Gold
+T909
+T911
+TF-SP4001
+TF-SP4501
+TF-SP4502
+TF-SP5001
+TF-SP5301
+TF-SP5302
+GWx Borus
+Antares
+AG280
+AG300
+CG260
+T100
+T200
+T38I
+803T
+903T
+G500
+Portege G450
+Portege G710
+Portege G810
+Portege G900
+Portege G910
+TG01
+TS 10
+TS 921
+TS605
+TS608
+TS808
+V904T
+Optimus TL-S431
+Optimus TL-S531
+Optimus TL-S532
+X5 L
+X6 B
+MyGuide M500
+U-100
+U-105
+U-200
+U-300
+U-400
+U-520
+U-700
+U-800
+U-900
+Chairman
+Unique
+V350
+Thor
+CG107
+E100
+VG107
+VG207
+VG300
+VG307
+VG320
+VG520
+VK1500
+VK200
+VK2000
+VK2010
+VK2020
+VK2100
+VK3100
+VK330
+VK4000
+VK4500
+VK5000
+VK530
+VK560
+VK700
+VK7000
+VK700C
+VK800
+VK900
+1iD
+2iD
+3iD
+BD-20
+BD-30
+BD-38
+BD-40
+BD-50
+BD-60
+BM 15
+BM 20
+BM 25
+BM 30
+BM31
+BM60
+BM70
+RX100
+RX11
+RX20
+RX200
+RX400
+RX500
+RX501
+RX600
+RX800
+SC-10
+ST-11
+V-100
+V-300
+V-310
+V-350
+V-380
+V-50
+V-500
+V-700
+VS400
+VS600
+VS800
+W210
+W420
+W520
+W740
+CH-100
+WCE-100
+WTE-300
+DV1
+DV2
+Mi4c
+Mi4c
+RED RICE
+Redmi 2
+Redmi 2
+Redmi 3
+Redmi Note
+Redmi Note
+Redmi Note 2
+Redmi Note 2 Prime
+Redmi Note
+Redmi Note 3
+Redmi Note 3
+Redmi Note 4G 1S
+Redmi Note 4G
+A21 Plus
+A316G
+A36
+A711G
+Axon Mini
+Blade
+Blade 2
+Blade 3
+Blade A3
+Blade A465
+Blade AF3
+Blade C V807
+Blade G Lux
+Blade GF3
+Blade HN
+Blade L2
+Blade L3
+Blade L370
+Blade L4 A460
+Blade L4 Pro
+Blade Q Lux
+Blade S6
+Blade S6 Lite
+Blade X3
+Blade X5
+Blade X7
+Blade X9
+Blade Z7
+C150
+Geek 2
+Geek 2 Pro
+Grand Era
+Grand Memo
+Grand Memo Lite
+Grand S
+Grand S Flex
+Grand S2
+H500
+Kis
+Leo M1
+Leo Q1
+Leo S1
+Libra
+Mimosa
+N855D
+Nubia My Prague
+Nubia My Prague
+Nubia Z5
+Nubia Z5 mini
+Nubia Z5S
+Nubia Z5S
+Nubia Z5S mini
+Nubia Z5S mini
+Nubia Z7 Max
+Nubia Z7 mini
+Nubia Z9 Max
+Nubia Z9 Max
+Nubia Z9 mini
+Open
+Q705U
+R221
+Roamer
+S519D
+SKATE
+Skate 2
+Star 1
+U950
+V790
+V795
+V808
+V809
+V8110
+V815W
+V880
+V880E
+V880E Dual
+V880G
+V880H
+V881 Blade+
+V889M Dual
+V970 Grand X
+V970M Grand X
+V975 Geek
+V987 Grand X Quad
+ZP100 PILOT
+ZP1000
+ZP200
+ZP200+
+ZP300
+ZP300+
+ZP500
+ZP500+
+ZP580
+ZP600 Libero
+ZP700
+ZP780
+ZP800H Libero HD
+ZP810
+ZP820
+ZP900 Leader
+ZP900h
+ZP900s
+ZP910
+ZP950
+ZP950+
+ZP950+
+ZP980
+ZP980
+ZP980
+ZP980 PLUS
+ZP980 PLUS 8-CORE
+ZP980 PLUS 8-CORE
+ZP990 RAM
+ZP990 RAM
+ZP990+
+ZP998
+ZP998
+ZP998+
+945 ГЛОНАСС
+Basic 140
+Bravo
+Business 840
+Fit
+i42
+i43
+Mini
+Neo
+Pro
+QWERTY
+Qwerty 650
+Qwerty 655
+Qwerty 665
+Touch 540
+Trendy Touch 547
+Viva
+Phone
+Phone 2
+4G Turbo
+CP10
+G2200
+Login
+Optima
+Sim+
+Slim
+SP-A10
+SP-A20i Mint
+SP-A5
+SP-W1
+TDM15
+TP-DS1
+U1270
+U8110
+U8180
+U8230
+ZB-1
+ZX410
+A10
+A15
+A50
+A55
+Vivid ZS-5000
+Vivid ZS-5700
+Vivid ZS-6500
+A100
+A105
+A106
+C100
+E300
+E600
+E700

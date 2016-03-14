@@ -1,0 +1,611 @@
+#
+# Производители часов: https://market.yandex.ru/vendors.xml?CAT_ID=2431654&hid=91259&track=fr_cm_vendor
+#
+
+AA Wooden Watches
+AESOP
+ALFAJR
+AVI-8
+AVON
+AWI
+Accurate
+Adidas
+Adriatica
+Aeromatic 1912
+Aerowatch
+Aigner
+Akribos XXIV
+Akteo
+Alain Silberstein
+Alessandro Frenza
+Alessi
+Alfex
+Alpina
+Altanus
+Alviero Martini
+Andy Watch
+Anne Klein
+Apeks
+Appella
+Appetime
+Aquanautic
+Archimede
+Armand Nicolet
+Armani
+Armitron
+Arnold & Son
+Astina
+Atlantic
+Audemars Piguet
+Auguste Reymond
+Aurora
+Axcent
+Azzaro
+a.b.art
+
+BALL
+BEDAT & CO
+BMW
+BOSS BLACK
+BOSS ORANGE
+Baby Watch
+Badec
+Baldessarini
+Balmain
+Barbie (Mattel)
+Barbos
+Baume & Mercier
+Bausele
+Bell & Ross
+Ben Sherman
+Benetton
+Bentley
+Bering
+Betty Barclay
+Bisset
+Blancpain
+Blauling
+Blu
+Blumarine
+Boccia
+Boegli
+Bora
+Bovet
+Braun
+Breguet
+Breil Milano
+Breitling
+Brosway
+Bruno Sohnle
+Bulova
+Buran
+Burberry
+Burett
+
+CITRON
+CX Swiss Military Watch
+Cacharel
+Calvaneo 1583
+Calvin Klein
+Calypso
+Candino
+Carbon14
+Cartier
+Carucci
+Casio
+Caterpillar
+CeCi
+Century
+Cerruti 1881
+Certina
+Chanel
+Charles-Auguste Paillard
+Charm
+Charmex
+Chopard
+Christian Bernard
+Christina London
+Chronoforce
+Chronoswiss
+Chronotech
+Cimier
+Citizen
+Claude Bernard
+Columbia
+Comandor
+Concord
+Continental
+Converse
+Cooc
+Copha
+Corum
+Cover
+Cross
+Cuervo y Sobrinos
+Curren
+Cyril ratel
+
+D.Factory
+DETOMASO
+DKNY
+DOXA
+Dalvey
+Daniel Klein
+Daniel Wellington
+Danish Design
+Davidoff
+Davosa
+Deep Blue
+Delbana
+Delma
+Denissov
+Diesel
+Disney
+Dolce&Gabbana
+Doliche
+DuBois
+Dufa
+
+EBEL
+ECCO
+EDC
+EDWIN
+ELLE
+ELYSEE
+ENE Watch
+EVIGA
+Eastcolight
+Eberhard
+Edox
+Electric
+Elevate
+Elite
+Epos
+Ernest Borel
+Escada
+Esprit
+Essence
+Eterna
+EverSwiss
+
+F.Gattien
+FCUK
+FENDI
+Ferrari
+Ferre Milano
+Festina
+Fjord
+Fontenay
+Fortis
+Fortuna
+Fossil
+Franc Vila
+Frederique Constant
+Freelook
+
+GF Ferre
+GUESS
+Gant
+Gattinoni
+Gc
+Geneva
+Gerald Genta
+Girard Perregaux
+Givenchy
+Glam Rock
+Glycine
+Go Girl Only
+Godier
+Graham
+Grovana
+Gryon
+Guardo
+Gucci
+Gustav Becker
+Guy Laroche
+
+H3TACTICAL
+HOOPS
+Haas
+Hamilton
+Hanowa
+Haurex
+Heine
+Hello Kitty (Sanrio)
+Helveco
+
+Hublot
+Hablot
+
+Hush Puppies
+Hysek
+
+I.T.A.
+IWC
+Ice-Watch
+IceLink
+InTimes
+Ingersoll
+Invicta
+Issey Miyake
+
+J. Springs
+JBW
+JEANRICHARD
+Jacques Lemans
+Jacques du Manoir
+Jaeger-LeCoultre
+Jaguar
+James McCabe
+Jaz-ma
+Jean Marcel
+Jean d`Eve
+Jennifer Lopez
+Jet Set
+John Galliano
+Jowissa
+Juicy Couture
+Junghans
+Junkers
+Just
+Just Cavalli
+
+KHS
+KIDS Euroswan
+KOMONO
+Kahuna
+Kappa
+Karen Millen
+Karl Lagerfeld
+Kawaii Factory
+Kenneth Cole
+Kenzo
+Klaus Kobec
+Kleynod
+Kolber
+Konstantin Chaykin
+Kookai
+Korloff
+Kraftworxs
+Kronsegler
+Kyboe
+
+L'Duchen
+LANTZ
+LEGO
+LEVEL
+LOCMAN
+La Mer
+Laco
+Lacoste
+Lambretta
+Lancaster
+Laros
+Lars Larsen
+Le Chic
+Le Tandy
+Le Temps
+Ledfort
+Lee Cooper
+Limit
+Link
+Longines
+Lorenz
+Lorus
+Lotus
+Louis Erard
+Louis Moinet
+Lowell
+Lucien Piccard
+Lucky Kids
+Luminox
+LÜM-TEC
+
+MARVIN
+Magellan
+Magic Time
+Marc Ecko
+Marc Jacobs
+MareMonti
+Mark Maddox
+Marksman
+Mathey-Tissot
+Mauboussin
+Maurice Lacroix
+Max XL
+Medana
+Michael Kors
+Michel Herbelin
+Michelle Renee
+Mido
+Mini
+Mira
+Misaki Watch
+Miss Sixty
+Mistura
+Mitsubishi
+Mitya Veselkov
+Miusli
+Momentum
+Mondaine
+Montblanc
+Montegrappa
+Moog
+Morellato
+Morgan
+Moschino
+Moscow Classic
+Movado
+Mr Jones
+
+N.B. YÄGER
+NAUTICA
+NAVA DESIGN
+NIVREL
+NOMOS Glashutte
+Naf Naf
+NauticFish
+Neff
+Nexxen
+Nina Ricci
+Nixon
+No-Watch
+Nooka
+Nowley
+noon copenhagen
+
+OMAX
+ORIENT
+ORIS
+Obaku
+Officina Del Tempo
+Omega
+
+PRECISTA
+PULSAR
+Paco Rabanne
+Panerai
+Paris Hilton
+Parmigiani
+Paul Picot
+Pequignet
+Perfect
+Perrelet
+Petroff
+Philip Laurence
+Philip Stein
+Philip Watch
+Philippe de Cheron
+Phosphor
+Piaget
+Pierre Cardin
+Pierre Lannier
+Pierre Ricaud
+Pierre deRoche
+Pilot Instruments
+Pilot Time
+Pirelli
+Platinor
+Police
+Porsche Design
+Priosa
+Puma
+
+Q&Q
+Quantum
+Qwill
+
+RADO
+REEBOK
+RG512
+RIEMAN
+RSW
+Ranger
+Raymond Weil
+Remark
+Retrowerk
+Revue Thommen
+Rivaldy
+River Island
+Roamer
+Roberto Cavalli
+Roberto Cavalli by Franck Muller
+RoccoBarocco
+Rochas
+Rochet
+Rodania
+Roger Dubuis
+Rolex
+Rolf Cremer
+Romain Jerome
+Romanoff
+Romanson
+Rotary
+Rover & Lakes
+Roxa
+Royal Crown
+Royal London
+
+S.T.A.M.P.S.
+SEVENFRIDAY
+SFAS
+SKMEI
+SMW Swiss Military Watch
+STORM
+SWISS MILITARY HANOWA
+Saint Honore
+Salvatore Ferragamo
+Sandoz
+Sauvage
+Schaumburg
+Sector
+Seculus
+Seiko
+Sekonda
+Selena
+Shot
+Sinn
+Sinobi
+Sisley
+Skagen
+Slap on Watch
+Slazenger
+Smalto
+Smith & Wesson
+Spazio24
+Speedo
+Spiegelburg
+Spinnaker
+Sprout
+Staurino Fratelli
+Steinhart
+Steinmeyer
+Stuhrling
+Superdry
+Suunto
+Swarovski
+Swatch
+Sweet Years
+Swiss Collection
+Swiss Eagle
+Swiss Legend
+Swiss Military by Chrono
+Swiss Military by Sigma
+Swiss Mountaineer
+
+TACS
+TOKYObay
+TW Steel
+Tag Heuer
+Taller
+Tauchmeister
+Tawatec
+TechnoMarine
+Ted Baker
+Ted Lapidus
+Temporis
+Tempus
+The Unemployed Philosophers Guild
+Thirty Third Element
+Thomas Earnshaw
+Timberland
+Time Force
+Timex
+Tina Bolotina
+Tissot
+Titoni
+Tokyoflash
+Tommy Hilfiger
+Tonino Lamborghini
+Torgoen
+Traser
+Tsovet
+
+UHR-KRAFT
+UMNYASHOV
+Ulysse Nardin
+Uniform Wares
+Union Glashütte
+
+VOSTOK EUROPE
+Vacheron Constantin
+Valentino
+Valeri
+Van Der Bauwede
+Vector
+Venus
+Versace
+Versales
+Versus
+Viceroy
+Victorinox
+Villemont
+Visconti
+Vivienne Westwood
+Vogard
+Vulcain
+
+Wainer
+Weide
+Welder
+Wencia
+Wenger
+Westar
+Wewood
+Winx Club
+Wittnauer
+Wyler
+
+Yonger
+Yonger & Bresson
+Yves Bertelin
+Yves Camani
+
+ZENITH
+ZGO
+ZIIIRO
+ZIZ
+ZamZam
+Zaritron
+Zeades
+Zeno
+ZentRa
+Zeppelin
+Zerone
+Zippo
+Zzero
+
+01THEONE
+
+1a CLASSE
+
+5.11 Tactical
+
+88 Rue Du Rhone
+
+Авиатор
+
+Восток
+
+Гамма
+
+Держава
+
+Заря
+Зенит
+
+Комета
+Континент
+
+Луч
+
+МакТайм
+Маша и Медведь
+Михаил Москвин
+
+Нестеров
+Ника
+
+Орион
+
+Павелъ Буре
+Победа
+Полет-Хронос
+
+РФС
+Радуга
+Ракета
+Русское время
+
+СССР
+Слава
+Смешарики
+Соло
+Спецназ
+Спутник
+
+Тик-Так
+
+Фаблер
+
+Штурманские
